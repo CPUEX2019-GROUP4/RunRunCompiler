@@ -1,11 +1,11 @@
 module Back.BlockStackSearch where
 
-import Prelude hiding(seq)
-import Back.Block
-import Data.Map as M
-import Data.Set as S
-import Back.BlockGraph
-import RunRun.RunRun
+import           Back.Block
+import           Back.BlockGraph
+import           Data.Map        as M
+import           Data.Set        as S
+import           Prelude         hiding (seq)
+import           RunRun.RunRun
 
 
 blockStackSearch :: Map String FunctionData -> RunRun (Map String FunctionData)
@@ -37,7 +37,7 @@ mkStackSet :: [Set String] -> Block -> (Set String, Set String)
 mkStackSet ss block =
     let ss' = case ss of
                 [] -> S.empty
-                _ -> Prelude.foldl1 S.intersection ss
+                _  -> Prelude.foldl1 S.intersection ss
     in
     (ss', S.union ss' (searchSave block))
 
@@ -49,4 +49,4 @@ searchSave block =
     where
       addToSet s (_, (Inst (Save y) _ _)) = S.insert y s
       addToSet s (_, (Inst (Save y) _ _)) = S.insert y s
-      addToSet s _ = s
+      addToSet s _                        = s

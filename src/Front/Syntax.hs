@@ -1,6 +1,6 @@
 module Front.Syntax where
 
-import RunRun.Type
+import           RunRun.Type
 
 data Syntax =
     Unit

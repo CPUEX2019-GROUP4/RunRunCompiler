@@ -1,12 +1,12 @@
 module Back.BlockPrepare where
 
-import RunRun.RunRun
-import Back.Block
-import Back.BlockGraph
-import Control.Monad.State
-import Data.Map
-import Data.Graph
-import RunRun.Type ()
+import           Back.Block
+import           Back.BlockGraph
+import           Control.Monad.State
+import           Data.Graph
+import           Data.Map
+import           RunRun.RunRun
+import           RunRun.Type         ()
 
 prepare :: RunRun (Map String FunctionData)
 prepare = do

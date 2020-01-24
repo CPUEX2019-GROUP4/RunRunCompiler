@@ -1,10 +1,12 @@
 module Middle.ConstFold where
 
-import Data.Map
-import Middle.KNormal
-import RunRun.RunRun
-import Front.Syntax (Arith_binary(..), Arith_unary(..), Float_binary(..), Float_unary(..), Compare(..)) --Unary_operator(..),
-import qualified Data.Map as M
+import           Data.Map
+import qualified Data.Map       as M
+import           Front.Syntax   (Arith_binary (..), Arith_unary (..),
+                                 Compare (..), Float_binary (..),
+                                 Float_unary (..))
+import           Middle.KNormal
+import           RunRun.RunRun
 
 constfold :: K -> RunRun K
 constfold e = do
@@ -79,7 +81,7 @@ calc_i2 :: Arith_binary -> Int -> Int -> Int
 calc_i2 Add = (+)
 calc_i2 Sub = (-)
 calc_f1 :: Float_unary  -> Float -> Float
-calc_f1 FNeg = (*(-1))
+calc_f1 FNeg      = (*(-1))
 calc_f1 Sqrt_init = (1.0/) . sqrt
 calc_f1 Finv_init = (1.0/)
 calc_f2 :: Float_binary -> Float -> Float -> Float

@@ -1,14 +1,16 @@
 module Back.Asm where
 
-import Prelude hiding (concat)
-import qualified Data.Set as S
-import Data.Array
+import           Data.Array
+import qualified Data.Set            as S
+import           Prelude             hiding (concat)
 -- import qualified Data.Sequence
-import Data.List()
-import RunRun.RunRun
-import RunRun.Type
-import Front.Syntax (Arith_binary(..), Arith_unary(..), Float_binary(..), Float_unary(..), Unary_operator(..), Compare(..))
-import Middle.Closure_Type (L(..))
+import           Data.List           ()
+import           Front.Syntax        (Arith_binary (..), Arith_unary (..),
+                                      Compare (..), Float_binary (..),
+                                      Float_unary (..), Unary_operator (..))
+import           Middle.Closure_Type (L (..))
+import           RunRun.RunRun
+import           RunRun.Type
 -- import Back.Block (Id_or_imm (..))
 
 data Id_or_imm = V String | C Int deriving(Eq)
@@ -54,11 +56,11 @@ data Exp =
 
 
 data Afundef = Afundef {
-            a_name :: !L,
-            a_args :: ![String],
+            a_name  :: !L,
+            a_args  :: ![String],
             a_fargs :: ![String],
-            a_body :: !T,
-            a_ret :: !Type}
+            a_body  :: !T,
+            a_ret   :: !Type}
             deriving(Show, Eq)
 
 data Aprog = Aprog [Afundef] T deriving(Show, Eq)
@@ -107,7 +109,7 @@ reg_ftmp = "%f31"
 
 is_reg :: String -> Bool
 is_reg ('%':_) = True
-is_reg _ = False
+is_reg _       = False
 
 -- ys \\ xs
 remove_and_uniq :: Ord a => S.Set a -> [a] -> [a]
@@ -116,7 +118,7 @@ remove_and_uniq xs_set ys_list =
 
 fv_id_pr_imm :: Id_or_imm -> [String]
 fv_id_pr_imm (V x) = [x]
-fv_id_pr_imm _ = []
+fv_id_pr_imm _     = []
 
 fv_exp :: Exp -> [String]
 fv_exp Nop = []
@@ -156,7 +158,7 @@ fv :: T -> [String]
 fv e = remove_and_uniq S.empty (fv' e)
 
 concat :: T -> (String, Type) -> T -> T
-concat (Ans ex) xt e2 = Let xt ex e2
+concat (Ans ex) xt e2        = Let xt ex e2
 concat (Let yt ex e1') xt e2 = Let yt ex (concat e1' xt e2)
 
 

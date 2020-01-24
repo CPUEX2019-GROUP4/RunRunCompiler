@@ -1,16 +1,16 @@
 module Back.Virtual where
 
-import Prelude hiding(seq)
+import           Prelude             hiding (seq)
 -- import Control.Monad.IO.Class(liftIO)
-import Control.Monad.State (get, foldM)
-import qualified Data.Map as M
-import qualified Data.Set as S (notMember)
-import Back.Asm as Asm hiding(fv)
+import           Back.Asm            as Asm hiding (fv)
+import           Control.Monad.State (foldM, get)
+import qualified Data.Map            as M
+import qualified Data.Set            as S (notMember)
+import           Front.Syntax        (Arith_binary (..))
+import           Middle.Closure      (fv)
 import qualified Middle.Closure_Type as C
-import Middle.Closure (fv)
-import RunRun.Type as Type
-import RunRun.RunRun
-import Front.Syntax (Arith_binary(..))
+import           RunRun.RunRun
+import           RunRun.Type         as Type
 -- import Back.Block (Id_or_imm (..))
 
 mapinit :: M.Map String Type
@@ -20,9 +20,9 @@ classify :: [(t2, Type)] -> b -> (b -> t2 -> b) -> (b -> t2 -> Type -> b) -> b
 classify xts ini addf addi = foldl f ini xts
                where
                f acc (x,t) = case t of
-                        Type.Unit -> acc;
+                        Type.Unit  -> acc;
                         Type.Float-> addf acc x;
-                        _ -> addi acc x t
+                        _          -> addi acc x t
 
 separate :: [(a, Type)] -> ([a], [a])
 separate xts = classify xts ([],[]) f1 f2

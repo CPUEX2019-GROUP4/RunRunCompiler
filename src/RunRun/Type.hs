@@ -1,8 +1,8 @@
 module RunRun.Type where
 
-import Control.Monad.Identity (Identity)
-import Control.Monad.State
-import Data.Map
+import           Control.Monad.Identity (Identity)
+import           Control.Monad.State
+import           Data.Map
 
 data Type =
       Unit

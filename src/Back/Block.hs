@@ -1,21 +1,25 @@
 module Back.Block where
 
-import Prelude hiding(exp)
+import           Prelude             hiding (exp)
 -- import qualified Data.Set as S
 -- import Data.Array
-import qualified Data.Sequence as SQ
-import Data.List()
-import Data.Array
-import qualified Data.Map as M
-import qualified Data.Set as S
-import qualified Data.Graph as G
+import           Data.Array
+import qualified Data.Graph          as G
+import           Data.List           ()
+import qualified Data.Map            as M
+import qualified Data.Sequence       as SQ
+import qualified Data.Set            as S
 -- import RunRun
-import RunRun.Type as Type
-import Front.Syntax as Syntax (Arith_binary(..), Arith_unary(..), Float_binary(..), Float_unary(..), Unary_operator(..), Compare(..))
-import Middle.Closure_Type (L(..))
-import Text.Printf(printf)
-import Data.Char(toLower)
-import Data.Bits as B
+import           Data.Bits           as B
+import           Data.Char           (toLower)
+import           Front.Syntax        as Syntax (Arith_binary (..),
+                                                Arith_unary (..), Compare (..),
+                                                Float_binary (..),
+                                                Float_unary (..),
+                                                Unary_operator (..))
+import           Middle.Closure_Type (L (..))
+import           RunRun.Type         as Type
+import           Text.Printf         (printf)
 
 
 
@@ -26,7 +30,7 @@ import Data.Bits as B
 
 data Id_or_imm = V | C Int deriving(Eq)
 instance Show Id_or_imm where
-    show V = ""
+    show V     = ""
     show (C n) = "(" ++ show n ++ ")"
 
 data InstHead =
@@ -110,10 +114,10 @@ type InstSeq = SQ.Seq ((String, Type), Inst)
 data Block = Block {
            -- blockNum :: Int,
            -- blockmother :: [Int],
-           blockInst :: InstSeq,
+           blockInst    :: InstSeq,
            blockTailExp :: TailExp,
-           blockBranch :: Branch,
-           blockStack :: (S.Set String, S.Set String)}
+           blockBranch  :: Branch,
+           blockStack   :: (S.Set String, S.Set String)}
            deriving(Eq)
 instance Show Block where
     show block =
@@ -130,14 +134,14 @@ newBlock :: InstSeq -> TailExp -> Branch -> Block
 newBlock x y z = Block {blockInst = x, blockTailExp = y, blockBranch = z, blockStack = (S.empty,S.empty)}
 
 data FunctionData = FunctionData {
-                  blocks :: M.Map Int Block,
-                  blockGraph :: G.Graph,
+                  blocks            :: M.Map Int Block,
+                  blockGraph        :: G.Graph,
                   blockReverseGraph :: G.Graph,
-                  line :: [Int],
-                  args :: ![String],
-                  fargs :: ![String],
-                  ret :: !Type,
-                  allStack :: [String]
+                  line              :: [Int],
+                  args              :: ![String],
+                  fargs             :: ![String],
+                  ret               :: !Type,
+                  allStack          :: [String]
                   }
                   deriving (Show)
 
@@ -298,7 +302,7 @@ reg_ftmp = "%f31"
 
 is_reg :: String -> Bool
 is_reg ('%':_) = True
-is_reg _ = False
+is_reg _       = False
 
 
 reg :: String -> String

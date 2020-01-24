@@ -1,7 +1,7 @@
 module Middle.Closure_Type where
 
 import qualified Front.Syntax as Syn
-import qualified RunRun.Type as Ty
+import qualified RunRun.Type  as Ty
 
 
 data L = L String deriving (Show, Eq)
@@ -45,10 +45,10 @@ data C =
 
 
 data Fundef = Fundef {
-        name :: (L, Ty.Type),
-        args :: [(String, Ty.Type)],
+        name      :: (L, Ty.Type),
+        args      :: [(String, Ty.Type)],
         formal_fv :: [(String, Ty.Type)],
-        body :: C
+        body      :: C
         }
         deriving(Show)
 

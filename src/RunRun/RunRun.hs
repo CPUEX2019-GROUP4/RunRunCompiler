@@ -1,18 +1,18 @@
 module RunRun.RunRun where
 
 --import Text.Printf(hPrintf, PrintfType)
-import System.IO
-import Data.Set (Set)
-import Data.Map (Map)
+import           Data.Map               (Map)
+import           Data.Set               (Set)
+import           System.IO
 -- import Data.Graph (Graph)
-import Control.Monad.State
-import Control.Monad.Except
-import Control.Monad.Identity()
+import           Control.Monad.Except
+import           Control.Monad.Identity ()
+import           Control.Monad.State
 
-import qualified Middle.Closure_Type as Cl
-import RunRun.Type
-import Front.Syntax()
-import Back.Block
+import           Back.Block
+import           Front.Syntax           ()
+import qualified Middle.Closure_Type    as Cl
+import           RunRun.Type
 
 type RunRun = StateT Env (ExceptT Error IO)
 

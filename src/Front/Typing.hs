@@ -1,18 +1,18 @@
 module Front.Typing where
 
-import Control.Monad.State
-import Control.Monad.Except
-import Control.Monad.Identity
-import Data.Map as M hiding(map)
+import           Control.Monad.Except
+import           Control.Monad.Identity
+import           Control.Monad.State
+import           Data.Map               as M hiding (map)
 
-import qualified RunRun.RunRun as R
-import Front.Syntax
-import qualified RunRun.Type as Type
+import           Front.Syntax
+import qualified RunRun.RunRun          as R
+import qualified RunRun.Type            as Type
 
 data TypingEnvs = TypingEnvs {
-      extenv :: Type.ExtEnv,
-      tyenv :: Type.TyEnv,
-      subst :: Type.Subst,
+      extenv       :: Type.ExtEnv,
+      tyenv        :: Type.TyEnv,
+      subst        :: Type.Subst,
       tyVarCounter :: Int
     } deriving (Show)
 data TypeError

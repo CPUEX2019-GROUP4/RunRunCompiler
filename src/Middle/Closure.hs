@@ -1,18 +1,18 @@
 module Middle.Closure where
 
-import Data.Set as S hiding(map)
-import Data.Map as M hiding(map)
+import           Data.Map            as M hiding (map)
+import           Data.Set            as S hiding (map)
 
 --import Control.Monad.IO.Class (liftIO)
 
-import System.IO
-import Text.Printf
-import Control.Monad.State
-import qualified Front.Syntax() --as Syn
-import RunRun.RunRun
-import qualified Middle.KNormal as K hiding (fv)
-import qualified RunRun.Type as Ty
-import Middle.Closure_Type
+import           Control.Monad.State
+import qualified Front.Syntax        ()
+import           Middle.Closure_Type
+import qualified Middle.KNormal      as K hiding (fv)
+import           RunRun.RunRun
+import qualified RunRun.Type         as Ty
+import           System.IO
+import           Text.Printf
 
 
 fv :: C -> S.Set String

@@ -1,14 +1,14 @@
 module Middle.KNormal where
 
-import Control.Monad.Cont
-import Control.Monad.State
-import Control.Monad.Except
-import Data.Set as S hiding(map)
-import Data.Map as M hiding(map)
+import           Control.Monad.Cont
+import           Control.Monad.Except
+import           Control.Monad.State
+import           Data.Map             as M hiding (map)
+import           Data.Set             as S hiding (map)
 
-import RunRun.RunRun as RunRun
-import qualified RunRun.Type as Type
-import qualified Front.Syntax as Syn
+import qualified Front.Syntax         as Syn
+import           RunRun.RunRun        as RunRun
+import qualified RunRun.Type          as Type
 
 data K =
       Unit

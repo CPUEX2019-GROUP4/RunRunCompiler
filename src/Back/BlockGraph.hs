@@ -1,9 +1,9 @@
 module Back.BlockGraph where
 
-import Back.Block
-import Data.Graph
-import Data.Map
+import           Back.Block
 import qualified Data.Array as Array
+import           Data.Graph
+import           Data.Map
 
 mkBlockGraph :: Map Int Block -> Graph
 mkBlockGraph mp =
@@ -20,8 +20,8 @@ mkBlockEdges mp =
     where
       mkEdge k block =
         case blockBranch block of
-          None -> []
-          One x -> [(k, x)]
+          None    -> []
+          One x   -> [(k, x)]
           Two x y -> [(k, x), (k, y)]
 
 ----------------------------------
@@ -42,8 +42,8 @@ mkBlockEdgesIF mp =
     where
       mkEdge k block =
         case blockBranch block of
-          None -> []
-          One x -> [(k, x)]
+          None    -> []
+          One x   -> [(k, x)]
           Two x y -> [(x,y), (k, x), (k, y)]
 
 

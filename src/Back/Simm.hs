@@ -1,11 +1,11 @@
 module Back.Simm where
 
-import Prelude hiding(exp)
-import RunRun.RunRun
-import Back.Asm
+import           Back.Asm
+import           Prelude             hiding (exp)
+import           RunRun.RunRun
 -- import Back.Block (Id_or_imm (..))
-import Control.Monad.State(get)
-import qualified Data.Map as M
+import           Control.Monad.State (get)
+import qualified Data.Map            as M
 
 simm :: Aprog -> RunRun Aprog
 simm (Aprog fundefs e) = do

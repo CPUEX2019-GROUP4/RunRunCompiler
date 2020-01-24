@@ -1,10 +1,10 @@
 module Middle.Elim where
 
-import Middle.KNormal
-import RunRun.RunRun
-import Data.Map as M hiding(map)
-import Data.Set as S hiding(map)
-import Control.Monad.State
+import           Control.Monad.State
+import           Data.Map            as M hiding (map)
+import           Data.Set            as S hiding (map)
+import           Middle.KNormal
+import           RunRun.RunRun
 
 type Memo = StateT (Map String (Set String)) RunRun
 
@@ -17,7 +17,7 @@ elim e = do
 
 effect :: K -> Bool
 effect (If _ e1 e2)         = effect e1 || effect e2
-effect (IfCmp _ _ _ e1 e2) = effect e1 || effect e2
+effect (IfCmp _ _ _ e1 e2)  = effect e1 || effect e2
 effect (FIfCmp _ _ _ e1 e2) = effect e1 || effect e2
 effect (Let _ e1 e2)        = effect e1 || effect e2
 effect (KLetRec _ e2)       = effect e2
@@ -27,7 +27,7 @@ effect (In _)               = True
 effect (Out _ _)            = True
 effect (Put _ _ _)          = True
 effect (Malloc _ _ _ _)     = True
-effect _ = False
+effect _                    = False
 
 
 e_body :: K -> Memo K

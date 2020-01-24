@@ -1,18 +1,18 @@
 module Back.RegAlloc where
 
-import Text.Printf (printf)
-import Prelude hiding(exp, all, seq)
-import Control.Monad.State(foldM)
-import Control.Monad.Except()
-import Data.List (find)
-import qualified Data.Sequence()
-import qualified Data.Array as Array
-import qualified Data.Map as M
-import qualified Data.Set as S
-import Middle.Closure_Type (L(L))
-import Back.Asm as Asm
-import RunRun.Type as Type
-import RunRun.RunRun
+import           Back.Asm             as Asm
+import           Control.Monad.Except ()
+import           Control.Monad.State  (foldM)
+import qualified Data.Array           as Array
+import           Data.List            (find)
+import qualified Data.Map             as M
+import qualified Data.Sequence        ()
+import qualified Data.Set             as S
+import           Middle.Closure_Type  (L (L))
+import           Prelude              hiding (all, exp, seq)
+import           RunRun.RunRun
+import           RunRun.Type          as Type
+import           Text.Printf          (printf)
 -- import Back.Block (Id_or_imm (..))
 
 -- 関数の返り値や引数をできるだけ第一レジスタに.
@@ -69,9 +69,9 @@ alloc :: (String, Type) -> T -> M.Map String String -> String -> Type -> RunRun 
 alloc dest cont regenv x t =
     if M.member x regenv then throw $ Fail "ohmy..." else
     let all = case t of
-            Type.Unit -> ["%r0"]
+            Type.Unit  -> ["%r0"]
             Type.Float -> allfregs
-            _ -> allregs in
+            _          -> allregs in
     if all == ["%r0"] then return $ Alloc "%r0" else
     if is_reg x then return $ Alloc x else
     let free = fv cont in
@@ -317,9 +317,9 @@ reg_fun (Afundef {a_name=L x, a_args=ys, a_fargs=zs, a_body=e, a_ret=t}) = do
                         let fr = fregs Array.! d in
                         (d+1,farg_regs' ++ [fr],M.insert z fr regenv_tmp)) -- assert (not (is_reg y))
         a <- case t of
-                Unit -> gentmp Unit
+                Unit  -> gentmp Unit
                 Float -> return $ fregs Array.! 0
-                _ -> return $ regs Array.! 0
+                _     -> return $ regs Array.! 0
         (e',_) <- g (a,t) (Ans (Mv a)) regenv'' e
         return $ Afundef {a_name=L x, a_args=arg_regs, a_fargs=farg_regs, a_body=e', a_ret=t}
 

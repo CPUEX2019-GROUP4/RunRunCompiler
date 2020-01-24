@@ -1,26 +1,26 @@
 module Back.BlockEmit where
 
-import System.IO
-import Prelude hiding(exp, seq, tail)
-import Text.Printf(printf)
-import Data.List(elemIndex, partition)
-import Data.Set (insert, empty, notMember, Set)
-import Data.Array ((!))
-import qualified Data.Map as M
-import Data.Int ()
+import           Data.Array             ((!))
+import           Data.Int               ()
+import           Data.List              (elemIndex, partition)
+import qualified Data.Map               as M
+import           Data.Set               (Set, empty, insert, notMember)
+import           Prelude                hiding (exp, seq, tail)
+import           System.IO
+import           Text.Printf            (printf)
 -- import Data.Char(toLower)
-import Control.Monad.State
-import Control.Monad.IO.Class()
+import           Control.Monad.IO.Class ()
+import           Control.Monad.State
 -- import Asm
-import RunRun.RunRun
+import           RunRun.RunRun
 -- import Data.Bits as B
-import Front.Syntax ({- Arith_unary(..), Arith_binary(..),-} Compare(..))
-import Middle.Closure_Type (L(L))
-import RunRun.Type as Type (Type(..))
+import           Front.Syntax           (Compare (..))
+import           Middle.Closure_Type    (L (L))
+import           RunRun.Type            as Type (Type (..))
 
-import Back.Block
+import           Back.Block
 
-import Foreign.C.Types
+import           Foreign.C.Types
 
 foreign import ccall "getlo" c_getlo :: CFloat -> IO CShort
 foreign import ccall "gethi" c_gethi :: CFloat -> IO CShort
@@ -64,7 +64,7 @@ offset :: String -> RunRun Int
 offset x = do
     mn <- locate x
     case mn of
-        Just n -> return $ n * 4
+        Just n  -> return $ n * 4
         Nothing -> throw $ Fail $ "what!? " ++ x
 
 stacksize :: RunRun Int
@@ -263,7 +263,7 @@ print_seq_array oc t x V ys zs =
     let (n,v) = case (ys, zs) of
               ([n',v'],[]) -> (n', v')
               ([n'], [v']) -> (n', v')
-              _ -> ("error","error") in
+              _            -> ("error","error") in
     do
             loop <- genid "arrayloop"
             exit <- genid "arrayexit"

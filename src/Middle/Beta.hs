@@ -1,9 +1,9 @@
 module Middle.Beta where
 
-import RunRun.RunRun
-import Middle.KNormal
-import Prelude hiding(lookup)
-import Data.Map hiding(map)
+import           Data.Map       hiding (map)
+import           Middle.KNormal
+import           Prelude        hiding (lookup)
+import           RunRun.RunRun
 
 beta :: K -> RunRun K
 beta e = do

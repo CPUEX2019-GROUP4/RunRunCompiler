@@ -1,7 +1,7 @@
 module Middle.Assoc where
 
-import RunRun.RunRun
-import Middle.KNormal
+import           Middle.KNormal
+import           RunRun.RunRun
 
 assoc :: K -> RunRun K
 assoc e = do
@@ -19,10 +19,10 @@ a_body (If x e1 e2) =
 a_body (Let xt e1 e2) =
         insert (a_body e1)
         where
-            insert (Let yt e1' e2') = Let yt e1' (insert e2')
-            insert (KLetRec f e) = KLetRec f (insert e)
+            insert (Let yt e1' e2')   = Let yt e1' (insert e2')
+            insert (KLetRec f e)      = KLetRec f (insert e)
             insert (LetTuple yts z e) = LetTuple yts z (insert e)
-            insert e = Let xt e (a_body e2)
+            insert e                  = Let xt e (a_body e2)
 a_body (KLetRec f e2) =
         KLetRec (f { kbody = a_body (kbody f) }) (a_body e2)
 a_body (LetTuple xts y e) =

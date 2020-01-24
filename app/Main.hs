@@ -1,39 +1,39 @@
 module Main where
 
-import System.Environment (getArgs)
-import System.IO
-import Data.Set (empty)
-import qualified Data.Map as M (empty)
-import Control.Monad(foldM)
-import Control.Monad.Except()
-import Control.Monad.Identity()
+import           Control.Monad          (foldM)
+import           Control.Monad.Except   ()
+import           Control.Monad.Identity ()
+import qualified Data.Map               as M (empty)
+import           Data.Set               (empty)
+import           System.Environment     (getArgs)
+import           System.IO
 
-import RunRun.RunRun
-import RunRun.Type
+import           RunRun.RunRun
+import           RunRun.Type
 
-import Front.Lexer          as Lexer
-import Front.Parser         as Parser
-import qualified Front.Typing as Typing
+import           Front.Lexer            as Lexer
+import           Front.Parser           as Parser
+import qualified Front.Typing           as Typing
 
-import Middle.KNormal       as KNormal
-import Middle.Alpha         as Alpha
-import Middle.Beta          as Beta
-import Middle.Inline        as Inline
-import Middle.ConstFold     as ConstFold
-import Middle.Assoc         as Assoc
-import Middle.Elim          as Elim
-import Middle.Global        as Global
-import Middle.ConvertGlobal as ConvertGlobal
-import Middle.Closure       as Closure
+import           Middle.Alpha           as Alpha
+import           Middle.Assoc           as Assoc
+import           Middle.Beta            as Beta
+import           Middle.Closure         as Closure
+import           Middle.ConstFold       as ConstFold
+import           Middle.ConvertGlobal   as ConvertGlobal
+import           Middle.Elim            as Elim
+import           Middle.Global          as Global
+import           Middle.Inline          as Inline
+import           Middle.KNormal         as KNormal
 
-import Back.Virtual         as Virtual
-import Back.Simm            as Simm
-import Back.RegAlloc        as RegAlloc
-import Back.ToBlock         as ToBlock
+import           Back.RegAlloc          as RegAlloc
+import           Back.Simm              as Simm
+import           Back.ToBlock           as ToBlock
+import           Back.Virtual           as Virtual
 -- import Back.Block           as Block
-import Back.BlockPrepare    as BlockPrepare
-import Back.BlockStackSearch as BlockStackSearch
-import Back.BlockEmit       as BlockEmit
+import           Back.BlockEmit         as BlockEmit
+import           Back.BlockPrepare      as BlockPrepare
+import           Back.BlockStackSearch  as BlockStackSearch
 
 main :: IO ()
 main = do

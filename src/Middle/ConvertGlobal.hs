@@ -1,11 +1,11 @@
 module Middle.ConvertGlobal where
 
-import Data.Map as M
-import Data.Set as S
-import RunRun.RunRun
-import Middle.KNormal as K
-import Control.Monad.State
-import qualified Middle.Alpha as Alpha(g)
+import           Control.Monad.State
+import           Data.Map            as M
+import           Data.Set            as S
+import qualified Middle.Alpha        as Alpha (g)
+import           Middle.KNormal      as K
+import           RunRun.RunRun
 
 
 convertGlobal :: K -> RunRun K

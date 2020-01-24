@@ -1,13 +1,13 @@
 module Middle.Inline where
 
-import Middle.KNormal
-import Data.Map as M hiding(size)
-import Data.Set as S hiding(size)
-import Control.Monad.State
-import RunRun.RunRun
-import RunRun.Type (Type)
-import Middle.Alpha as Alpha (g)
-import Front.Syntax() -- (Compare(..), Arith_binary(..))
+import           Control.Monad.State
+import           Data.Map            as M hiding (size)
+import           Data.Set            as S hiding (size)
+import           Front.Syntax        ()
+import           Middle.Alpha        as Alpha (g)
+import           Middle.KNormal
+import           RunRun.RunRun
+import           RunRun.Type         (Type)
 
 inline :: K -> RunRun K
 inline e = do
@@ -49,18 +49,18 @@ i_body env (LetTuple xts y e) = LetTuple xts y <$> i_body env e
 i_body _ e = return e
 
 size :: K -> Int
-size (If _ e1 e2) = 1 + size e1 + size e2
-size (IfCmp _ _ _ e1 e2) = 1 + size e1 +  size e2
+size (If _ e1 e2)         = 1 + size e1 + size e2
+size (IfCmp _ _ _ e1 e2)  = 1 + size e1 +  size e2
 size (FIfCmp _ _ _ e1 e2) = 1 + size e1 + size e2
-size (Let _ e1 e2) = 1 + size e1 + size e2
-size (KLetRec f e2) = 1 + size (kbody f) + size e2
-size (LetTuple _ _ e) = 1 + size e
-size _ = 1
+size (Let _ e1 e2)        = 1 + size e1 + size e2
+size (KLetRec f e2)       = 1 + size (kbody f) + size e2
+size (LetTuple _ _ e)     = 1 + size e
+size _                    = 1
 
 
 foldl2M :: (acc -> a -> b -> acc) -> acc -> [a] -> [b] -> RunRun acc
-foldl2M _ z [] [] = return z
+foldl2M _ z [] []        = return z
 foldl2M k z (a:as)(b:bs) = foldl2M k (k z a b) as bs
-foldl2M _ _ _  _ = throw $ Fail "length not hitoshii. oh."
+foldl2M _ _ _  _         = throw $ Fail "length not hitoshii. oh."
 
 
