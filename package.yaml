@@ -21,9 +21,13 @@ description:         Please see the README on GitHub at <https://github.com/keng
 
 dependencies:
 - base >= 4.7 && < 5
+- array
+- mtl
+- containers
 
 library:
   source-dirs: src
+  c-sources: src/Back/float.c
 
 executables:
   RunRunCompiler-exe:
