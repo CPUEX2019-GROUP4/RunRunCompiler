@@ -1,13 +1,13 @@
 module Back.Reg.Liveness where
 
-import Back.Block
-import Back.BlockGraph
-import RunRun.RunRun
-import RunRun.Type
+import           Back.Block
+import           Back.BlockGraph
+import           RunRun.RunRun
+import           RunRun.Type
 
-import Data.Sequence as SEQ
-import Data.Map as M
-import Data.Set as S
+import           Data.Map        as M
+import           Data.Sequence   as SEQ
+import           Data.Set        as S
 
 
 -- data Block = Block {
@@ -34,7 +34,7 @@ import Data.Set as S
 type Live = Seq (Set String, Set String)
 
 -- | 関数呼び出しの有無に関係なく, 同時に resister または stack
--- に存在せねばならぬ変数の集合を各命令ごとに計算する.
+--   に存在せねばならぬ変数の集合を各命令ごとに計算する.
 liveness :: Map String FunctionData -> RunRun (Map String (FunctionData, Map Int Live))
 liveness m = return $ M.map (\ func -> (func, liveFunc func)) m
 
@@ -50,7 +50,7 @@ liveFunc func =
       gatherSet xs accmap = Prelude.foldl (\ s12 n -> union2 (accmap M.! n) s12) (S.empty, S.empty) xs
       -- union2 :: (S,S) -> Live -> (S,S)
       union2 ((a1,a2) :<| _) (b1, b2) = (a1 `S.union` b1, a2 `S.union` b2)
-      union2 Empty (b1,b2) = (b1, b2)
+      union2 Empty (b1,b2)            = (b1, b2)
       -- insertToMap -> Map Int Live -> Map Int Live
       insertToMap accmap n =
         let s = gatherSet (follows n) accmap in
@@ -58,8 +58,15 @@ liveFunc func =
 
 
 liveBlock:: Block -> (Set String, Set String) -> Live
-liveBlock block s12 =
-    liveSeq (blockInst block) s12 |> s12
+liveBlock block s12@(s1,s2) =
+    let s12' = case blockTailExp block of
+          -- Call
+          If x -> (S.insert x s1, s2)
+          IfCmp _ x y -> (S.insert x $ S.insert y s1, s2)
+          FIfCmp _ x y -> (s1, S.insert x $ S.insert y s2)
+          _ -> s12
+    in
+    liveSeq (blockInst block) s12' |> s12'
 
 liveSeq :: InstSeq -> (Set String, Set String) -> Live
 liveSeq Empty s12 = SEQ.singleton s12

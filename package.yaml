@@ -24,6 +24,7 @@ dependencies:
 - array
 - mtl
 - containers
+- algebraic-graphs
 
 library:
   source-dirs: src

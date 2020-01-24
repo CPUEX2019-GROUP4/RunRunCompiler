@@ -2,7 +2,7 @@
 
 {
 {-# OPTIONS_GHC -w #-}
-module Front.Parser where
+module Front.Parser (parse) where
 
 import Control.Monad.IO.Class(liftIO)
 import System.IO

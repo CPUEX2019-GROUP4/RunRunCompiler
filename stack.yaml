@@ -31,7 +31,7 @@ resolver: lts-14.21
 packages:
 - .
 build:
-  haddock: true
+  # haddock: true
 #   haddock-arguments:
 #     haddock-args: []
 #   open-haddocks: false

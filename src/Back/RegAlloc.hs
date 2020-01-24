@@ -293,7 +293,7 @@ g'_call dest cont regenv constr ys zs = do
                      case regenv M.! x of
                        rx | elem rx allregs -> seq (Save (regenv M.! x) x) e'
                           | elem rx allfregs -> seq (SaveFloat (regenv M.! x) x) e'
-                          | otherwise -> throw $ Fail "kikachew !!")
+                          | otherwise -> throw $ Fail "pikachew !!")
                      e) -- is there something wrong here ???
                 (Ans <$> (constr
                     (mapM (\y -> find_reg y Type.Int regenv) ys)
