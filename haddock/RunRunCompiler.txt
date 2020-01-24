@@ -7,5 +7,912 @@
 @package RunRunCompiler
 @version 0.1.0.0
 
+module Front.Lexer
+alexIndexInt32OffAddr :: AlexAddr -> Int# -> Int#
+quickIndex :: Array Int (AlexAcc (Any :: Type)) -> Int -> AlexAcc (Any :: Type)
+data AlexReturn a
+AlexEOF :: AlexReturn a
+AlexError :: !AlexInput -> AlexReturn a
+AlexSkip :: !AlexInput -> !Int -> AlexReturn a
+AlexToken :: !AlexInput -> !Int -> a -> AlexReturn a
+alexScan :: (Char, [Byte], String) -> Int -> AlexReturn (String -> Token)
+alexScanUser :: () => t -> (Char, [Byte], String) -> Int -> AlexReturn (String -> Token)
+alex_scan_tkn :: () => t1 -> t2 -> Int# -> AlexInput -> Int# -> AlexLastAcc -> (AlexLastAcc, (Char, [Byte], String))
+data AlexLastAcc
+AlexNone :: AlexLastAcc
+AlexLastAcc :: !Int -> !AlexInput -> !Int -> AlexLastAcc
+AlexLastSkip :: !AlexInput -> !Int -> AlexLastAcc
+data AlexAcc user
+AlexAccNone :: AlexAcc user
+AlexAcc :: Int -> AlexAcc user
+AlexAccSkip :: AlexAcc user
+data Token
+CommentL :: Token
+CommentR :: Token
+TokenINT :: Int -> Token
+TokenVAR :: String -> Token
+TokenFLOAT :: Float -> Token
+TokenNOT :: Token
+TokenBOOL :: Bool -> Token
+TokenLET :: Token
+TokenREC :: Token
+TokenIN :: Token
+TokenIF :: Token
+TokenTHEN :: Token
+TokenELSE :: Token
+TokenARROW :: Token
+TokenMUL4 :: Token
+TokenMUL10 :: Token
+TokenDIV2 :: Token
+TokenDIV10 :: Token
+TokenPLUS :: Token
+TokenMINUS :: Token
+TokenFINV_INIT :: Token
+TokenSQRT_INIT :: Token
+TokenFPLUS :: Token
+TokenFMINUS :: Token
+TokenFMUL :: Token
+TokenFDIV :: Token
+TokenEQ :: Token
+TokenNEQ :: Token
+TokenLT :: Token
+TokenGT :: Token
+TokenLE :: Token
+TokenGE :: Token
+TokenFLESS :: Token
+TokenFISZERO :: Token
+TokenRPAREN :: Token
+TokenLPAREN :: Token
+TokenSEMICOLON :: Token
+TokenCOMMA :: Token
+TokenDOT :: Token
+TokenItoF :: Token
+TokenFtoI :: Token
+TokenPrintChar :: Token
+TokenReadInt :: Token
+TokenReadFloat :: Token
+TokenArrayCreate :: Token
+read_float :: String -> Float
+lex :: String -> [Token]
+alex_action_1 :: () => p -> Token
+alex_action_2 :: () => p -> Token
+alex_action_3 :: () => p -> Token
+alex_action_4 :: () => p -> Token
+alex_action_5 :: () => p -> Token
+alex_action_6 :: () => p -> Token
+alex_action_7 :: () => p -> Token
+alex_action_8 :: () => p -> Token
+alex_action_9 :: String -> Token
+alex_action_10 :: String -> Token
+alex_action_11 :: () => p -> Token
+alex_action_12 :: () => p -> Token
+alex_action_13 :: () => p -> Token
+alex_action_14 :: () => p -> Token
+alex_action_15 :: () => p -> Token
+alex_action_16 :: () => p -> Token
+alex_action_17 :: () => p -> Token
+alex_action_18 :: () => p -> Token
+alex_action_19 :: () => p -> Token
+alex_action_20 :: () => p -> Token
+alex_action_21 :: () => p -> Token
+alex_action_22 :: () => p -> Token
+alex_action_23 :: () => p -> Token
+alex_action_24 :: () => p -> Token
+alex_action_25 :: () => p -> Token
+alex_action_26 :: () => p -> Token
+alex_action_27 :: () => p -> Token
+alex_action_28 :: () => p -> Token
+alex_action_29 :: () => p -> Token
+alex_action_30 :: () => p -> Token
+alex_action_31 :: () => p -> Token
+alex_action_32 :: () => p -> Token
+alex_action_33 :: () => p -> Token
+alex_action_34 :: () => p -> Token
+alex_action_35 :: () => p -> Token
+alex_action_36 :: () => p -> Token
+alex_action_37 :: () => p -> Token
+alex_action_38 :: () => p -> Token
+alex_action_39 :: () => p -> Token
+alex_action_40 :: () => p -> Token
+alex_action_41 :: () => p -> Token
+alex_action_42 :: () => p -> Token
+alex_action_43 :: () => p -> Token
+alex_action_44 :: () => p -> Token
+alex_action_45 :: () => p -> Token
+alex_action_46 :: () => p -> Token
+alex_action_47 :: () => p -> Token
+alex_action_48 :: () => p -> Token
+alex_action_49 :: () => p -> Token
+alex_action_50 :: String -> Token
+alex_action_52 :: String -> Token
+data AlexAddr
+AlexA# :: Addr# -> AlexAddr
+alexIndexInt16OffAddr :: AlexAddr -> Int# -> Int#
+
+-- | Encode a Haskell String to a list of Word8 values, in UTF8 format.
+utf8Encode :: Char -> [Word8]
+utf8Encode' :: Char -> (Word8, [Word8])
+type Byte = Word8
+type AlexInput = (Char, [Byte], String)
+alexInputPrevChar :: AlexInput -> Char
+alexScanTokens :: String -> [Token]
+alexGetByte :: AlexInput -> Maybe (Byte, AlexInput)
+alex_tab_size :: Int
+alex_base :: AlexAddr
+alex_table :: AlexAddr
+alex_check :: AlexAddr
+alex_deflt :: AlexAddr
+alex_accept :: () => Array Int (AlexAcc user)
+alex_actions :: Array Int (String -> Token)
+instance GHC.Show.Show Front.Lexer.Token
+instance GHC.Classes.Eq Front.Lexer.Token
+
 module Lib
 someFunc :: IO ()
+
+module RunRun.Type
+data Type
+Unit :: Type
+Bool :: Type
+Int :: Type
+Float :: Type
+Fun :: [Type] -> Type -> Type
+Tuple :: [Type] -> Type
+Array :: Type -> Type
+Var :: !Int -> Type
+type CounterT = StateT Int
+type Counter = CounterT Identity
+type ExtEnv = Map String Type
+type TyEnv = Map String Type
+type Subst = Map Int Type
+initTyenv :: TyEnv
+initExtenv :: ExtEnv
+gentyp :: Monad m => CounterT m Type
+runCounter :: CounterT Identity a -> a
+runCounterT :: Monad m => CounterT m a -> m a
+instance GHC.Show.Show RunRun.Type.Type
+instance GHC.Classes.Eq RunRun.Type.Type
+
+module Front.Syntax
+data Syntax
+Unit :: Syntax
+Int :: !Int -> Syntax
+Float :: !Float -> Syntax
+Bool :: !Bool -> Syntax
+Var :: !String -> Syntax
+Not :: !Syntax -> Syntax
+Unary_op :: !Unary_operator -> !Type -> !Type -> !Syntax -> Syntax
+Arith1 :: !Arith_unary -> !Syntax -> Syntax
+Arith2 :: !Arith_binary -> !Syntax -> !Syntax -> Syntax
+Float1 :: !Float_unary -> !Syntax -> Syntax
+Float2 :: !Float_binary -> !Syntax -> !Syntax -> Syntax
+Cmp :: !Compare -> !Syntax -> !Syntax -> Syntax
+Let :: !(String, Type) -> !Syntax -> !Syntax -> Syntax
+Tuple :: ![Syntax] -> Syntax
+LetTuple :: ![(String, Type)] -> !Syntax -> !Syntax -> Syntax
+If :: !Syntax -> !Syntax -> !Syntax -> Syntax
+Out :: !Int -> !Syntax -> Syntax
+In :: !Type -> Syntax
+LetRec :: !Fundef -> !Syntax -> Syntax
+App :: !Syntax -> ![Syntax] -> Syntax
+Array :: !Syntax -> !Syntax -> Syntax
+Get :: !Syntax -> !Syntax -> Syntax
+Put :: !Syntax -> !Syntax -> !Syntax -> Syntax
+data Unary_operator
+ItoF :: Unary_operator
+FtoI :: Unary_operator
+data Arith_unary
+Neg :: Arith_unary
+Mul4 :: Arith_unary
+Mul10 :: Arith_unary
+Div2 :: Arith_unary
+Div10 :: Arith_unary
+data Arith_binary
+Add :: Arith_binary
+Sub :: Arith_binary
+data Float_unary
+FNeg :: Float_unary
+Sqrt_init :: Float_unary
+Finv_init :: Float_unary
+data Float_binary
+FAdd :: Float_binary
+FSub :: Float_binary
+FMul :: Float_binary
+data Compare
+Eq :: Compare
+Lt :: Compare
+Gt :: Compare
+Ne :: Compare
+data Fundef
+Func :: (String, Type) -> [(String, Type)] -> Syntax -> Fundef
+[name] :: Fundef -> (String, Type)
+[args] :: Fundef -> [(String, Type)]
+[body] :: Fundef -> Syntax
+instance GHC.Show.Show Front.Syntax.Syntax
+instance GHC.Classes.Eq Front.Syntax.Syntax
+instance GHC.Show.Show Front.Syntax.Fundef
+instance GHC.Classes.Eq Front.Syntax.Fundef
+instance GHC.Show.Show Front.Syntax.Compare
+instance GHC.Classes.Eq Front.Syntax.Compare
+instance GHC.Show.Show Front.Syntax.Float_binary
+instance GHC.Classes.Eq Front.Syntax.Float_binary
+instance GHC.Show.Show Front.Syntax.Float_unary
+instance GHC.Classes.Eq Front.Syntax.Float_unary
+instance GHC.Show.Show Front.Syntax.Arith_binary
+instance GHC.Classes.Eq Front.Syntax.Arith_binary
+instance GHC.Show.Show Front.Syntax.Arith_unary
+instance GHC.Classes.Eq Front.Syntax.Arith_unary
+instance GHC.Show.Show Front.Syntax.Unary_operator
+instance GHC.Classes.Eq Front.Syntax.Unary_operator
+
+module Middle.Closure_Type
+data L
+L :: String -> L
+data Prog
+Prog :: C -> Prog
+data C
+Unit :: C
+Int :: !Int -> C
+Float :: !Float -> C
+Unary_op :: !Unary_operator -> !Type -> !Type -> !String -> C
+Arith1 :: !Arith_unary -> !String -> C
+Arith2 :: !Arith_binary -> !String -> !String -> C
+Float1 :: !Float_unary -> !String -> C
+Float2 :: !Float_binary -> !String -> !String -> C
+Cmp :: !Compare -> !String -> !String -> C
+If :: !String -> !C -> !C -> C
+IfCmp :: !Compare -> !String -> !String -> !C -> !C -> C
+FIfCmp :: !Compare -> !String -> !String -> !C -> !C -> C
+Let :: !(String, Type) -> !C -> !C -> C
+Var :: !String -> C
+Out :: !Int -> !String -> C
+In :: !Type -> C
+Tuple :: ![String] -> C
+LetTuple :: ![(String, Type)] -> !String -> !C -> C
+Array :: !Type -> !String -> !String -> C
+Get :: !String -> !String -> C
+Put :: !String -> !String -> !String -> C
+MakeCls :: !(String, Type) -> !Closure -> !C -> C
+
+-- | AppCls !String ![String] ----------- とりあえずなしで
+AppDir :: !L -> ![String] -> C
+Malloc :: !Type -> !Int -> !Int -> !MallocInit -> C
+data Fundef
+Fundef :: (L, Type) -> [(String, Type)] -> [(String, Type)] -> C -> Fundef
+[name] :: Fundef -> (L, Type)
+[args] :: Fundef -> [(String, Type)]
+[formal_fv] :: Fundef -> [(String, Type)]
+[body] :: Fundef -> C
+data Closure
+Cls :: L -> [String] -> Closure
+[entry] :: Closure -> L
+[actual_fv] :: Closure -> [String]
+data MallocInit
+A :: !String -> MallocInit
+T :: ![String] -> MallocInit
+instance GHC.Show.Show Middle.Closure_Type.Prog
+instance GHC.Show.Show Middle.Closure_Type.Fundef
+instance GHC.Show.Show Middle.Closure_Type.C
+instance GHC.Classes.Eq Middle.Closure_Type.MallocInit
+instance GHC.Show.Show Middle.Closure_Type.MallocInit
+instance GHC.Show.Show Middle.Closure_Type.Closure
+instance GHC.Classes.Eq Middle.Closure_Type.L
+instance GHC.Show.Show Middle.Closure_Type.L
+
+module Back.Block
+data Id_or_imm
+V :: Id_or_imm
+C :: Int -> Id_or_imm
+data InstHead
+Nop :: InstHead
+Li :: !Int -> InstHead
+FLi :: !Float -> InstHead
+SetL :: !L -> InstHead
+Mv :: InstHead
+Out :: !Int -> InstHead
+In :: !Type -> InstHead
+Unary_op :: !Unary_operator -> !Type -> !Type -> InstHead
+Arith1 :: !Arith_unary -> InstHead
+Arith2 :: !Arith_binary -> !Id_or_imm -> InstHead
+Float1 :: !Float_unary -> InstHead
+Float2 :: !Float_binary -> InstHead
+Slw :: !Id_or_imm -> InstHead
+Lw :: !Id_or_imm -> InstHead
+Sw :: !Id_or_imm -> InstHead
+FMv :: InstHead
+Cmp :: !Compare -> !Id_or_imm -> InstHead
+Lf :: !Id_or_imm -> InstHead
+Sf :: !Id_or_imm -> InstHead
+CallDir :: !L -> InstHead
+Save :: !String -> InstHead
+Restore :: !String -> InstHead
+Makearray :: !Type -> !Id_or_imm -> InstHead
+data Inst
+Inst :: InstHead -> ![String] -> ![String] -> Inst
+data TailExp
+End :: TailExp
+Call :: !L -> ![String] -> ![String] -> TailExp
+If :: !String -> TailExp
+IfCmp :: !Compare -> !String -> !String -> TailExp
+FIfCmp :: !Compare -> !String -> !String -> TailExp
+data Branch
+Two :: !Int -> !Int -> Branch
+One :: !Int -> Branch
+None :: Branch
+type InstSeq = Seq ((String, Type), Inst)
+data Block
+Block :: InstSeq -> TailExp -> Branch -> (Set String, Set String) -> Block
+[blockInst] :: Block -> InstSeq
+[blockTailExp] :: Block -> TailExp
+[blockBranch] :: Block -> Branch
+[blockStack] :: Block -> (Set String, Set String)
+newBlock :: InstSeq -> TailExp -> Branch -> Block
+data FunctionData
+FunctionData :: Map Int Block -> Graph -> Graph -> [Int] -> ![String] -> ![String] -> !Type -> [String] -> FunctionData
+[blocks] :: FunctionData -> Map Int Block
+[blockGraph] :: FunctionData -> Graph
+[blockReverseGraph] :: FunctionData -> Graph
+[line] :: FunctionData -> [Int]
+[args] :: FunctionData -> ![String]
+[fargs] :: FunctionData -> ![String]
+[ret] :: FunctionData -> !Type
+[allStack] :: FunctionData -> [String]
+printinstruction :: ((String, Type), Inst) -> String
+regs :: Array Int String
+fregs :: Array Int String
+allregs :: [String]
+allfregs :: [String]
+regs_len :: Int
+fregs_len :: Int
+reg_cl :: String
+reg_sw :: String
+reg_fsw :: String
+reg_sp :: String
+reg_hp :: String
+reg_lr :: String
+reg_tmp :: String
+reg_ftmp :: String
+is_reg :: String -> Bool
+reg :: String -> String
+instance GHC.Show.Show Back.Block.FunctionData
+instance GHC.Classes.Eq Back.Block.Block
+instance GHC.Show.Show Back.Block.Branch
+instance GHC.Classes.Eq Back.Block.Branch
+instance GHC.Show.Show Back.Block.TailExp
+instance GHC.Classes.Eq Back.Block.TailExp
+instance GHC.Show.Show Back.Block.Inst
+instance GHC.Classes.Eq Back.Block.Inst
+instance GHC.Show.Show Back.Block.InstHead
+instance GHC.Classes.Eq Back.Block.InstHead
+instance GHC.Classes.Eq Back.Block.Id_or_imm
+instance GHC.Show.Show Back.Block.Block
+instance GHC.Show.Show Back.Block.Id_or_imm
+
+module RunRun.RunRun
+type RunRun = StateT Env (ExceptT Error IO)
+data Env
+Env :: Int -> TyEnv -> ExtEnv -> Int -> Set String -> [String] -> [Fundef] -> Int -> Map String Global -> Int -> Int -> Int -> [(((String, [String], [String], Type), [Int]), Map Int Block)] -> Env
+[tyVarCounter] :: Env -> Int
+[tyenv] :: Env -> TyEnv
+[exttyenv] :: Env -> ExtEnv
+[idcounter] :: Env -> Int
+[stackset] :: Env -> Set String
+[stackmap] :: Env -> [String]
+[toplevel] :: Env -> [Fundef]
+[inlinenum] :: Env -> Int
+[globals] :: Env -> Map String Global
+[hp] :: Env -> Int
+[sp] :: Env -> Int
+[blockid] :: Env -> Int
+[blockmap] :: Env -> [(((String, [String], [String], Type), [Int]), Map Int Block)]
+data Error
+ParseErr :: String -> Error
+Fail :: String -> Error
+data Global
+Global :: Type -> Int -> Global
+[typ] :: Global -> Type
+[addr] :: Global -> Int
+throw :: Error -> RunRun a
+runRunRun :: RunRun a -> Env -> IO (Either Error a)
+newtypevar :: RunRun Int
+genid :: String -> RunRun String
+gentmp :: Type -> RunRun String
+id_of_typ :: Type -> RunRun Char
+eputstrln :: String -> RunRun ()
+eprint :: Show a => a -> RunRun ()
+newblock :: () -> RunRun Int
+instance GHC.Show.Show RunRun.RunRun.Env
+instance GHC.Show.Show RunRun.RunRun.Global
+instance GHC.Show.Show RunRun.RunRun.Error
+
+module Middle.KNormal
+data K
+Unit :: K
+Int :: !Int -> K
+Float :: !Float -> K
+Unary_op :: !Unary_operator -> !Type -> !Type -> !String -> K
+Arith1 :: !Arith_unary -> !String -> K
+Arith2 :: !Arith_binary -> !String -> !String -> K
+Float1 :: !Float_unary -> !String -> K
+Float2 :: !Float_binary -> !String -> !String -> K
+Cmp :: !Compare -> !String -> !String -> K
+IfCmp :: !Compare -> !String -> !String -> !K -> !K -> K
+FIfCmp :: !Compare -> !String -> !String -> !K -> !K -> K
+Let :: !(String, Type) -> !K -> !K -> K
+KLetRec :: !KFundef -> !K -> K
+KApp :: !String -> ![String] -> K
+If :: !String -> !K -> !K -> K
+Var :: !String -> K
+Tuple :: ![String] -> K
+LetTuple :: ![(String, Type)] -> !String -> !K -> K
+Array :: !Type -> !String -> !String -> K
+Out :: !Int -> !String -> K
+In :: !Type -> K
+Get :: !String -> !String -> K
+Put :: !String -> !String -> !String -> K
+Malloc :: !Type -> !Int -> !Int -> !MallocInit -> K
+data KFundef
+KFunc :: !(String, Type) -> ![(String, Type)] -> !K -> KFundef
+[kname] :: KFundef -> !(String, Type)
+[kargs] :: KFundef -> ![(String, Type)]
+[kbody] :: KFundef -> !K
+data MallocInit
+A :: !String -> MallocInit
+T :: ![String] -> MallocInit
+fv :: K -> Set String
+id_of_typ__ :: Type -> StateT Int (Except Error) Char
+gennewid :: Type -> StateT Int (Except Error) String
+insert_let :: (K, Type) -> Cont (StateT Int (Except Error) (K, Type)) String
+rtn :: a -> Cont (StateT Int (Except Error) a) b
+ilet :: StateT Int (Except Error) (K, Type) -> Cont (StateT Int (Except Error) (K, Type)) String
+k_body :: Map String Type -> Syntax -> StateT Int (Except Error) (K, Type)
+knormal :: Syntax -> RunRun K
+instance GHC.Classes.Eq Middle.KNormal.KFundef
+instance GHC.Show.Show Middle.KNormal.KFundef
+instance GHC.Classes.Eq Middle.KNormal.K
+instance GHC.Show.Show Middle.KNormal.K
+instance GHC.Classes.Eq Middle.KNormal.MallocInit
+instance GHC.Show.Show Middle.KNormal.MallocInit
+
+module Middle.Global
+global :: K -> RunRun K
+g_body :: Map String Int -> K -> RunRun K
+g_bodyadd :: String -> Type -> Int -> RunRun Int
+
+module Middle.Elim
+type Memo = StateT (Map String (Set String)) RunRun
+elim :: K -> RunRun K
+effect :: K -> Bool
+e_body :: K -> Memo K
+free :: K -> Memo (Set String)
+
+module Middle.ConstFold
+constfold :: K -> RunRun K
+f :: Map String K -> K -> K
+calc_i1 :: Arith_unary -> Int -> Int
+calc_i2 :: Arith_binary -> Int -> Int -> Int
+calc_f1 :: Float_unary -> Float -> Float
+calc_f2 :: Float_binary -> Float -> Float -> Float
+calc_cmp :: (Num n, Ord n) => Compare -> n -> n -> Bool
+
+module Middle.Closure
+fv :: C -> Set String
+g :: Map String Type -> Set String -> K -> RunRun C
+closure :: K -> RunRun Prog
+
+module Middle.Beta
+beta :: K -> RunRun K
+b :: Map String String -> K -> RunRun K
+
+module Middle.Assoc
+assoc :: K -> RunRun K
+a_body :: K -> K
+
+module Middle.Alpha
+find_a :: Ord k => k -> Map k k -> k
+g :: Map String String -> K -> RunRun K
+alpha :: K -> RunRun K
+
+module Middle.Inline
+inline :: K -> RunRun K
+i_body :: Map String ([(String, Type)], K) -> K -> RunRun K
+size :: K -> Int
+foldl2M :: (acc -> a -> b -> acc) -> acc -> [a] -> [b] -> RunRun acc
+
+module Middle.ConvertGlobal
+convertGlobal :: K -> RunRun K
+find_and_convert :: K -> RunRun K
+convert_each :: KFundef -> Map String Global -> RunRun K
+convert :: Map String Global -> K -> K
+free :: Map String Global -> K -> (Map String Global, Map String Global)
+insertlet :: Map String Global -> K -> K
+
+module Front.Typing
+data TypingEnvs
+TypingEnvs :: ExtEnv -> TyEnv -> Subst -> Int -> TypingEnvs
+[extenv] :: TypingEnvs -> ExtEnv
+[tyenv] :: TypingEnvs -> TyEnv
+[subst] :: TypingEnvs -> Subst
+[tyVarCounter] :: TypingEnvs -> Int
+data TypeError
+UnifyError :: Type -> Type -> TypeError
+TypingError :: Syntax -> Type -> Type -> TypeError
+throw :: TypeError -> TypeM a
+type TypeM = StateT TypingEnvs (ExceptT TypeError Identity)
+typing :: Syntax -> RunRun Syntax
+typingTM :: Syntax -> TypeM Syntax
+deref_typ :: Type -> TypeM Type
+deref_id_typ :: (String, Type) -> TypeM (String, Type)
+deref_term :: Syntax -> TypeM Syntax
+occur :: Int -> Type -> TypeM Bool
+occur__ :: Int -> Type -> Subst -> Bool
+unify :: Type -> Type -> TypeM ()
+unify__ :: Type -> Type -> Subst -> TypeM ()
+unifyM :: Type -> TypeM Type -> TypeM ()
+unifyM2 :: TypeM Type -> TypeM Type -> TypeM ()
+infer :: Syntax -> TypeM Type
+infer__ :: Syntax -> TyEnv -> ExtEnv -> TypeM Type
+add_tyenv :: String -> Type -> TypeM ()
+add_subst :: Int -> Type -> TypeM ()
+add_ext :: String -> Type -> TypeM ()
+find_tyenv :: String -> TypeM (Maybe Type)
+find_subst :: Int -> TypeM (Maybe Type)
+find_ext :: String -> TypeM (Maybe Type)
+gentyp :: TypeM Int
+gettyenv :: TypeM TyEnv
+getsubst :: TypeM Subst
+getextenv :: TypeM ExtEnv
+instance GHC.Show.Show Front.Typing.TypeError
+instance GHC.Classes.Eq Front.Typing.TypeError
+instance GHC.Show.Show Front.Typing.TypingEnvs
+
+module Front.Parser
+newtype HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+HappyAbsSyn :: HappyAny -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+type HappyAny = Any
+happyIn4 :: t4 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut4 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t4
+happyIn5 :: t5 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut5 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t5
+happyIn6 :: t6 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut6 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t6
+happyIn7 :: t7 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut7 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t7
+happyIn8 :: t8 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut8 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t8
+happyIn9 :: t9 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut9 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t9
+happyIn10 :: t10 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut10 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t10
+happyIn11 :: t11 -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOut11 :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> t11
+happyInTok :: Token -> HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11
+happyOutTok :: HappyAbsSyn t4 t5 t6 t7 t8 t9 t10 t11 -> Token
+happyExpList :: HappyAddr
+happyExpListPerState :: Int -> [[Char]]
+happyActOffsets :: HappyAddr
+happyGotoOffsets :: HappyAddr
+happyAdjustOffset :: Int# -> Int#
+happyDefActions :: HappyAddr
+happyCheck :: HappyAddr
+happyTable :: HappyAddr
+happyReduceArr :: Array Int (Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)))
+happy_n_terms :: Int
+happy_n_nonterms :: Int
+happyReduce_1 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_1 :: () => p1 -> HappyAbsSyn t1 t2 t3 t5 t12 t13 t14 t15 -> p2 -> HappyAbsSyn t2 t16 t17 t18 t19 t20 t21 t22
+happyReduce_2 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_2 :: () => p1 -> p2 -> HappyAbsSyn Syntax t5 t6 t7 t8 t9 t10 t11
+happyReduce_3 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_3 :: () => HappyAbsSyn t4 t1 t2 t3 t14 t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24
+happyReduce_4 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_4 :: () => HappyAbsSyn t4 t1 t2 t3 t14 t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24
+happyReduce_5 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_5 :: () => HappyAbsSyn t4 t1 t2 t3 t14 t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24
+happyReduce_6 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_6 :: () => HappyAbsSyn t4 t1 t2 t3 t14 t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24
+happyReduce_7 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_7 :: () => HappyStk (HappyAbsSyn Syntax Syntax t6 t7 t8 t9 t10 t11) -> HappyStk (HappyAbsSyn Syntax Syntax t6 t7 t8 t9 t10 t11)
+happyReduce_8 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_8 :: () => HappyAbsSyn t1 t2 t3 t4 t15 t16 t17 t18 -> HappyAbsSyn t19 t1 t20 t21 t22 t23 t24 t25
+happyReduce_9 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_9 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_10 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_10 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_11 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_11 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_12 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_12 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_13 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_13 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_14 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_14 :: () => p -> HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_15 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_15 :: () => p -> HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_16 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_16 :: () => p -> HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_17 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_17 :: () => p -> HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_18 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_18 :: () => HappyAbsSyn Syntax t5 t1 t2 t3 t4 t15 t16 -> p -> HappyAbsSyn t17 Syntax t18 t19 t20 t21 t22 t23
+happyReduce_19 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_19 :: () => HappyAbsSyn Syntax t5 t1 t2 t3 t4 t15 t16 -> p -> HappyAbsSyn t17 Syntax t18 t19 t20 t21 t22 t23
+happyReduce_20 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_20 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_21 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_21 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_22 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_22 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_23 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_23 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_24 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_24 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_25 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_25 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_26 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_26 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_27 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_27 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_28 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_28 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_29 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_29 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_30 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_30 :: () => HappyAbsSyn Syntax t1 t2 t3 t4 t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24 -> p -> HappyAbsSyn t25 Syntax t26 t27 t28 t29 t30 t31
+happyReduce_31 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_31 :: () => HappyAbsSyn Syntax t5 t1 t2 t3 t4 t15 t16 -> p -> HappyAbsSyn t17 Syntax t18 t19 t20 t21 t22 t23
+happyReduce_32 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_32 :: () => HappyStk (HappyAbsSyn t4 Syntax t6 t7 t8 t9 t10 t11) -> HappyStk (HappyAbsSyn t4 Syntax t6 t7 t8 t9 t10 t11)
+happyReduce_33 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_33 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21
+happyReduce_34 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_34 :: () => p1 -> p2 -> p3 -> HappyAbsSyn t4 Syntax t6 t7 t8 t9 t10 t11
+happyReduce_35 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_35 :: () => p1 -> p2 -> p3 -> HappyAbsSyn t4 Syntax t6 t7 t8 t9 t10 t11
+happyReduce_36 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_36 :: () => HappyAbsSyn Syntax t5 t1 t2 t3 t4 t15 t16 -> p -> HappyAbsSyn t17 Syntax t18 t19 t20 t21 t22 t23
+happyReduce_37 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_37 :: () => HappyAbsSyn Syntax t5 t1 t2 t3 t4 t15 t16 -> p -> HappyAbsSyn t17 Syntax t18 t19 t20 t21 t22 t23
+happyReduce_38 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_38 :: () => HappyAbsSyn Syntax t5 t1 t2 t3 t4 t15 t16 -> p -> HappyAbsSyn t17 Syntax t18 t19 t20 t21 t22 t23
+happyReduce_39 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_39 :: () => HappyAbsSyn Syntax t1 t2 t3 t4 t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24 -> p -> HappyAbsSyn t25 Syntax t26 t27 t28 t29 t30 t31
+happyReduce_40 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_40 :: () => HappyAbsSyn t1 t2 t3 t14 [Syntax] t15 t16 t17 -> HappyAbsSyn Syntax t18 t19 t20 t21 t22 t23 t24 -> HappyAbsSyn t25 Syntax t26 t27 t28 t29 t30 t31
+happyReduce_41 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_41 :: () => HappyAbsSyn t1 t5 t2 t3 t14 [Syntax] t15 t16 -> HappyAbsSyn t17 Syntax t18 t19 t20 t9 t21 t22
+happyReduce_42 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_42 :: () => HappyStk (HappyAbsSyn t4 Syntax t6 t7 t8 t9 [(String, Type)] t11) -> HappyStk (HappyAbsSyn t4 Syntax t6 t7 t8 t9 [(String, Type)] t11)
+happyReduce_43 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_43 :: () => HappyAbsSyn t1 Syntax t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 Syntax t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 Syntax t23 t24 t25 t26 t27 t28
+happyReduce_44 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_44 :: () => HappyStk (HappyAbsSyn t4 Syntax t6 t7 t8 t9 t10 (String, Type)) -> HappyStk (HappyAbsSyn t4 Syntax t6 t7 t8 t9 t10 (String, Type))
+happyReduce_45 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_45 :: () => HappyStk (HappyAbsSyn t4 Syntax Fundef t7 t8 t9 t10 t11) -> HappyStk (HappyAbsSyn t4 Syntax Fundef t7 t8 t9 t10 t11)
+happyReduce_46 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_46 :: () => HappyStk (HappyAbsSyn Syntax Syntax t6 t7 t8 t9 t10 t11) -> HappyStk (HappyAbsSyn Syntax Syntax t6 t7 t8 t9 t10 t11)
+happyReduce_47 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_47 :: () => HappyStk (HappyAbsSyn t4 Syntax Fundef [(String, Type)] t8 t9 t10 (String, Type)) -> HappyStk (HappyAbsSyn t4 Syntax Fundef [(String, Type)] t8 t9 t10 (String, Type))
+happyReduce_48 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_48 :: () => HappyAbsSyn t1 t2 t3 t7 t14 t15 t16 a -> HappyAbsSyn t17 t18 t19 [a] t20 t21 t22 t11
+happyReduce_49 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_49 :: () => HappyAbsSyn t1 t2 t3 [a] t7 t14 t15 t16 -> HappyAbsSyn t17 t18 t19 t20 t21 t22 t23 a -> HappyAbsSyn t24 t25 t26 [a] t27 t28 t29 t30
+happyReduce_50 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_50 :: () => HappyAbsSyn a t1 t2 t3 t8 t14 t15 t16 -> HappyAbsSyn t17 t18 t19 t20 [a] t21 t22 t23 -> HappyAbsSyn t24 t25 t26 t27 [a] t28 t29 t30
+happyReduce_51 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_51 :: () => HappyAbsSyn a t1 t2 t3 t8 t4 t15 t16 -> HappyAbsSyn t17 t18 t19 t20 [a] t21 t22 t23
+happyReduce_52 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_52 :: () => HappyAbsSyn t1 a t2 t3 t14 t9 t15 t16 -> p -> HappyAbsSyn t17 t18 t19 t20 t21 [a] t22 t23 -> HappyAbsSyn t24 t25 t26 t27 t28 [a] t29 t30
+happyReduce_53 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_53 :: () => HappyAbsSyn t1 a t2 t3 t5 t12 t13 t14 -> p -> HappyAbsSyn t15 a t16 t17 t18 t19 t20 t21 -> HappyAbsSyn t22 t23 t24 t25 t26 [a] t27 t28
+happyReduce_54 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_54 :: () => HappyAbsSyn t1 t2 t3 t10 t12 t13 t14 a -> p -> HappyAbsSyn t15 t16 t17 t18 t19 t20 [a] t21 -> HappyAbsSyn t22 t23 t24 t25 t26 t27 [a] t28
+happyReduce_55 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_55 :: () => HappyAbsSyn t1 t2 t3 t14 t15 t16 t17 a -> p -> HappyAbsSyn t18 t19 t20 t21 t22 t23 t24 a -> HappyAbsSyn t25 t26 t27 t28 t29 t30 [a] t11
+happyReduce_56 :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduction_56 :: () => HappyStk (HappyAbsSyn t1 t2 t3 t14 t15 t16 t17 t11) -> p -> RunRun (HappyAbsSyn t18 t19 t20 t21 t22 t23 t24 (String, Type))
+happyNewToken :: Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyError_ :: () => [String] -> Int# -> Token -> [Token] -> RunRun a
+happyThen :: () => RunRun a -> (a -> RunRun b) -> RunRun b
+happyReturn :: () => a -> RunRun a
+happyThen1 :: Monad m => m t1 -> (t1 -> t2 -> m b) -> t2 -> m b
+happyReturn1 :: () => a -> b -> RunRun a
+happyError' :: () => ([Token], [String]) -> RunRun a
+mparse :: [Token] -> RunRun Syntax
+happySeq :: () => a -> b -> b
+parseError :: [Token] -> RunRun a
+removeComments :: Int -> [Token] -> RunRun [Token]
+parse :: [Token] -> RunRun Syntax
+data Happy_IntList
+HappyCons :: Int# -> Happy_IntList -> Happy_IntList
+data HappyStk a
+HappyStk :: a -> HappyStk a -> HappyStk a
+infixr 9 `HappyStk`
+infixr 9 `HappyStk`
+happyParse :: Int# -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyAccept :: () => Int# -> p1 -> Int# -> p2 -> HappyStk a -> b -> RunRun a
+happyDoAction :: Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+indexShortOffAddr :: HappyAddr -> Int# -> Int#
+happyLt :: Int# -> Int# -> Bool
+readArrayBit :: HappyAddr -> Int -> Bool
+data HappyAddr
+HappyA# :: Addr# -> HappyAddr
+happyShift :: Int# -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happySpecReduce_0 :: Int# -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happySpecReduce_1 :: Int# -> (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happySpecReduce_2 :: Int# -> (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happySpecReduce_3 :: Int# -> (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type) -> HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyReduce :: Int# -> Int# -> (HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyMonadReduce :: Int# -> Int# -> (HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> Token -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyMonad2Reduce :: Int# -> Int# -> (HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> Token -> StateT Env (ExceptT Error IO) (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))) -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyDrop :: Int# -> Happy_IntList -> Happy_IntList
+happyDropStk :: () => Int# -> HappyStk a -> HappyStk a
+happyGoto :: Int# -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+happyFail :: [[Char]] -> Int# -> Token -> Int# -> Happy_IntList -> HappyStk (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type)) -> [Token] -> RunRun (HappyAbsSyn Syntax Syntax Fundef [(String, Type)] [Syntax] [Syntax] [(String, Type)] (String, Type))
+notHappyAtAll :: a
+happyTcHack :: Int# -> a -> a
+happyDoSeq :: a -> b -> b
+happyDontSeq :: a -> b -> b
+
+module Back.BlockGraph
+mkBlockGraph :: Map Int Block -> Graph
+mkBlockEdges :: Map Int Block -> [(Int, Int)]
+mkBlockGraphSeq :: Map Int Block -> Graph
+mkBlockEdgesIF :: Map Int Block -> [(Int, Int)]
+adjacentList :: Graph -> Int -> [Int]
+
+module Back.BlockStackSearch
+blockStackSearch :: Map String FunctionData -> RunRun (Map String FunctionData)
+mkFuncStack :: FunctionData -> FunctionData
+mkStackSet :: [Set String] -> Block -> (Set String, Set String)
+searchSave :: Block -> Set String
+
+module Back.BlockPrepare
+prepare :: RunRun (Map String FunctionData)
+
+module Back.BlockEmit
+c_getlo :: CFloat -> IO CShort
+c_gethi :: CFloat -> IO CShort
+getlo :: Float -> IO Int
+gethi :: Float -> IO Int
+stackadd :: String -> RunRun ()
+save :: String -> RunRun ()
+locate :: String -> RunRun (Maybe Int)
+offset :: String -> RunRun Int
+stacksize :: RunRun Int
+shuffle :: Eq a => a -> [(a, a)] -> [(a, a)]
+data Dest
+Tail :: Dest
+NonTail :: String -> Dest
+print_function :: Handle -> String -> FunctionData -> RunRun ()
+print_blocks :: Handle -> [Int] -> Map Int Block -> RunRun ()
+print_block :: Handle -> Int -> Block -> RunRun ()
+print_seq :: Handle -> ((String, Type), Inst) -> RunRun ()
+print_seq_save :: Handle -> ((String, Type), Inst) -> Set String -> RunRun ()
+mv_args :: Handle -> [(String, String)] -> [String] -> [String] -> RunRun ()
+print_seq_array :: Handle -> Type -> String -> Id_or_imm -> [String] -> [String] -> RunRun ()
+emit :: Handle -> Map String FunctionData -> RunRun ()
+
+module Back.Asm
+data Id_or_imm
+V :: String -> Id_or_imm
+C :: Int -> Id_or_imm
+data T
+Ans :: !Exp -> T
+Let :: !(String, Type) -> Exp -> T -> T
+data Exp
+Nop :: Exp
+Li :: !Int -> Exp
+FLi :: !Float -> Exp
+SetL :: !L -> Exp
+Mv :: !String -> Exp
+Out :: !Int -> !String -> Exp
+In :: !Type -> Exp
+Unary_op :: !Unary_operator -> !Type -> !Type -> !String -> Exp
+Arith1 :: !Arith_unary -> !String -> Exp
+Arith2 :: !Arith_binary -> !String -> !Id_or_imm -> Exp
+Float1 :: !Float_unary -> !String -> Exp
+Float2 :: !Float_binary -> !String -> !String -> Exp
+Slw :: !String -> !Id_or_imm -> Exp
+Lw :: !String -> !Id_or_imm -> Exp
+Sw :: !String -> !String -> !Id_or_imm -> Exp
+FMv :: !String -> Exp
+Cmp :: !Compare -> !String -> !Id_or_imm -> Exp
+If :: !String -> !T -> !T -> Exp
+IfCmp :: !Compare -> !String -> !String -> !T -> !T -> Exp
+FIfCmp :: !Compare -> !String -> !String -> !T -> !T -> Exp
+Lf :: !String -> !Id_or_imm -> Exp
+Sf :: !String -> !String -> !Id_or_imm -> Exp
+CallDir :: !L -> ![String] -> ![String] -> Exp
+Save :: !String -> !String -> Exp
+SaveFloat :: !String -> !String -> Exp
+Restore :: !String -> Exp
+Makearray :: !Type -> !Id_or_imm -> !String -> Exp
+data Afundef
+Afundef :: !L -> ![String] -> ![String] -> !T -> !Type -> Afundef
+[a_name] :: Afundef -> !L
+[a_args] :: Afundef -> ![String]
+[a_fargs] :: Afundef -> ![String]
+[a_body] :: Afundef -> !T
+[a_ret] :: Afundef -> !Type
+data Aprog
+Aprog :: [Afundef] -> T -> Aprog
+fletd :: (String, Exp, T) -> T
+seq :: Exp -> T -> RunRun T
+regs :: Array Int String
+fregs :: Array Int String
+allregs :: [String]
+allfregs :: [String]
+regs_len :: Int
+fregs_len :: Int
+reg_cl :: String
+reg_sw :: String
+reg_fsw :: String
+reg_sp :: String
+reg_hp :: String
+reg_lr :: String
+reg_tmp :: String
+reg_ftmp :: String
+is_reg :: String -> Bool
+remove_and_uniq :: Ord a => Set a -> [a] -> [a]
+fv_id_pr_imm :: Id_or_imm -> [String]
+fv_exp :: Exp -> [String]
+fv' :: T -> [String]
+fv :: T -> [String]
+concat :: T -> (String, Type) -> T -> T
+instance GHC.Classes.Eq Back.Asm.Aprog
+instance GHC.Show.Show Back.Asm.Aprog
+instance GHC.Classes.Eq Back.Asm.Afundef
+instance GHC.Show.Show Back.Asm.Afundef
+instance GHC.Classes.Eq Back.Asm.T
+instance GHC.Show.Show Back.Asm.Exp
+instance GHC.Classes.Eq Back.Asm.Exp
+instance GHC.Classes.Eq Back.Asm.Id_or_imm
+instance GHC.Show.Show Back.Asm.T
+instance GHC.Show.Show Back.Asm.Id_or_imm
+
+module Back.Virtual
+mapinit :: Map String Type
+classify :: [(t2, Type)] -> b -> (b -> t2 -> b) -> (b -> t2 -> Type -> b) -> b
+separate :: [(a, Type)] -> ([a], [a])
+expand :: [(t3, Type)] -> (Int, t4) -> (t3 -> Int -> t4 -> t4) -> (t3 -> Type -> Int -> t4 -> t4) -> (Int, t4)
+g :: Map String Type -> C -> RunRun T
+store_same_value :: Int -> (Int -> Exp) -> T -> RunRun T
+h :: Fundef -> RunRun Afundef
+findGlobal :: String -> RunRun (Maybe Global)
+virtual :: Prog -> RunRun Aprog
+
+module Back.ToBlock
+toBlock :: Aprog -> RunRun ()
+convertFundef :: Afundef -> RunRun ()
+convert :: Int -> InstSeq -> (String, Type) -> Branch -> T -> RunRun [Int]
+define_block :: Int -> InstSeq -> TailExp -> Branch -> RunRun ()
+
+module Back.Simm
+simm :: Aprog -> RunRun Aprog
+function_simm :: Map String Int -> Afundef -> Afundef
+s_body :: Map String Int -> T -> T
+small :: Int -> Bool
+s_subst :: Map String Int -> Exp -> Exp
+
+module Back.RegAlloc
+target' :: String -> (String, Type) -> Exp -> RunRun (Bool, [String])
+target :: String -> (String, Type) -> T -> RunRun (Bool, [String])
+target_args :: String -> Array Int String -> Int -> [String] -> [String]
+data Alloc_result
+Alloc :: !String -> Alloc_result
+Spill :: !String -> Alloc_result
+alloc :: (String, Type) -> T -> Map String String -> String -> Type -> RunRun Alloc_result
+add_regenv :: String -> String -> Map String String -> RunRun (Map String String)
+find_reg :: String -> Type -> Map String String -> Either (String, Type) String
+find'_reg :: Id_or_imm -> Map String String -> Either (String, Type) Id_or_imm
+g :: (String, Type) -> T -> Map String String -> T -> RunRun (T, Map String String)
+g'_and_restore :: (String, Type) -> T -> Map String String -> Exp -> RunRun (T, Map String String)
+g' :: (String, Type) -> T -> Map String String -> Exp -> RunRun (Either (String, Type) (T, Map String String))
+g'_if :: (String, Type) -> T -> Map String String -> (T -> T -> Either (String, Type) Exp) -> T -> T -> RunRun (Either (String, Type) (T, Map String String))
+g'_call :: ([Char], b) -> T -> Map [Char] String -> (Either (String, Type) [String] -> Either (String, Type) ([String] -> Exp)) -> [String] -> [String] -> RunRun (Either (String, Type) (T, Map k a))
+reg_fun :: Afundef -> RunRun Afundef
+return_reg :: a -> RunRun (Either (String, Type) a)
+regalloc :: Aprog -> RunRun Aprog
+instance GHC.Classes.Eq Back.RegAlloc.Alloc_result
+instance GHC.Show.Show Back.RegAlloc.Alloc_result
