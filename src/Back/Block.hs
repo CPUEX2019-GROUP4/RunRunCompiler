@@ -90,7 +90,7 @@ data InstHead =
 --   deriving(Eq, Show)
 
 data Inst =
-    Inst InstHead ![String] ![String]
+    Inst !InstHead ![String] ![String]
   deriving(Eq, Show)
 
 

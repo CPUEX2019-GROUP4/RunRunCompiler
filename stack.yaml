@@ -30,8 +30,8 @@ resolver: lts-14.21
 #   - wai
 packages:
 - .
-# build:
-#   haddock: true
+build:
+  haddock: true
 #   haddock-arguments:
 #     haddock-args: []
 #   open-haddocks: false
