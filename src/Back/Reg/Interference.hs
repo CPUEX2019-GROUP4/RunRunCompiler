@@ -9,4 +9,9 @@ import           Data.Set                            as S
 
 -- type Live = Seq (Set String, Set String)
 
+type G = AdjacencyMap
 
+mkGraph :: Ord a => Map a (Set a) -> G a
+mkGraph m =
+    let dg = AM m in
+    symmetricClosure dg
