@@ -200,16 +200,16 @@ printSeqSave oc ((_, _), Inst (Save y) [x] []) stset
             ofset <- offset y
             liftIO $ hPutStr oc $ printf "    sw %s %s %d\n" (reg x) (reg reg_sp) ofset
     | x `elem` allfregs = throw $ Fail "so-nansu"
-    -- iranai hazu
-    | x `elem` allregs    = do
-            save y
-            ofset <- offset y
-            liftIO $ hPutStr oc $ printf "    sw %s %s %d\n" (reg x) (reg reg_sp) ofset
-    | x `elem` allfregs   = do
-            save y
-            ofset <- offset y
-            liftIO $ hPutStr oc $ printf "    swcZ %s %s %d\n" (reg x) (reg reg_sp) ofset
-    | not tf                = return ()
+--    -- iranai hazu
+--    -- | x `elem` allregs    = do
+--    --         save y
+--    --         ofset <- offset y
+--    --         liftIO $ hPutStr oc $ printf "    sw %s %s %d\n" (reg x) (reg reg_sp) ofset
+--    -- | x `elem` allfregs   = do
+--    --         save y
+--    --         ofset <- offset y
+--    --         liftIO $ hPutStr oc $ printf "    swcZ %s %s %d\n" (reg x) (reg reg_sp) ofset
+   | not tf                = return ()
     where
         tf = notMember y stset
 printSeqSave oc ((_, _), Inst (Save y) [] [x]) stset
@@ -218,18 +218,18 @@ printSeqSave oc ((_, _), Inst (Save y) [] [x]) stset
             ofset <- offset y
             liftIO $ hPutStr oc $ printf "    swcZ %s %s %d\n" (reg x) (reg reg_sp) ofset
     | x `elem` allregs = throw $ Fail "so-nano"
-    -- iranai hazu
-    | x `elem` allregs    = do
-            save y
-            ofset <- offset y
-            liftIO $ hPutStr oc $ printf "    sw %s %s %d\n" (reg x) (reg reg_sp) ofset
-    | x `elem` allfregs   = do
-            save y
-            ofset <- offset y
-            liftIO $ hPutStr oc $ printf "    swcZ %s %s %d\n" (reg x) (reg reg_sp) ofset
-    | not tf                = return ()
+--    -- iranai hazu
+--    -- | x `elem` allregs    = do
+--    --         save y
+--    --         ofset <- offset y
+--    --         liftIO $ hPutStr oc $ printf "    sw %s %s %d\n" (reg x) (reg reg_sp) ofset
+--    -- | x `elem` allfregs   = do
+--    --         save y
+--    --         ofset <- offset y
+--    --         liftIO $ hPutStr oc $ printf "    swcZ %s %s %d\n" (reg x) (reg reg_sp) ofset
+   | not tf                = return ()
 -- printSeqSave oc ((_, _), Inst (Save y) [] [x]) stset
---     | otherwise             = throw $ Fail "maji!?"
+    | otherwise             = throw $ Fail "maji!?"
     where
         tf = notMember y stset
 printSeqSave _ _ _ = throw $ Fail "e?"

@@ -13,18 +13,19 @@ type SaveSet = (Set String, Set String)
 -- | collect variables that are to be saved.
 saveset :: Map String (FunctionData, Map Int Live) -> RunRun (Map String (FunctionData, Map Int Live, SaveSet))
 saveset m =
-    return $ M.map (\ (f,x) -> (f,x,liveFunc f x)) m
+    return $ M.map (\ (f,x) -> (f,x,saveFunc f x)) m
 
 
-liveFunc :: FunctionData -> Map Int Live -> SaveSet
-liveFunc func livemap =
+saveFunc :: FunctionData -> Map Int Live -> SaveSet
+saveFunc func livemap =
     Prelude.foldr g (S.empty, S.empty) (line func)
     where
-      f n = liveBlock (blocks func M.! n) (livemap M.! n)
+      f n = saveBlock (blocks func M.! n) (livemap M.! n)
       g n s = f n `union2` s
 
-liveBlock:: Block -> Live -> SaveSet
-liveBlock block live =
+-- | can not handle with tailCall yet
+saveBlock:: Block -> Live -> SaveSet
+saveBlock block live =
     let s =
           -- case blockTailExp block of
           --        Call ->
