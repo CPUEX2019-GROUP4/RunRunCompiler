@@ -15,13 +15,12 @@ mkBlockGraph mp =
 
 
 mkBlockEdges :: Map Int Block -> [(Int, Int)]
-mkBlockEdges mp =
-    foldrWithKey (\k a b -> (mkEdge k a) ++ b) [] mp
+mkBlockEdges = foldrWithKey (\k a b -> mkEdge k a ++ b) []
     where
       mkEdge k block =
         case blockBranch block of
           None    -> []
-          One x   -> [(k, x)]
+          One x _ -> [(k, x)]
           Two x y -> [(k, x), (k, y)]
 
 ----------------------------------
@@ -37,13 +36,12 @@ mkBlockGraphSeq mp =
     buildG bounds edgeList
 
 mkBlockEdgesIF :: Map Int Block -> [(Int, Int)]
-mkBlockEdgesIF mp =
-    foldrWithKey (\k a b -> (mkEdge k a) ++ b) [] mp
+mkBlockEdgesIF = foldrWithKey (\k a b -> mkEdge k a ++ b) []
     where
       mkEdge k block =
         case blockBranch block of
           None    -> []
-          One x   -> [(k, x)]
+          One x _ -> [(k, x)]
           Two x y -> [(x,y), (k, x), (k, y)]
 
 

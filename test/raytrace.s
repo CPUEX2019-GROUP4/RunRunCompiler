@@ -1,5 +1,5 @@
     ori r29 r0 5040
-    ori r30 r0 32964
+    ori r30 r0 5040
     jal main
 end_of_program:
     nop

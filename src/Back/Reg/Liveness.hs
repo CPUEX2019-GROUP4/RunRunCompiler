@@ -61,10 +61,10 @@ liveBlock:: Block -> (Set String, Set String) -> Live
 liveBlock block s12@(s1,s2) =
     let s12' = case blockTailExp block of
           -- Call
-          If x -> (S.insert x s1, s2)
-          IfCmp _ x y -> (S.insert x $ S.insert y s1, s2)
+          If x         -> (S.insert x s1, s2)
+          IfCmp _ x y  -> (S.insert x $ S.insert y s1, s2)
           FIfCmp _ x y -> (s1, S.insert x $ S.insert y s2)
-          _ -> s12
+          _            -> s12
     in
     liveSeq (blockInst block) s12' |> s12'
 

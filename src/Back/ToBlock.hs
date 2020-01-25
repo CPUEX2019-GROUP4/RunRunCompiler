@@ -102,13 +102,13 @@ convert b seq yt branch instruction
     | A.Let xt (A.FIfCmp cmp x y e1 e2) e <- instruction
             = subfunc (FIfCmp cmp x y) e1 e2 e xt
     where
-      subfunc tail e1 e2 e xt = do
+      subfunc tail e1 e2 e xt@(x,_) = do
           b1 <- newblock ()
           b2 <- newblock ()
           bcont <- newblock ()
           define_block b seq tail (Two b1 b2)
-          l1 <- convert b1 SQ.empty xt (One bcont) e2 -- if b で true であるときに jump するように入れ替える.
-          l2 <- convert b2 SQ.empty xt (One bcont) e1
+          l1 <- convert b1 SQ.empty xt (One bcont x) e2 -- if b で true であるときに jump するように入れ替える.
+          l2 <- convert b2 SQ.empty xt (One bcont x) e1
           l3 <- convert bcont SQ.empty yt branch e
           return $ b : l1 ++ l2 ++ l3
 convert b seq xt branch instruction

@@ -48,5 +48,5 @@ searchSave block =
     Prelude.foldl addToSet S.empty seq
     where
       addToSet s (_, (Inst (Save y) _ _)) = S.insert y s
-      addToSet s (_, (Inst (Save y) _ _)) = S.insert y s
+      -- addToSet s (_, (Inst (Save y) _ _)) = S.insert y s
       addToSet s _                        = s

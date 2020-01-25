@@ -1,29 +1,36 @@
 module Back.Reg.Coloring where
 
-import Algebra.Graph.AdjacencyMap
-import Data.Set as S
-import Data.Map as M
-import Algebra.Graph.Export.Dot
+import           Algebra.Graph.AdjacencyMap
+import           Algebra.Graph.Export.Dot
+import           Data.Map                   as M
+import           Data.Set                   as S
 -- AdjacencyMap a
 type G = AdjacencyMap
 
-data Reg a = Alloc [a] | Spill a
+-- data Reg a = Alloc [a] | Spill a
 
 type Stack a = [a]
 
-
+-- | O(n)
+-- good v := d(v) < k - 2 (heuristic)
 goodVirteces :: Ord a => Int -> G a -> [a]
 goodVirteces k g =
     let mapaseta = adjacencyMap g in
-    M.foldrWithKey (\ key s acc -> if S.size s <= k then key : acc else acc) [] mapaseta
+    M.foldrWithKey (\ key s acc -> if S.size s < k - 2 then key : acc else acc) [] mapaseta
 
-deleteGood :: Ord a => Int -> G a -> Stack a -> Reg a
-deleteGood k g stack =
+-- | return spill_list and stack (reversed)
+--
+-- O(n^2 log(n))
+deleteGood :: Ord a => Int -> G a -> ([a], Stack a)
+deleteGood k g =
     case goodVirteces k g of
-      [] | isEmpty g -> Alloc stack
+      [] | isEmpty g -> ([], [])
          | otherwise -> -- consider some better algorithm !!
-                        Spill $ fst . M.elemAt 0 $ adjacencyMap g
-      xs -> deleteGood k (Prelude.foldr removeVertex g xs) (xs ++ stack)
+                        let v = fst . M.elemAt 0 $ adjacencyMap g
+                            (sp,st) = deleteGood k (removeVertex v g) in
+                            (v:sp, v:st)
+      xs -> let (sp, st) = deleteGood k (Prelude.foldr removeVertex g xs)
+                    in (sp, xs ++ st)
 
 
 ----------------------------------

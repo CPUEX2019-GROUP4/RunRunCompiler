@@ -104,7 +104,7 @@ data TailExp =
 
 data Branch =
     Two !Int !Int
-  | One !Int
+  | One !Int !String
   | None
   deriving (Eq, Show)
 
@@ -156,23 +156,23 @@ printinstruction ((x,t), Inst e ys zs)
             let n = i `div` (1 `shift` 16) in
             let m = i `mod` (1 `shift` 16) in
             let r = reg x in
-            (printf "    #%d\n" i) ++
-            (printf "    lui %s %d\n" r n) ++
-            (printf "    ori %s %s %d\n" r r m)
+            printf "    #%d\n" i ++
+            printf "    lui %s %d\n" r n ++
+            printf "    ori %s %s %d\n" r r m
     | FLi f     <- e =
-            (printf "    flui %s %f\n" (reg x) f) ++
-            (printf "    fori %s %s %f\n" (reg x) (reg x) f)
+            printf "    flui %s %f\n" (reg x) f ++
+            printf "    fori %s %s %f\n" (reg x) (reg x) f
     | SetL (L label)    <- e =
-            (printf "    lui %s ha(%s)\n" x label) ++
-            (printf "    ori %s %s lo16(%s)\n" x x label)
+            printf "    lui %s ha(%s)\n" x label ++
+            printf "    ori %s %s lo16(%s)\n" x x label
     | Mv <- e, [y] <- ys, x == y = ""
     | Mv <- e, [y] <- ys =
             printf "    mv %s %s\n" (reg x) (reg y)
     | Out n <- e, [y] <- ys =
             printf "    out %s %d\n" (reg y) n
-    | In (Type.Int) <- e =
+    | In Type.Int <- e =
             printf "    inint %s\n" (reg x)
-    | In (Type.Float) <- e =
+    | In Type.Float <- e =
             printf "    inflt %s\n" (reg x)
     | In _ <- e =
             printf "    error : input %s\n" (show t)
@@ -185,9 +185,9 @@ printinstruction ((x,t), Inst e ys zs)
     | Arith1 Mul4 <- e, [y] <- ys =
             printf "    sll %s %s 2\n" (reg x) (reg y)
     | Arith1 Mul10 <- e, [y] <- ys =
-            (printf "    sll %s %s 3\n" (reg reg_tmp) (reg y)) ++
-            (printf "    add %s %s %s\n" (reg reg_tmp) (reg reg_tmp) (reg y)) ++
-            (printf "    add %s %s %s\n" (reg x) (reg reg_tmp) (reg y))
+            printf "    sll %s %s 3\n" (reg reg_tmp) (reg y) ++
+            printf "    add %s %s %s\n" (reg reg_tmp) (reg reg_tmp) (reg y) ++
+            printf "    add %s %s %s\n" (reg x) (reg reg_tmp) (reg y)
     | Arith1 Div2 <- e, [y] <- ys =
             printf "    div2 %s %s\n" (reg x) (reg y)
     | Arith1 Div10 <- e, [y] <- ys =
@@ -220,8 +220,8 @@ printinstruction ((x,t), Inst e ys zs)
     | Cmp Syntax.Eq V <- e, [y,z] <- ys =
             printf "    seq %s %s %s\n" (reg x) (reg y) (reg z)
     | Cmp Syntax.Eq (C z) <- e, [y] <- ys =
-           (printf "    ori %s %d\n"     (reg reg_tmp) z) ++
-           (printf "    seq %s %s %s\n" (reg x) (reg y) (reg reg_tmp))
+           printf "    ori %s %d\n"     (reg reg_tmp) z ++
+           printf "    seq %s %s %s\n" (reg x) (reg y) (reg reg_tmp)
     | Cmp Syntax.Ne V <- e, [y,z] <- ys =
             printf "    sub %s %s %s\n" (reg x) (reg y) (reg z)
     | Cmp Syntax.Ne (C z) <- e, [y] <- ys =
@@ -233,8 +233,8 @@ printinstruction ((x,t), Inst e ys zs)
     | Cmp Syntax.Gt V <- e, [y,z] <- ys =
             printf "    slt %s %s %s\n" (reg x) (reg z) (reg y)
     | Cmp Syntax.Gt (C z) <- e, [y] <- ys =
-           (printf "    ori %s r0 %d\n" (reg reg_tmp) z) ++
-           (printf "    slt %s %s %s\n" (reg x) (reg reg_tmp) (reg y))
+           printf "    ori %s r0 %d\n" (reg reg_tmp) z ++
+           printf "    slt %s %s %s\n" (reg x) (reg reg_tmp) (reg y)
     | Lf V <- e, [y,z] <- ys =
             printf "    flwab %s %s %s\n" (reg x) (reg y) (reg z)
     | Lf (C z) <- e, [y] <- ys =
@@ -258,9 +258,9 @@ printinstruction ((x,t), Inst e ys zs)
     | Makearray _ V <- e, [n, v] <- ys =
             printf "    makearray %s %s\n" (reg n) (reg v)
     | CallDir (L s) <- e =
-            (printf "    call %s\n" s) ++
-            (printf "      ys = %s\n" (show ys)) ++
-            (printf "      zs = %s\n" (show zs))
+            printf "    call %s\n" s ++
+            printf "      ys = %s\n" (show ys) ++
+            printf "      zs = %s\n" (show zs)
     | otherwise = show e ++ show ys ++ show zs
 
 

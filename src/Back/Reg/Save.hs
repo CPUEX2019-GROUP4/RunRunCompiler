@@ -1,10 +1,10 @@
 module Back.Reg.Save where
 
-import RunRun.RunRun
 import           Back.Block
-import           Data.Map        as M
-import           Data.Sequence   as SEQ
-import           Data.Set        as S
+import           Data.Map      as M
+import           Data.Sequence as SEQ
+import           Data.Set      as S
+import           RunRun.RunRun
 
 type Live = Seq (Set String, Set String)
 type SaveSet = (Set String, Set String)
@@ -34,9 +34,9 @@ liveBlock block live =
 
 
 saveSeq :: InstSeq -> Live -> SaveSet
-saveSeq Empty _ = (S.empty, S.empty)
+saveSeq Empty _               = (S.empty, S.empty)
 saveSeq (x :<| xs) (y :<| ys) = save x y `union2` saveSeq xs ys
-saveSeq _ _ = (S.empty, S.empty) -- should be an error
+saveSeq _ _                   = (S.empty, S.empty) -- should be an error
 
 save :: ((String, a), Inst) -> SaveSet -> SaveSet
 save ((_,_), Inst (CallDir _) _ _) s = s
