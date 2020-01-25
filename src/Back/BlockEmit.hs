@@ -297,7 +297,7 @@ emit oc functions = do
     -- eprint functions
     eputstrln "assembly"
     stack <- gets sp
-    heap  <- gets sp
+    heap  <- gets hp
     --eprint =<< (globals <$> get)
     liftIO $ hPutStr oc $ printf "    ori %s r0 %d\n" (reg reg_sp) stack
     liftIO $ hPutStr oc $ printf "    ori %s r0 %d\n" (reg reg_hp) heap
