@@ -12,6 +12,10 @@ import           Data.Set                            as S
 type G = AdjacencyMap
 
 mkGraph :: Ord a => Map a (Set a) -> G a
-mkGraph m =
-    let dg = AM m in
-    symmetricClosure dg
+mkGraph = symmetricClosure . AM
+
+
+removeVertices :: Ord a => [a] -> G a -> G a
+removeVertices = flip $ Prelude.foldr removeVertex
+
+
