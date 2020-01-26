@@ -35,7 +35,11 @@ intersection2 (a,b) (c,d) = (a `S.intersection` c, b `S.intersection` d)
 
 
 insertSave :: Set String -> InstSeq -> InstSeq
-insertSave s (a@((x,_), _) :<| xs)
-    | x `S.member` s = a <| (("%r0", Type.Unit), Inst (Save x) [] []) <| insertSave s xs
+insertSave s (a@((x,t), _) :<| xs)
+    | Type.Float <- t, ismem = a <| (("%r0", Type.Unit), Inst (Save x) [] [x]) <| insertSave s xs
+    | Type.Unit  <- t, ismem = a <| insertSave s xs
+    | ismem                  = a <| (("%r0", Type.Unit), Inst (Save x) [x] []) <| insertSave s xs
     | otherwise      = a <| insertSave s xs
+    where
+      ismem = x `S.member` s
 insertSave _ Empty = Empty
