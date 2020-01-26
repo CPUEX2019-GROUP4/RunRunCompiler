@@ -10,27 +10,6 @@ import           Data.Sequence   as SEQ
 import           Data.Set        as S
 
 
--- data Block = Block {
---            -- blockNum :: Int,
---            -- blockmother :: [Int],
---            blockInst    :: InstSeq,
---            blockTailExp :: TailExp,
---            blockBranch  :: Branch,
---            blockStack   :: (S.Set String, S.Set String)}
---            deriving(Eq)
--- data FunctionData = FunctionData {
---                   blocks            :: M.Map Int Block,
---                   blockGraph        :: G.Graph,
---                   blockReverseGraph :: G.Graph,
---                   line              :: [Int],
---                   args              :: ![String],
---                   fargs             :: ![String],
---                   ret               :: !Type,
---                   allStack          :: [String]
---                   }
--- type InstSeq = SQ.Seq ((String, Type), Inst)
-
-
 type Live = Seq (Set String, Set String)
 
 -- | 関数呼び出しの有無に関係なく, 同時に resister または stack
@@ -38,6 +17,8 @@ type Live = Seq (Set String, Set String)
 liveness :: Map String FunctionData -> RunRun (Map String (FunctionData, Map Int Live))
 liveness m = return $ M.map (\ func -> (func, liveFunc func)) m
 
+-- |
+-- FunctionData -> Map blocknum Live
 liveFunc :: FunctionData -> Map Int Live
 liveFunc func =
     Prelude.foldl insertToMap M.empty l
@@ -56,6 +37,8 @@ liveFunc func =
         let s = gatherSet (follows n) accmap in
         M.insert n (liveBlock (blocks func M.! n) s) accmap
 
+-- |
+-- liveBlock :: Block -> livingset -> Live
 liveBlock:: Block -> (Set String, Set String) -> Live
 liveBlock block s12@(s1,s2) =
     let s12' = case blockTailExp block of
@@ -86,9 +69,3 @@ liveSeq (xs :|> x) s12 =
 live :: ((String, Type), Inst) -> (Set String, Set String) -> (Set String, Set String)
 live ((x, Float), Inst _ ys zs) (s1,s2) = (S.fromList ys `S.union` s1, S.delete x $ S.fromList zs `S.union` s2)
 live ((x, _    ), Inst _ ys zs) (s1,s2) = (S.delete x $ S.fromList ys `S.union` s1, S.fromList zs `S.union` s2)
-
-
-
-
-
-

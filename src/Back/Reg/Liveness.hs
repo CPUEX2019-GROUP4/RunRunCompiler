@@ -19,10 +19,10 @@ import           Back.BlockGraph
 import           RunRun.RunRun
 import           RunRun.Type     as Type
 
+import qualified Data.List       as L
 import           Data.Map        as M
 import           Data.Sequence   as SEQ
 import           Data.Set        as S
-import qualified Data.List       as L
 
 type Adj = Map String (Set String)
 type LiveInterval = Map String (Int, Int)
@@ -46,7 +46,7 @@ liveCheck (xs :|> ((a,t), Inst e ys zs)) (s1,s2) (adjint, adjfloat, live, coales
         live'  = Prelude.foldr (\ y -> M.insert y (0,i)) live  ys''
         live'' = Prelude.foldr (\ y -> M.insert y (0,i)) live' zs''
         j = case M.lookup a live of
-              Nothing -> -1
+              Nothing    -> -1
               Just (_,n) -> n
         live''' = M.insert a (i,j) live'''
         coalesce' = case e of
