@@ -20,7 +20,7 @@ mkBlockEdges = foldrWithKey (\k a b -> mkEdge k a ++ b) []
       mkEdge k block =
         case blockBranch block of
           None    -> []
-          One x _ -> [(k, x)]
+          One x _ _ -> [(k, x)]
           Two x y -> [(k, x), (k, y)]
 
 ----------------------------------
@@ -41,7 +41,7 @@ mkBlockEdgesIF = foldrWithKey (\k a b -> mkEdge k a ++ b) []
       mkEdge k block =
         case blockBranch block of
           None    -> []
-          One x _ -> [(k, x)]
+          One x _ _ -> [(k, x)]
           Two x y -> [(x,y), (k, x), (k, y)]
 
 

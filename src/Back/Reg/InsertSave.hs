@@ -12,8 +12,8 @@ type Store = (Set String, Set String)
 type Save  = (Set String, Set String)
 
 
-insertSave :: FunctionData -> Map Int Store -> FunctionData
-insertSave func store =
+insertSaveFunc :: FunctionData -> Map Int Store -> FunctionData
+insertSaveFunc func store =
     let bs = M.mapWithKey blockConvert (blocks func) in
     func { blocks = bs }
     where
@@ -21,8 +21,8 @@ insertSave func store =
       save = mkSave func store
       blockConvert :: Int -> Block -> Block
       blockConvert b block =
-        let instseq = insertSave (save M.! k) (blockInst block) in
-        block { blockinst = instseq }
+        let instseq = insertSave (save M.! b) (blockInst block) in
+        block { blockInst = instseq }
 
 
 mkSave :: FunctionData -> Map Int Store -> Map Int Save
@@ -47,7 +47,7 @@ intersection2 (a,b) (c,d) = (a `S.intersection` c, b `S.intersection` d)
 
 
 insertSave :: Save -> InstSeq -> InstSeq
-insertSave (s1,s2) (a@((x,t), _) :<| xs)
+insertSave s@(s1,s2) (a@((x,t), _) :<| xs)
     | Type.Float <- t, x `S.member` s2 = a <| (("%r0", Type.Unit), Inst (Save x) [] [x]) <| insertSave s xs
     | Type.Unit  <- t  = a <| insertSave s xs
     | x `S.member` s1                  = a <| (("%r0", Type.Unit), Inst (Save x) [x] []) <| insertSave s xs

@@ -26,6 +26,12 @@ import           Data.Map            as M
 import           Data.Sequence       as SEQ
 import           Data.Set            as S
 
+import           Algebra.Graph.AdjacencyMap
+import           Algebra.Graph.AdjacencyMap.Algorithm
+import           Algebra.Graph.AdjacencyMap.Internal
+
+type G = AdjacencyMap
+
 type Adj = Map String (Set String)
 type LiveInterval = Map String (Int, Int)
 type Coalesce = [(String, String)]
@@ -35,33 +41,37 @@ type ALL = (Adj,Adj,LiveInterval,Coalesce)
 type Live = Map SN Set2
 
 
+allinit :: ALL
+allinit = (M.empty, M.empty, M.empty, [])
+
 -- |
 -- topSorted SN (of a connected component) -> Graph -> ALL
 liveConn :: Map SN SmallBlock -> G SN -> [SN] -> ALL
 liveConn m g c =
     let (_, all) =
-          Prelude.foldr (\ sn acc -> liveSB sn (m M.! sn) acc) (Prelude.reverse c)
+          Prelude.foldr (\ sn acc -> liveSB sn (m M.! sn) acc) (M.empty, allinit) (Prelude.reverse c)
     in all
 
 
 liveSB :: SN -> SmallBlock -> (Live, ALL) -> (Live, ALL)
-liveSB sn sb (live, (adjint, adjfloat, live, coalesce)) =
-    (M.insert sn s', all)
+liveSB sn sb (live, (adjint, adjfloat, liveinterval, coalesce)) =
+    (M.insert sn s' live, all)
     where
       inst = sInst sb
       tail = sBranch sb
-      (ys,zs,s) = case tail of
+      (ys,zs,s@(s1,s2)) = case tail of
                          RETURN -> ([], [], (S.empty, S.empty))
-                         IF ys' zs' b1 b2 -> (ys', zs', (live M.! b1) `S.union` (live M.! b2))
-                         Cont ys' zs' b -> (ys', zs', live M.! b)
+                         IF ys' zs' b1 b2 -> (ys', zs', (live M.! b1) `union2` (live M.! b2))
+                         CONT ys' zs' b -> (ys', zs', live M.! b)
       -- CONT は考えなくていいと思う
       ys' = [ y | y <- ys, y `S.notMember` s1 ]
       zs' = [ z | z <- zs, z `S.notMember` s2 ]
-      adjint'   = Prelude.foldr (`M.insert` s1') adjint   ys'
-      adjfloat' = Prelude.foldr (`M.insert` s2') adjfloat zs'
-      live'  = Prelude.foldr (\ y -> M.insert y (0,i)) live  ys''
-      live'' = Prelude.foldr (\ z -> M.insert z (0,i)) live' zs''
-      (s', all) = liveCheck inst (s, (adjint', adjfloat', live'', coalesce))
+      adjint'   = Prelude.foldr (`M.insert` s1) adjint   ys'
+      adjfloat' = Prelude.foldr (`M.insert` s2) adjfloat zs'
+      i = SEQ.length inst
+      liveinterval'  = Prelude.foldr (\ y -> M.insert y (0,i)) liveinterval  ys'
+      liveinterval'' = Prelude.foldr (\ z -> M.insert z (0,i)) liveinterval' zs'
+      (s', all) = liveCheck inst (s, (adjint', adjfloat', liveinterval'', coalesce))
 
 
 -- |
@@ -98,4 +108,9 @@ liveCheck (xs :|> ((a,t), Inst e ys zs)) ((s1,s2), (adjint, adjfloat, live, coal
       (s1', s2') = case t of
                      Type.Float -> (s1, a `S.delete` s2)
                      _          -> (a `S.delete` s1, s2)
+
+union2 :: Ord a => (Set a, Set a) -> (Set a, Set a) -> (Set a, Set a)
+union2 (a,b) (c,d) = (a `S.union` c, b `S.union` d)
+
+
 

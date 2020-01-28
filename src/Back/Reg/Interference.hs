@@ -6,8 +6,8 @@ import           Algebra.Graph.AdjacencyMap.Internal
 import           Back.Block
 import           Back.Reg.SmallBlock
 import           Data.Map                            as M
-import           Data.Set                            as S
 import           Data.Sequence                       as SEQ
+import           Data.Set                            as S
 
 
 type Adj = Map String (Set String)
@@ -36,8 +36,8 @@ interferenceConn :: Map SN SmallBlock -> G SN -> [SN] -> ALL -> X
 interferenceConn m g c (adjint, adjfloat, live, coalesce) =
     let igraph = mkGraph adjint
         fgraph = mkGraph adjfloat
-        (imerge, fmerge) = Prelude.foldr (append2 . merging) [] c
-        (iargs,  fargs ) = Prelude.foldr (append2 . args) [] c
+        (imerge, fmerge) = Prelude.foldr (append2 . merging) ([],[]) c
+        (iargs,  fargs ) = Prelude.foldr (append2 . args) ([],[]) c
     in
     (igraph, fgraph, imerge, fmerge, iargs, fargs)
     where
@@ -46,10 +46,10 @@ interferenceConn m g c (adjint, adjfloat, live, coalesce) =
       args sn =
         let sb = m M.! sn
             inst = sInst sb in
-        case isCall sb of
+        case sIsCall sb of
           False -> ([], [])
           True | Empty   <- inst             -> ([],[])
-               | (_:|> Inst _ ys zs) <- inst -> ([ys],[zs])
+               | (_:|> (_, Inst _ ys zs)) <- inst -> ([ys],[zs])
       append2 (a,b) (c,d) = (a++c, b++d)
 
 

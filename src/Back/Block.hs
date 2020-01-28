@@ -104,7 +104,7 @@ data TailExp =
 
 data Branch =
     Two !Int !Int
-  | One !Int !String
+  | One !Int ![String] ![String]
   | None
   deriving (Eq, Show)
 

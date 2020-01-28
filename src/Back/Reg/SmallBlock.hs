@@ -21,7 +21,7 @@ data SmallBlockTail =
 
 data SmallBlock =
     SmallBlock {
-               sInst :: InstSeq, sBranch :: SmallBlockTail, sIsCall :: Bool}
+              sInst :: InstSeq, sBranch :: SmallBlockTail, sIsCall :: Bool}
 
 -- type NontailCall = Map SN SN
 -- -- ^ Formar -> Present
@@ -65,7 +65,7 @@ mkBranch tail branch
     | If x <- tail, Two b1 b2 <- branch = f [] [x] b1 b2
     | IfCmp _ x y <- tail, Two b1 b2 <- branch = f [x,y] [] b1 b2
     | FIfCmp _ x y <- tail, Two b1 b2 <- branch = f [] [x,y] b1 b2
-    | One b1 x <- branch = (CONT x (b1,0), S.singleton b1)
+    | One b1 x y <- branch = (CONT x y (b1,0), S.singleton b1)
     | otherwise = (RETURN, S.empty)
     where
       f l1 l2 b1 b2 = (IF l1 l2 (b1,0) (b2,0), S.fromList [b1,b2])
@@ -98,7 +98,7 @@ breakIntoSmallBlock b instseq tail =
       number = SEQ.length cut
       f :: SN -> (InstSeq, Bool) -> (SN, SmallBlock)
       f (b',s) (instseq', bool) =
-        ((b',s), SmallBlock { sInst = instseq', sBranch = CONT (callReturn instseq') (b',s+1), sIsCall = bool })
+        ((b',s), SmallBlock { sInst = instseq', sBranch = callReturn instseq' (b',s+1), sIsCall = bool })
       smallBlockList :: [(SN, SmallBlock)]
       smallBlockList = zipWith f (zip (repeat b) [0..]) (F.toList others)
       lastSB :: SmallBlock
@@ -107,5 +107,8 @@ breakIntoSmallBlock b instseq tail =
       smallblocks = M.fromList (((b, number - 1), lastSB) : smallBlockList)
 
 -- | might cause error
-callReturn :: InstSeq -> String
-callReturn (_ :|> ((x,_), Inst (CallDir _) _ _)) = x
+callReturn :: InstSeq -> SN -> SmallBlockTail
+callReturn (_ :|> ((x,Type.Float), Inst (CallDir _) _ _)) = CONT [] [x]
+callReturn (_ :|> ((x,_         ), Inst (CallDir _) _ _)) = CONT [x] []
+
+

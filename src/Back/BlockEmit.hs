@@ -145,7 +145,7 @@ printBlock oc b Block {blockInst = seq, blockTailExp = tail, blockBranch = branc
                           liftIO $ hPutStr oc $ printf "    fclt %s %s\n" (reg y) (reg x)
                           liftIO $ hPutStr oc $ printf "    bc1t %s\n" ("block_" ++ show b2)
             -- liftIO $ hPutStrLn oc $ printf "    j %s" ("block_" ++ show b1)
-    | End <- tail, One b1 _ <- branch = do
+    | End <- tail, One b1 _ _ <- branch = do
             instructions
             liftIO $ hPutStr oc $ printf "    j %s\n" ("block_" ++ show b1)
     | otherwise = throw $ Fail (show tail ++ show branch)

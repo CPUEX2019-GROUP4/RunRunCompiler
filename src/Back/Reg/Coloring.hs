@@ -1,13 +1,13 @@
 module Back.Reg.Coloring where
 
-import Back.Block
 import           Algebra.Graph.AdjacencyMap
 import           Algebra.Graph.Export.Dot
-import           Data.Map                   as M
-import           Data.Set                   as S
+import           Back.Block
+import           Control.Monad              (foldM)
 import           Data.List                  as L
-import           Data.Maybe (catMaybes)
-import Control.Monad (foldM)
+import           Data.Map                   as M
+import           Data.Maybe                 (catMaybes)
+import           Data.Set                   as S
 
 -- AdjacencyMap a
 type G = AdjacencyMap
