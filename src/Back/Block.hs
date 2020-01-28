@@ -180,8 +180,7 @@ printinstruction ((x,t), Inst e ys zs)
             printf "    %s %s %s\n" ((map toLower . show) op) (reg x) (reg y)
     | Unary_op op _ _ <- e, [y] <- zs =
             printf "    %s %s %s\n" ((map toLower . show) op) (reg x) (reg y)
-    | Arith1 Neg <- e, [y] <- ys =
-            printf "    sub %s r0 %s\n" (reg x) (reg y)
+    | Arith1 Neg <- e, [y] <- ys = printf "    sub %s r0 %s\n" (reg x) (reg y)
     | Arith1 Mul4 <- e, [y] <- ys =
             printf "    sll %s %s 2\n" (reg x) (reg y)
     | Arith1 Mul10 <- e, [y] <- ys =
@@ -277,7 +276,7 @@ allfregs :: [String]
 allfregs = elems fregs
 
 regs_len :: Int
-regs_len = 25
+regs_len = 27
 fregs_len :: Int
 fregs_len = 32
 

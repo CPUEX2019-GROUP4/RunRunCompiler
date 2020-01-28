@@ -2,9 +2,9 @@ module Back.Reg.Stack where
 
 import           Back.Block
 import           Back.BlockGraph
-import           Data.Map      as M
-import           Data.Sequence as SEQ
-import           Data.Set      as S
+import           Data.Map        as M
+import           Data.Sequence   as SEQ
+import           Data.Set        as S
 import           RunRun.RunRun
 
 type Live = Seq (Set String, Set String)
@@ -42,8 +42,7 @@ saveFunc func livemap =
         s1 n `union2` (s2 n `intersection2` (s3 n acc `intersection2` s4 n))
 
 unionList :: Ord a => [(Set a, Set a)] -> (Set a, Set a)
-unionList [] = (S.empty, S.empty)
-unoinList (s:ss) = s `union2` unionList ss
+unionList = Prelude.foldr union2 (S.empty, S.empty)
 
 intersectionList :: Ord a => [(Set a, Set a)] -> (Set a, Set a) -> (Set a, Set a)
 intersectionList [] u = u
@@ -54,12 +53,12 @@ blockFirstLive m blocknum =
     headSeq $ m M.! blocknum
 
 headSeq :: Live -> (Set String, Set String)
-headSeq (x :<| xs) = x
-headSeq Empty      = (S.empty, S.empty)
+headSeq (x :<| _) = x
+headSeq Empty     = (S.empty, S.empty)
 
 lastSeq :: Live -> (Set String, Set String)
-lastSeq (xs :|> x) = x
-lastSeq Empty      = (S.empty, S.empty)
+lastSeq (_ :|> x) = x
+lastSeq Empty     = (S.empty, S.empty)
 
 -- | can not handle with tailCall yet
 -- block -> live ->
@@ -74,7 +73,7 @@ saveSeq _ _                   = (S.empty, S.empty) -- should be an error
 
 save :: ((String, a), Inst) -> Store -> Store
 save ((_,_), Inst (CallDir _) _ _) s = s
-save _ s = (S.empty, S.empty)
+save _ _                             = (S.empty, S.empty)
 
 
 -------------------

@@ -16,35 +16,70 @@ module Back.Reg.Liveness where
 
 import           Back.Block
 import           Back.BlockGraph
+import           Back.Reg.SmallBlock
+import           Prelude             hiding (tail)
 import           RunRun.RunRun
-import           RunRun.Type     as Type
+import           RunRun.Type         as Type
 
-import qualified Data.List       as L
-import           Data.Map        as M
-import           Data.Sequence   as SEQ
-import           Data.Set        as S
+import qualified Data.List           as L
+import           Data.Map            as M
+import           Data.Sequence       as SEQ
+import           Data.Set            as S
 
 type Adj = Map String (Set String)
 type LiveInterval = Map String (Int, Int)
 type Coalesce = [(String, String)]
-type RSet = (Set String, Set String)
+type Set2 = (Set String, Set String)
 type ALL = (Adj,Adj,LiveInterval,Coalesce)
+
+type Live = Map SN Set2
+
+
+-- |
+-- topSorted SN (of a connected component) -> Graph -> ALL
+liveConn :: Map SN SmallBlock -> G SN -> [SN] -> ALL
+liveConn m g c =
+    let (_, all) =
+          Prelude.foldr (\ sn acc -> liveSB sn (m M.! sn) acc) (Prelude.reverse c)
+    in all
+
+
+liveSB :: SN -> SmallBlock -> (Live, ALL) -> (Live, ALL)
+liveSB sn sb (live, (adjint, adjfloat, live, coalesce)) =
+    (M.insert sn s', all)
+    where
+      inst = sInst sb
+      tail = sBranch sb
+      (ys,zs,s) = case tail of
+                         RETURN -> ([], [], (S.empty, S.empty))
+                         IF ys' zs' b1 b2 -> (ys', zs', (live M.! b1) `S.union` (live M.! b2))
+                         Cont ys' zs' b -> (ys', zs', live M.! b)
+      -- CONT は考えなくていいと思う
+      ys' = [ y | y <- ys, y `S.notMember` s1 ]
+      zs' = [ z | z <- zs, z `S.notMember` s2 ]
+      adjint'   = Prelude.foldr (`M.insert` s1') adjint   ys'
+      adjfloat' = Prelude.foldr (`M.insert` s2') adjfloat zs'
+      live'  = Prelude.foldr (\ y -> M.insert y (0,i)) live  ys''
+      live'' = Prelude.foldr (\ z -> M.insert z (0,i)) live' zs''
+      (s', all) = liveCheck inst (s, (adjint', adjfloat', live'', coalesce))
+
 
 -- |
 -- [Given] 命令列 InstSeq と その命令列実行後に "レジスタに" 生存していなければならない変数の集合
 --
 -- [Return] (Int干渉グラフ, Float干渉グラフ, Map 変数名 生存期間, Coalesce)
-liveCheck :: InstSeq -> RSet -> ALL -> ALL
-liveCheck Empty _ a = a
-liveCheck (xs :|> ((a,t), Inst e ys zs)) (s1,s2) (adjint, adjfloat, live, coalesce) =
+liveCheck :: InstSeq -> (Set2, ALL) -> (Set2, ALL)
+liveCheck Empty a = a
+liveCheck (xs :|> ((a,t), Inst e ys zs)) ((s1,s2), (adjint, adjfloat, live, coalesce)) =
     let (ys', zs') = f t (ys, zs)
+        -- ys'', zs'' は最後の使用
         ys'' = [ y | y <- ys', y `S.notMember` s1 ]
         zs'' = [ z | z <- zs', z `S.notMember` s2 ]
-        adjint'   = Prelude.foldr (`M.insert` s1) adjint   ys''
-        adjfloat' = Prelude.foldr (`M.insert` s2) adjfloat zs''
+        adjint'   = Prelude.foldr (`M.insert` s1') adjint   ys''
+        adjfloat' = Prelude.foldr (`M.insert` s2') adjfloat zs''
         i = SEQ.length xs
         live'  = Prelude.foldr (\ y -> M.insert y (0,i)) live  ys''
-        live'' = Prelude.foldr (\ y -> M.insert y (0,i)) live' zs''
+        live'' = Prelude.foldr (\ z -> M.insert z (0,i)) live' zs''
         j = case M.lookup a live of
               Nothing    -> -1
               Just (_,n) -> n
@@ -54,15 +89,13 @@ liveCheck (xs :|> ((a,t), Inst e ys zs)) (s1,s2) (adjint, adjfloat, live, coales
                       FMv | [z] <- zs -> (a,z) : coalesce
                       _               -> coalesce
     in
-    (adjint', adjfloat', live''', coalesce')
+    liveCheck xs ((s1', s2'), (adjint', adjfloat', live''', coalesce'))
     where
+      -- f :: Type で場合わけし, 生存変数を更新.
       f t (ys, zs)
         | Type.Float <- t = (L.nub ys, L.delete a $ L.nub zs)
         | otherwise       = (L.delete a $ L.nub ys, L.nub zs)
-
-
-
-
-
-
+      (s1', s2') = case t of
+                     Type.Float -> (s1, a `S.delete` s2)
+                     _          -> (a `S.delete` s1, s2)
 

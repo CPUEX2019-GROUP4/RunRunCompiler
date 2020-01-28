@@ -2,10 +2,10 @@ module Back.Reg.InsertSave where
 
 import           Back.Block
 import           Back.BlockGraph
-import           RunRun.Type as Type
-import           Data.Map   as M
-import           Data.Set   as S
-import           Data.Sequence as SEQ
+import           Data.Map        as M
+import           Data.Sequence   as SEQ
+import           Data.Set        as S
+import           RunRun.Type     as Type
 
 
 type Store = (Set String, Set String)

@@ -1,4 +1,4 @@
-stack build
+stack build --ghc-options="-Wall"
 
 if [ $1 != "raytrace" ]; then
   testfile="test/test"
