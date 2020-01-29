@@ -26,7 +26,7 @@ import           Middle.Global          as Global
 import           Middle.Inline          as Inline
 import           Middle.KNormal         as KNormal
 
--- import           Back.RegAlloc          as RegAlloc
+import           Back.RegAlloc          as RegAlloc
 import           Back.Simm              as Simm
 import           Back.ToBlock           as ToBlock
 import           Back.Virtual           as Virtual
@@ -54,10 +54,10 @@ main = do
         >>= Closure.closure
         >>= Virtual.virtual
         >>= Simm.simm
-        -- >>= RegAlloc.regalloc
+        >>= RegAlloc.regalloc
         >>= ToBlock.toBlock
         >> BlockPrepare.prepare
-        >>= BlockRegAlloc.regAlloc
+        -- >>= BlockRegAlloc.regAlloc
         >>= BlockStackSearch.blockStackSearch
         >>= BlockEmit.emit oc
         -- >>= Emit.emit oc
@@ -71,8 +71,8 @@ iter :: Int -> K -> RunRun K
 iter n e = foldM (\m _ -> opt m) e [1..n]
 
 opt :: K -> RunRun K
-opt e = return e
-        >>= Beta.beta
+opt e =
+        Beta.beta e
         >>= Assoc.assoc
         >>= Inline.inline
         >>= ConstFold.constfold
@@ -88,7 +88,7 @@ initEnv = Env {
             stackset = empty,
             stackmap = [],
             toplevel = [],
-            inlinenum = 0,
+            inlinenum = 650,
             globals = M.empty,
             hp = 30000,
             sp = 5040,

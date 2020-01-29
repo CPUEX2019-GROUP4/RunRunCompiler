@@ -1,5 +1,5 @@
     ori r29 r0 5040
-    ori r30 r0 27964
+    ori r30 r0 32964
     jal main
 end_of_program:
     nop
@@ -49,7 +49,7 @@ block_5886:
     fmul f2 f4 f2
     fmul f2 f3 f2
     sll r1 r2 2
-    lw r1 r1 25716
+    lw r1 r1 30716
     sll r2 r3 2
     lwab r2 r1 r2
     lw r2 r2 0
@@ -1250,7 +1250,7 @@ block_858:
     beq r3 r4 block_860
 block_859:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f0 f3
@@ -1461,7 +1461,7 @@ block_912:
     beq r3 r4 block_915
 block_914:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f0 f3
@@ -1672,7 +1672,7 @@ block_967:
     beq r3 r4 block_970
 block_969:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f0 f3
@@ -1883,7 +1883,7 @@ block_1022:
     beq r3 r4 block_1025
 block_1024:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f0 f3
@@ -2129,7 +2129,7 @@ block_6023:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90913
     sll r28 r4  2
 arrayloop.90912:
@@ -2157,7 +2157,7 @@ block_6025:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90915
     sll r28 r4  2
 arrayloop.90914:
@@ -2185,7 +2185,7 @@ block_6027:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90917
     sll r28 r4  2
 arrayloop.90916:
@@ -2213,7 +2213,7 @@ block_6029:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90919
     sll r28 r4  2
 arrayloop.90918:
@@ -2257,7 +2257,7 @@ block_6032:
     swcZ f0 r30 8
     mv r2 r30
     addi r30 r30 12
-    lw r3 r0 25000
+    lw r3 r0 30000
     beq r0 r3 arrayexit.90921
     sll r28 r3  2
 arrayloop.90920:
@@ -2396,9 +2396,9 @@ arrayexit.90921:
     mv r2 r30
     addi r30 r30 480
     sll r3 r1 2
-    sw r2 r3 25716
+    sw r2 r3 30716
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 118
     sw r1 r29 12
     blt r3 r0 block_6035
@@ -2410,7 +2410,7 @@ block_6034:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90923
     sll r28 r4  2
 arrayloop.90922:
@@ -2437,7 +2437,7 @@ block_6037:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90925
     sll r28 r4  2
 arrayloop.90924:
@@ -2464,7 +2464,7 @@ block_6039:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90927
     sll r28 r4  2
 arrayloop.90926:
@@ -2507,7 +2507,7 @@ block_6041:
     swcZ f0 r30 8
     mv r2 r30
     addi r30 r30 12
-    lw r3 r0 25000
+    lw r3 r0 30000
     beq r0 r3 arrayexit.90929
     sll r28 r3  2
 arrayloop.90928:
@@ -2646,9 +2646,9 @@ arrayexit.90929:
     mv r2 r30
     addi r30 r30 480
     sll r3 r1 2
-    sw r2 r3 25716
+    sw r2 r3 30716
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 118
     sw r1 r29 8
     blt r3 r0 block_6044
@@ -2660,7 +2660,7 @@ block_6043:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90931
     sll r28 r4  2
 arrayloop.90930:
@@ -2687,7 +2687,7 @@ block_6046:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90933
     sll r28 r4  2
 arrayloop.90932:
@@ -2728,7 +2728,7 @@ block_6048:
     swcZ f0 r30 8
     mv r2 r30
     addi r30 r30 12
-    lw r3 r0 25000
+    lw r3 r0 30000
     beq r0 r3 arrayexit.90935
     sll r28 r3  2
 arrayloop.90934:
@@ -2867,9 +2867,9 @@ arrayexit.90935:
     mv r2 r30
     addi r30 r30 480
     sll r3 r1 2
-    sw r2 r3 25716
+    sw r2 r3 30716
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 118
     sw r1 r29 0
     blt r3 r0 block_6051
@@ -2881,7 +2881,7 @@ block_6050:
     swcZ f0 r30 8
     mv r3 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90937
     sll r28 r4  2
 arrayloop.90936:
@@ -2920,7 +2920,7 @@ block_6053:
     swcZ f0 r30 8
     mv r2 r30
     addi r30 r30 12
-    lw r3 r0 25000
+    lw r3 r0 30000
     beq r0 r3 arrayexit.90939
     sll r28 r3  2
 arrayloop.90938:
@@ -3059,9 +3059,9 @@ arrayexit.90939:
     mv r2 r30
     addi r30 r30 480
     sll r3 r1 2
-    sw r2 r3 25716
+    sw r2 r3 30716
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 118
     sw r1 r29 4
     mv r1 r2
@@ -3113,11 +3113,11 @@ block_5582:
     sll r7 r2 2
     lwab r3 r3 r7
     lwcZ f0 r3 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r3 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r3 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r3 r1 24
     lw r3 r3 0
     sll r7 r2 2
@@ -3130,14 +3130,14 @@ block_5582:
     sw r4 r29 0
     beq r3 r0 block_5585
 block_5584:
-    lw r7 r0 25716
+    lw r7 r0 30716
     lwcZ f0 r5 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r5 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r5 8
-    swcZ f0 r0 25656
-    lw r8 r0 25000
+    swcZ f0 r0 30656
+    lw r8 r0 30000
     subi r8 r8 1
     sw r7 r29 16
     mv r2 r8
@@ -3163,15 +3163,15 @@ block_5586:
     lw r2 r29 40
     beq r2 r1 block_5588
 block_5587:
-    lw r1 r0 25720
+    lw r1 r0 30720
     lw r3 r29 8
     lwcZ f0 r3 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r3 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r3 8
-    swcZ f0 r0 25656
-    lw r4 r0 25000
+    swcZ f0 r0 30656
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 20
     mv r2 r4
@@ -3197,15 +3197,15 @@ block_5589:
     lw r2 r29 40
     beq r2 r1 block_5591
 block_5590:
-    lw r1 r0 25724
+    lw r1 r0 30724
     lw r3 r29 8
     lwcZ f0 r3 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r3 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r3 8
-    swcZ f0 r0 25656
-    lw r4 r0 25000
+    swcZ f0 r0 30656
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 24
     mv r2 r4
@@ -3231,15 +3231,15 @@ block_5592:
     lw r2 r29 40
     beq r2 r1 block_5594
 block_5593:
-    lw r1 r0 25728
+    lw r1 r0 30728
     lw r3 r29 8
     lwcZ f0 r3 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r3 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r3 8
-    swcZ f0 r0 25656
-    lw r4 r0 25000
+    swcZ f0 r0 30656
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 28
     mv r2 r4
@@ -3265,15 +3265,15 @@ block_5595:
     lw r2 r29 40
     beq r2 r1 block_5597
 block_5596:
-    lw r1 r0 25732
+    lw r1 r0 30732
     lw r2 r29 8
     lwcZ f0 r2 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r2 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r2 8
-    swcZ f0 r0 25656
-    lw r3 r0 25000
+    swcZ f0 r0 30656
+    lw r3 r0 30000
     subi r3 r3 1
     sw r1 r29 32
     mv r1 r2
@@ -3299,24 +3299,24 @@ block_5598:
     sll r2 r1 2
     lw r3 r29 52
     lwab r2 r3 r2
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r2 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r2 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r2 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5583:
     lw r1 r29 56
     addi r1 r1 1
@@ -3343,11 +3343,11 @@ block_5604:
     sll r7 r1 2
     lwab r3 r3 r7
     lwcZ f0 r3 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r3 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r3 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r3 r2 24
     lw r3 r3 0
     sll r7 r1 2
@@ -3361,7 +3361,7 @@ block_5604:
     sw r4 r29 4
     beq r3 r0 block_5607
 block_5606:
-    lw r7 r0 25716
+    lw r7 r0 30716
     mv r3 r5
     mv r2 r4
     mv r1 r7
@@ -3377,7 +3377,7 @@ block_5608:
     lw r2 r29 44
     beq r2 r1 block_5610
 block_5609:
-    lw r1 r0 25720
+    lw r1 r0 30720
     lw r3 r29 4
     lw r4 r29 12
     mv r2 r3
@@ -3394,7 +3394,7 @@ block_5611:
     lw r2 r29 44
     beq r2 r1 block_5613
 block_5612:
-    lw r1 r0 25724
+    lw r1 r0 30724
     lw r3 r29 4
     lw r4 r29 12
     mv r2 r3
@@ -3411,7 +3411,7 @@ block_5614:
     lw r2 r29 44
     beq r2 r1 block_5616
 block_5615:
-    lw r1 r0 25728
+    lw r1 r0 30728
     lw r3 r29 4
     lw r4 r29 12
     mv r2 r3
@@ -3428,7 +3428,7 @@ block_5617:
     lw r2 r29 44
     beq r2 r1 block_5619
 block_5618:
-    lw r1 r0 25732
+    lw r1 r0 30732
     lw r2 r29 4
     lw r3 r29 12
     sw r31 r29 64
@@ -3443,24 +3443,24 @@ block_5620:
     sll r2 r1 2
     lw r3 r29 48
     lwab r2 r3 r2
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r2 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r2 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r2 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5605:
     addi r2 r1 1
     lw r1 r29 60
@@ -3484,7 +3484,7 @@ block_6055:
 block_6056:
     sll r3 r2 2
     lwab r3 r1 r3
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 16
     sw r2 r29 12
@@ -3502,13 +3502,13 @@ block_6058:
     sll r2 r1 2
     lw r3 r29 16
     lwab r2 r3 r2
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 8
     blt r4 r0 block_6061
 block_6060:
     sll r5 r4 2
-    lw r5 r5 25048
+    lw r5 r5 30048
     lw r6 r2 4
     lw r7 r2 0
     lw r8 r5 4
@@ -3945,7 +3945,7 @@ block_6125:
     sll r2 r1 2
     lw r3 r29 16
     lwab r2 r3 r2
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 0
     mv r1 r2
@@ -3962,13 +3962,13 @@ block_6127:
     sll r2 r1 2
     lw r3 r29 16
     lwab r2 r3 r2
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 4
     blt r4 r0 block_6130
 block_6129:
     sll r5 r4 2
-    lw r5 r5 25048
+    lw r5 r5 30048
     lw r6 r2 4
     lw r7 r2 0
     lw r8 r5 4
@@ -5332,19 +5332,19 @@ block_6194:
     blt r1 r0 block_6196
 block_6195:
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 119
     sw r1 r29 24
     blt r3 r0 block_6198
 block_6197:
     lw r3 r2 476
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r2 r29 8
     blt r4 r0 block_6201
 block_6200:
     sll r5 r4 2
-    lw r5 r5 25048
+    lw r5 r5 30048
     lw r6 r3 4
     lw r7 r3 0
     lw r8 r5 4
@@ -5779,7 +5779,7 @@ block_6202:
 block_6265:
     lw r1 r29 8
     lw r2 r1 472
-    lw r3 r0 25000
+    lw r3 r0 30000
     subi r3 r3 1
     mv r1 r2
     mv r2 r3
@@ -5793,12 +5793,12 @@ block_6265:
 block_6267:
     lw r1 r29 8
     lw r2 r1 468
-    lw r3 r0 25000
+    lw r3 r0 30000
     subi r3 r3 1
     blt r3 r0 block_6270
 block_6269:
     sll r4 r3 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r5 r2 4
     lw r6 r2 0
     lw r7 r4 4
@@ -6247,13 +6247,13 @@ block_6199:
     blt r1 r0 block_6335
 block_6334:
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 119
     sw r1 r29 20
     blt r3 r0 block_6337
 block_6336:
     lw r3 r2 476
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r2 r29 0
     mv r2 r4
@@ -6268,12 +6268,12 @@ block_6336:
 block_6339:
     lw r1 r29 0
     lw r2 r1 472
-    lw r3 r0 25000
+    lw r3 r0 30000
     subi r3 r3 1
     blt r3 r0 block_6342
 block_6341:
     sll r4 r3 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r5 r2 4
     lw r6 r2 0
     lw r7 r4 4
@@ -6720,19 +6720,19 @@ block_6338:
     blt r1 r0 block_6407
 block_6406:
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 119
     sw r1 r29 12
     blt r3 r0 block_6409
 block_6408:
     lw r3 r2 476
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r2 r29 4
     blt r4 r0 block_6412
 block_6411:
     sll r5 r4 2
-    lw r5 r5 25048
+    lw r5 r5 30048
     lw r6 r3 4
     lw r7 r3 0
     lw r8 r5 4
@@ -7177,7 +7177,7 @@ block_6410:
     blt r1 r0 block_6477
 block_6476:
     sll r2 r1 2
-    lw r2 r2 25716
+    lw r2 r2 30716
     addi r3 r0 119
     sw r1 r29 16
     mv r1 r2
@@ -7208,7 +7208,7 @@ block_715:
     blt r2 r0 block_717
 block_716:
     sll r3 r2 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r1 4
     lw r5 r1 0
     lw r6 r3 4
@@ -7631,7 +7631,7 @@ block_720:
     blt r2 r0 block_781
 block_780:
     sll r3 r2 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r1 4
     lw r5 r1 0
     lw r6 r3 4
@@ -8063,7 +8063,7 @@ block_717:
     jr r31
 iter_trace_diffuse_rays.4938:
 block_4102:
-    addi r5 r0 25552
+    addi r5 r0 30552
     blt r4 r0 block_4104
 block_4103:
     sll r6 r4 2
@@ -8105,8 +8105,8 @@ block_4108:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r7 r0 25536
+    swcZ f1 r0 30548
+    lw r7 r0 30536
     lw r8 r7 0
     lw r9 r8 0
     addi r10 r0 -1
@@ -8120,7 +8120,7 @@ block_4111:
     beq r9 r10 block_4115
 block_4114:
     sll r10 r9 2
-    lw r10 r10 25048
+    lw r10 r10 30048
     lw r11 r10 40
     lwcZ f1 r11 0
     lwcZ f2 r11 4
@@ -8185,7 +8185,7 @@ block_4129:
     fsub f1 f1 f2
     lwcZ f2 r9 16
     fmul f1 f1 f2
-    swcZ f1 r0 25540
+    swcZ f1 r0 30540
     j block_4131
 block_4130:
     sqrt_init f3 f2
@@ -8201,7 +8201,7 @@ block_4130:
     fadd f1 f1 f2
     lwcZ f2 r9 16
     fmul f1 f1 f2
-    swcZ f1 r0 25540
+    swcZ f1 r0 30540
 block_4131:
     addi r9 r0 1
     j block_4119
@@ -8228,7 +8228,7 @@ block_4136:
     lwcZ f1 r9 0
     lwcZ f2 r11 12
     fmul f1 f1 f2
-    swcZ f1 r0 25540
+    swcZ f1 r0 30540
     addi r9 r0 1
     j block_4119
 block_4118:
@@ -8431,21 +8431,21 @@ block_4189:
     mv r9 r0
     j block_4119
 block_4190:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r9 r0 3
     j block_4119
 block_4172:
-    swcZ f4 r0 25540
+    swcZ f4 r0 30540
     addi r9 r0 2
     j block_4119
 block_4154:
-    swcZ f4 r0 25540
+    swcZ f4 r0 30540
     addi r9 r0 1
 block_4119:
     beq r9 r0 block_4192
 block_4191:
-    lwcZ f1 r0 25540
-    lwcZ f2 r0 25548
+    lwcZ f1 r0 30540
+    lwcZ f2 r0 30548
     fclt f1 f2
     bc1t block_4194
 block_4193:
@@ -8456,7 +8456,7 @@ block_4194:
     beq r9 r10 block_4196
 block_4195:
     sll r9 r9 2
-    lw r9 r9 25332
+    lw r9 r9 30332
     sw r8 r29 68
     mv r3 r6
     mv r2 r9
@@ -8472,7 +8472,7 @@ block_4195:
     beq r2 r3 block_4198
 block_4197:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 48
     mv r1 r0
     sw r31 r29 104
@@ -8486,7 +8486,7 @@ block_4197:
     beq r2 r3 block_4200
 block_4199:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 48
     mv r1 r0
     sw r31 r29 104
@@ -8500,7 +8500,7 @@ block_4199:
     beq r2 r3 block_4202
 block_4201:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 48
     mv r1 r0
     sw r31 r29 104
@@ -8533,7 +8533,7 @@ block_4115:
     beq r9 r10 block_4204
 block_4203:
     sll r9 r9 2
-    lw r9 r9 25332
+    lw r9 r9 30332
     sw r8 r29 68
     mv r3 r6
     mv r2 r9
@@ -8549,7 +8549,7 @@ block_4203:
     beq r2 r3 block_4206
 block_4205:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 48
     mv r1 r0
     sw r31 r29 104
@@ -8563,7 +8563,7 @@ block_4205:
     beq r2 r3 block_4208
 block_4207:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 48
     mv r1 r0
     sw r31 r29 104
@@ -8577,7 +8577,7 @@ block_4207:
     beq r2 r3 block_4210
 block_4209:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 48
     mv r1 r0
     sw r31 r29 104
@@ -8613,7 +8613,7 @@ block_4116:
     j block_4113
 block_4112:
 block_4113:
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -8638,9 +8638,9 @@ block_4213:
 block_4216:
     j block_4110
 block_4217:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 48
     lw r2 r2 0
     lw r3 r1 4
@@ -8650,15 +8650,15 @@ block_4218:
     addi r2 r0 2
     beq r3 r2 block_4222
 block_4221:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -8685,7 +8685,7 @@ block_4223:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -8697,7 +8697,7 @@ block_4223:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -8709,20 +8709,20 @@ block_4223:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4225
 block_4224:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_4225:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -8768,37 +8768,37 @@ block_4227:
     #1.0
     flui f0 16256
 block_4228:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4220
 block_4222:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4220
 block_4219:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -8834,7 +8834,7 @@ block_4232:
 block_4233:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_4220:
     lw r2 r29 76
     sw r1 r29 88
@@ -8843,7 +8843,7 @@ block_4220:
     jal utexture.4603
     subi r29 r29 108
     lw r31 r29 104
-    lw r2 r0 25536
+    lw r2 r0 30536
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -8852,15 +8852,15 @@ block_4220:
     lw r31 r29 104
     bne r1 r0 block_4240
 block_4239:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -8887,21 +8887,21 @@ block_4246:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     j block_4110
 block_4240:
     j block_4110
@@ -8916,8 +8916,8 @@ block_4109:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r7 r0 25536
+    swcZ f1 r0 30548
+    lw r7 r0 30536
     lw r8 r7 0
     lw r9 r8 0
     addi r10 r0 -1
@@ -8931,7 +8931,7 @@ block_4247:
     beq r9 r10 block_4251
 block_4250:
     sll r10 r9 2
-    lw r10 r10 25048
+    lw r10 r10 30048
     lw r11 r10 40
     lwcZ f1 r11 0
     lwcZ f2 r11 4
@@ -8996,7 +8996,7 @@ block_4265:
     fsub f1 f1 f2
     lwcZ f2 r9 16
     fmul f1 f1 f2
-    swcZ f1 r0 25540
+    swcZ f1 r0 30540
     j block_4267
 block_4266:
     sqrt_init f3 f2
@@ -9012,7 +9012,7 @@ block_4266:
     fadd f1 f1 f2
     lwcZ f2 r9 16
     fmul f1 f1 f2
-    swcZ f1 r0 25540
+    swcZ f1 r0 30540
 block_4267:
     addi r9 r0 1
     j block_4255
@@ -9039,7 +9039,7 @@ block_4272:
     lwcZ f1 r9 0
     lwcZ f2 r11 12
     fmul f1 f1 f2
-    swcZ f1 r0 25540
+    swcZ f1 r0 30540
     addi r9 r0 1
     j block_4255
 block_4254:
@@ -9242,21 +9242,21 @@ block_4325:
     mv r9 r0
     j block_4255
 block_4326:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r9 r0 3
     j block_4255
 block_4308:
-    swcZ f4 r0 25540
+    swcZ f4 r0 30540
     addi r9 r0 2
     j block_4255
 block_4290:
-    swcZ f4 r0 25540
+    swcZ f4 r0 30540
     addi r9 r0 1
 block_4255:
     beq r9 r0 block_4328
 block_4327:
-    lwcZ f1 r0 25540
-    lwcZ f2 r0 25548
+    lwcZ f1 r0 30540
+    lwcZ f2 r0 30548
     fclt f1 f2
     bc1t block_4330
 block_4329:
@@ -9267,7 +9267,7 @@ block_4330:
     beq r9 r10 block_4332
 block_4331:
     sll r9 r9 2
-    lw r9 r9 25332
+    lw r9 r9 30332
     sw r8 r29 64
     mv r3 r6
     mv r2 r9
@@ -9283,7 +9283,7 @@ block_4331:
     beq r2 r3 block_4334
 block_4333:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 40
     mv r1 r0
     sw r31 r29 104
@@ -9297,7 +9297,7 @@ block_4333:
     beq r2 r3 block_4336
 block_4335:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 40
     mv r1 r0
     sw r31 r29 104
@@ -9311,7 +9311,7 @@ block_4335:
     beq r2 r3 block_4338
 block_4337:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 40
     mv r1 r0
     sw r31 r29 104
@@ -9344,7 +9344,7 @@ block_4251:
     beq r9 r10 block_4340
 block_4339:
     sll r9 r9 2
-    lw r9 r9 25332
+    lw r9 r9 30332
     sw r8 r29 64
     mv r3 r6
     mv r2 r9
@@ -9360,7 +9360,7 @@ block_4339:
     beq r2 r3 block_4342
 block_4341:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 40
     mv r1 r0
     sw r31 r29 104
@@ -9374,7 +9374,7 @@ block_4341:
     beq r2 r3 block_4344
 block_4343:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 40
     mv r1 r0
     sw r31 r29 104
@@ -9388,7 +9388,7 @@ block_4343:
     beq r2 r3 block_4346
 block_4345:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 40
     mv r1 r0
     sw r31 r29 104
@@ -9424,7 +9424,7 @@ block_4252:
     j block_4249
 block_4248:
 block_4249:
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -9449,9 +9449,9 @@ block_4349:
 block_4352:
     j block_4110
 block_4353:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 40
     lw r2 r2 0
     lw r3 r1 4
@@ -9461,15 +9461,15 @@ block_4354:
     addi r2 r0 2
     beq r3 r2 block_4358
 block_4357:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -9496,7 +9496,7 @@ block_4359:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -9508,7 +9508,7 @@ block_4359:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -9520,20 +9520,20 @@ block_4359:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4361
 block_4360:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_4361:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -9579,37 +9579,37 @@ block_4363:
     #1.0
     flui f0 16256
 block_4364:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4356
 block_4358:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4356
 block_4355:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -9645,7 +9645,7 @@ block_4368:
 block_4369:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_4356:
     lw r2 r29 76
     sw r1 r29 84
@@ -9654,7 +9654,7 @@ block_4356:
     jal utexture.4603
     subi r29 r29 108
     lw r31 r29 104
-    lw r2 r0 25536
+    lw r2 r0 30536
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -9663,15 +9663,15 @@ block_4356:
     lw r31 r29 104
     bne r1 r0 block_4376
 block_4375:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -9698,21 +9698,21 @@ block_4382:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     j block_4110
 block_4376:
 block_4110:
@@ -9758,8 +9758,8 @@ block_4388:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r5 r0 25536
+    swcZ f1 r0 30548
+    lw r5 r0 30536
     sw r2 r29 44
     swcZ f0 r29 24
     mv r3 r2
@@ -9770,7 +9770,7 @@ block_4388:
     jal trace_or_matrix_fast.4483
     subi r29 r29 108
     lw r31 r29 104
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -9795,9 +9795,9 @@ block_4393:
 block_4396:
     j block_4390
 block_4397:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 44
     lw r2 r2 0
     lw r3 r1 4
@@ -9807,15 +9807,15 @@ block_4398:
     addi r2 r0 2
     beq r3 r2 block_4402
 block_4401:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -9842,7 +9842,7 @@ block_4403:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -9854,7 +9854,7 @@ block_4403:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -9866,20 +9866,20 @@ block_4403:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4405
 block_4404:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_4405:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -9925,37 +9925,37 @@ block_4407:
     #1.0
     flui f0 16256
 block_4408:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4400
 block_4402:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4400
 block_4399:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -9991,18 +9991,18 @@ block_4412:
 block_4413:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_4400:
     lw r2 r1 0
     lw r3 r1 32
     lwcZ f0 r3 0
-    swcZ f0 r0 25580
+    swcZ f0 r0 30580
     lw r3 r1 32
     lwcZ f0 r3 4
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     lw r3 r1 32
     lwcZ f0 r3 8
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     addi r3 r0 1
     beq r2 r3 block_4420
 block_4419:
@@ -10017,7 +10017,7 @@ block_4424:
 block_4426:
     j block_4421
 block_4427:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -10034,7 +10034,7 @@ block_4427:
     fsub f2 f3 f2
     fmul f1 f1 f2
     fmul f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -10288,7 +10288,7 @@ block_4452:
     fsub f1 f1 f3
 block_4453:
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f3 r2 4
     fsub f1 f1 f3
@@ -10576,14 +10576,14 @@ block_4485:
     flui f1 16469
     fori f1 f1 21845
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_4421
 block_4425:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -10734,17 +10734,17 @@ block_4509:
     #255.0
     flui f1 17279
     fmul f1 f0 f1
-    swcZ f1 r0 25584
+    swcZ f1 r0 30584
     #1.0
     flui f1 16256
     fsub f0 f1 f0
     #255.0
     flui f1 17279
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_4421
 block_4423:
-    lwcZ f0 r0 25556
+    lwcZ f0 r0 30556
     #0.25
     flui f1 16000
     fmul f0 f0 f1
@@ -10854,17 +10854,17 @@ block_4527:
     #255.0
     flui f1 17279
     fmul f1 f1 f0
-    swcZ f1 r0 25580
+    swcZ f1 r0 30580
     #255.0
     flui f1 17279
     #1.0
     flui f2 16256
     fsub f0 f2 f0
     fmul f0 f1 f0
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     j block_4421
 block_4420:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -10898,7 +10898,7 @@ block_4531:
 block_4532:
     addi r2 r0 1
 block_4533:
-    lwcZ f0 r0 25560
+    lwcZ f0 r0 30560
     lw r3 r1 20
     lwcZ f1 r3 8
     fsub f0 f0 f1
@@ -10953,9 +10953,9 @@ block_4546:
     #255.0
     flui f0 17279
 block_4542:
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
 block_4421:
-    lw r2 r0 25536
+    lw r2 r0 30536
     lw r3 r2 0
     lw r4 r3 0
     addi r5 r0 -1
@@ -10968,20 +10968,20 @@ block_4547:
     beq r4 r5 block_4551
 block_4550:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -11086,7 +11086,7 @@ block_4571:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_4573
 block_4572:
     sqrt_init f1 f0
@@ -11102,7 +11102,7 @@ block_4572:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_4573:
     addi r4 r0 1
     j block_4555
@@ -11134,11 +11134,11 @@ block_4578:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_4555
 block_4554:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -11337,20 +11337,20 @@ block_4631:
     mv r4 r0
     j block_4555
 block_4632:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_4555
 block_4614:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_4555
 block_4596:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_4555:
     beq r4 r0 block_4634
 block_4633:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -11365,7 +11365,7 @@ block_4636:
     beq r4 r5 block_4638
 block_4637:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 104
@@ -11381,7 +11381,7 @@ block_4640:
     beq r2 r3 block_4643
 block_4642:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11396,7 +11396,7 @@ block_4644:
     beq r2 r3 block_4647
 block_4646:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11411,7 +11411,7 @@ block_4648:
     beq r2 r3 block_4651
 block_4650:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11482,7 +11482,7 @@ block_4657:
     beq r2 r3 block_4659
 block_4658:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11497,7 +11497,7 @@ block_4661:
     beq r2 r3 block_4664
 block_4663:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11512,7 +11512,7 @@ block_4665:
     beq r2 r3 block_4668
 block_4667:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11527,7 +11527,7 @@ block_4669:
     beq r2 r3 block_4672
 block_4671:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -11586,15 +11586,15 @@ block_4548:
 block_4549:
     bne r1 r0 block_4678
 block_4677:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -11621,21 +11621,21 @@ block_4684:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     j block_4390
 block_4678:
     j block_4390
@@ -11650,8 +11650,8 @@ block_4389:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r5 r0 25536
+    swcZ f1 r0 30548
+    lw r5 r0 30536
     sw r2 r29 36
     swcZ f0 r29 16
     mv r3 r2
@@ -11662,7 +11662,7 @@ block_4389:
     jal trace_or_matrix_fast.4483
     subi r29 r29 108
     lw r31 r29 104
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -11687,9 +11687,9 @@ block_4687:
 block_4690:
     j block_4390
 block_4691:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 36
     lw r2 r2 0
     lw r3 r1 4
@@ -11699,15 +11699,15 @@ block_4692:
     addi r2 r0 2
     beq r3 r2 block_4696
 block_4695:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -11734,7 +11734,7 @@ block_4697:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -11746,7 +11746,7 @@ block_4697:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -11758,20 +11758,20 @@ block_4697:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4699
 block_4698:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_4699:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -11817,37 +11817,37 @@ block_4701:
     #1.0
     flui f0 16256
 block_4702:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4694
 block_4696:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4694
 block_4693:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -11883,18 +11883,18 @@ block_4706:
 block_4707:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_4694:
     lw r2 r1 0
     lw r3 r1 32
     lwcZ f0 r3 0
-    swcZ f0 r0 25580
+    swcZ f0 r0 30580
     lw r3 r1 32
     lwcZ f0 r3 4
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     lw r3 r1 32
     lwcZ f0 r3 8
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     addi r3 r0 1
     beq r2 r3 block_4714
 block_4713:
@@ -11909,7 +11909,7 @@ block_4718:
 block_4720:
     j block_4715
 block_4721:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -11926,7 +11926,7 @@ block_4721:
     fsub f2 f3 f2
     fmul f1 f1 f2
     fmul f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -12180,7 +12180,7 @@ block_4746:
     fsub f1 f1 f3
 block_4747:
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f3 r2 4
     fsub f1 f1 f3
@@ -12468,14 +12468,14 @@ block_4779:
     flui f1 16469
     fori f1 f1 21845
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_4715
 block_4719:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -12626,17 +12626,17 @@ block_4803:
     #255.0
     flui f1 17279
     fmul f1 f0 f1
-    swcZ f1 r0 25584
+    swcZ f1 r0 30584
     #1.0
     flui f1 16256
     fsub f0 f1 f0
     #255.0
     flui f1 17279
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_4715
 block_4717:
-    lwcZ f0 r0 25556
+    lwcZ f0 r0 30556
     #0.25
     flui f1 16000
     fmul f0 f0 f1
@@ -12746,17 +12746,17 @@ block_4821:
     #255.0
     flui f1 17279
     fmul f1 f1 f0
-    swcZ f1 r0 25580
+    swcZ f1 r0 30580
     #255.0
     flui f1 17279
     #1.0
     flui f2 16256
     fsub f0 f2 f0
     fmul f0 f1 f0
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     j block_4715
 block_4714:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -12790,7 +12790,7 @@ block_4825:
 block_4826:
     addi r2 r0 1
 block_4827:
-    lwcZ f0 r0 25560
+    lwcZ f0 r0 30560
     lw r3 r1 20
     lwcZ f1 r3 8
     fsub f0 f0 f1
@@ -12845,9 +12845,9 @@ block_4840:
     #255.0
     flui f0 17279
 block_4836:
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
 block_4715:
-    lw r2 r0 25536
+    lw r2 r0 30536
     lw r3 r2 0
     lw r4 r3 0
     addi r5 r0 -1
@@ -12860,20 +12860,20 @@ block_4841:
     beq r4 r5 block_4845
 block_4844:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -12978,7 +12978,7 @@ block_4865:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_4867
 block_4866:
     sqrt_init f1 f0
@@ -12994,7 +12994,7 @@ block_4866:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_4867:
     addi r4 r0 1
     j block_4849
@@ -13026,11 +13026,11 @@ block_4872:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_4849
 block_4848:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -13229,20 +13229,20 @@ block_4925:
     mv r4 r0
     j block_4849
 block_4926:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_4849
 block_4908:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_4849
 block_4890:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_4849:
     beq r4 r0 block_4928
 block_4927:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -13257,7 +13257,7 @@ block_4930:
     beq r4 r5 block_4932
 block_4931:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 104
@@ -13273,7 +13273,7 @@ block_4934:
     beq r2 r3 block_4937
 block_4936:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13288,7 +13288,7 @@ block_4938:
     beq r2 r3 block_4941
 block_4940:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13303,7 +13303,7 @@ block_4942:
     beq r2 r3 block_4945
 block_4944:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13374,7 +13374,7 @@ block_4951:
     beq r2 r3 block_4953
 block_4952:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13389,7 +13389,7 @@ block_4955:
     beq r2 r3 block_4958
 block_4957:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13404,7 +13404,7 @@ block_4959:
     beq r2 r3 block_4962
 block_4961:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13419,7 +13419,7 @@ block_4963:
     beq r2 r3 block_4966
 block_4965:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 104
     addi r29 r29 108
@@ -13478,15 +13478,15 @@ block_4842:
 block_4843:
     bne r1 r0 block_4972
 block_4971:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -13513,21 +13513,21 @@ block_4978:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     j block_4390
 block_4972:
 block_4390:
@@ -13548,515 +13548,515 @@ block_4104:
     jr r31
 main:
 block_0:
-    sw r0 r0 25000
+    sw r0 r0 30000
     #0.0
     flui f0 0
-    addi r1 r0 25004
-    sw r1 r0 25044
-    sw r1 r0 25040
-    sw r1 r0 25036
-    sw r1 r0 25032
-    sw r0 r0 25028
-    sw r1 r0 25024
-    sw r1 r0 25020
-    sw r0 r0 25016
-    sw r0 r0 25012
-    sw r0 r0 25008
-    sw r0 r0 25004
-    addi r1 r0 25004
-    sw r1 r0 25284
-    sw r1 r0 25280
-    sw r1 r0 25276
-    sw r1 r0 25272
-    sw r1 r0 25268
-    sw r1 r0 25264
-    sw r1 r0 25260
-    sw r1 r0 25256
-    sw r1 r0 25252
-    sw r1 r0 25248
-    sw r1 r0 25244
-    sw r1 r0 25240
-    sw r1 r0 25236
-    sw r1 r0 25232
-    sw r1 r0 25228
-    sw r1 r0 25224
-    sw r1 r0 25220
-    sw r1 r0 25216
-    sw r1 r0 25212
-    sw r1 r0 25208
-    sw r1 r0 25204
-    sw r1 r0 25200
-    sw r1 r0 25196
-    sw r1 r0 25192
-    sw r1 r0 25188
-    sw r1 r0 25184
-    sw r1 r0 25180
-    sw r1 r0 25176
-    sw r1 r0 25172
-    sw r1 r0 25168
-    sw r1 r0 25164
-    sw r1 r0 25160
-    sw r1 r0 25156
-    sw r1 r0 25152
-    sw r1 r0 25148
-    sw r1 r0 25144
-    sw r1 r0 25140
-    sw r1 r0 25136
-    sw r1 r0 25132
-    sw r1 r0 25128
-    sw r1 r0 25124
-    sw r1 r0 25120
-    sw r1 r0 25116
-    sw r1 r0 25112
-    sw r1 r0 25108
-    sw r1 r0 25104
-    sw r1 r0 25100
-    sw r1 r0 25096
-    sw r1 r0 25092
-    sw r1 r0 25088
-    sw r1 r0 25084
-    sw r1 r0 25080
-    sw r1 r0 25076
-    sw r1 r0 25072
-    sw r1 r0 25068
-    sw r1 r0 25064
-    sw r1 r0 25060
-    sw r1 r0 25056
-    sw r1 r0 25052
-    sw r1 r0 25048
+    addi r1 r0 30004
+    sw r1 r0 30044
+    sw r1 r0 30040
+    sw r1 r0 30036
+    sw r1 r0 30032
+    sw r0 r0 30028
+    sw r1 r0 30024
+    sw r1 r0 30020
+    sw r0 r0 30016
+    sw r0 r0 30012
+    sw r0 r0 30008
+    sw r0 r0 30004
+    addi r1 r0 30004
+    sw r1 r0 30284
+    sw r1 r0 30280
+    sw r1 r0 30276
+    sw r1 r0 30272
+    sw r1 r0 30268
+    sw r1 r0 30264
+    sw r1 r0 30260
+    sw r1 r0 30256
+    sw r1 r0 30252
+    sw r1 r0 30248
+    sw r1 r0 30244
+    sw r1 r0 30240
+    sw r1 r0 30236
+    sw r1 r0 30232
+    sw r1 r0 30228
+    sw r1 r0 30224
+    sw r1 r0 30220
+    sw r1 r0 30216
+    sw r1 r0 30212
+    sw r1 r0 30208
+    sw r1 r0 30204
+    sw r1 r0 30200
+    sw r1 r0 30196
+    sw r1 r0 30192
+    sw r1 r0 30188
+    sw r1 r0 30184
+    sw r1 r0 30180
+    sw r1 r0 30176
+    sw r1 r0 30172
+    sw r1 r0 30168
+    sw r1 r0 30164
+    sw r1 r0 30160
+    sw r1 r0 30156
+    sw r1 r0 30152
+    sw r1 r0 30148
+    sw r1 r0 30144
+    sw r1 r0 30140
+    sw r1 r0 30136
+    sw r1 r0 30132
+    sw r1 r0 30128
+    sw r1 r0 30124
+    sw r1 r0 30120
+    sw r1 r0 30116
+    sw r1 r0 30112
+    sw r1 r0 30108
+    sw r1 r0 30104
+    sw r1 r0 30100
+    sw r1 r0 30096
+    sw r1 r0 30092
+    sw r1 r0 30088
+    sw r1 r0 30084
+    sw r1 r0 30080
+    sw r1 r0 30076
+    sw r1 r0 30072
+    sw r1 r0 30068
+    sw r1 r0 30064
+    sw r1 r0 30060
+    sw r1 r0 30056
+    sw r1 r0 30052
+    sw r1 r0 30048
     #0.0
     flui f0 0
-    swcZ f0 r0 25296
-    swcZ f0 r0 25292
-    swcZ f0 r0 25288
+    swcZ f0 r0 30296
+    swcZ f0 r0 30292
+    swcZ f0 r0 30288
     #0.0
     flui f0 0
-    swcZ f0 r0 25308
-    swcZ f0 r0 25304
-    swcZ f0 r0 25300
+    swcZ f0 r0 30308
+    swcZ f0 r0 30304
+    swcZ f0 r0 30300
     #0.0
     flui f0 0
-    swcZ f0 r0 25320
-    swcZ f0 r0 25316
-    swcZ f0 r0 25312
+    swcZ f0 r0 30320
+    swcZ f0 r0 30316
+    swcZ f0 r0 30312
     #255.0
     flui f0 17279
-    swcZ f0 r0 25324
+    swcZ f0 r0 30324
     addi r1 r0 -1
-    sw r1 r0 25328
-    addi r1 r0 25328
-    sw r1 r0 25528
-    sw r1 r0 25524
-    sw r1 r0 25520
-    sw r1 r0 25516
-    sw r1 r0 25512
-    sw r1 r0 25508
-    sw r1 r0 25504
-    sw r1 r0 25500
-    sw r1 r0 25496
-    sw r1 r0 25492
-    sw r1 r0 25488
-    sw r1 r0 25484
-    sw r1 r0 25480
-    sw r1 r0 25476
-    sw r1 r0 25472
-    sw r1 r0 25468
-    sw r1 r0 25464
-    sw r1 r0 25460
-    sw r1 r0 25456
-    sw r1 r0 25452
-    sw r1 r0 25448
-    sw r1 r0 25444
-    sw r1 r0 25440
-    sw r1 r0 25436
-    sw r1 r0 25432
-    sw r1 r0 25428
-    sw r1 r0 25424
-    sw r1 r0 25420
-    sw r1 r0 25416
-    sw r1 r0 25412
-    sw r1 r0 25408
-    sw r1 r0 25404
-    sw r1 r0 25400
-    sw r1 r0 25396
-    sw r1 r0 25392
-    sw r1 r0 25388
-    sw r1 r0 25384
-    sw r1 r0 25380
-    sw r1 r0 25376
-    sw r1 r0 25372
-    sw r1 r0 25368
-    sw r1 r0 25364
-    sw r1 r0 25360
-    sw r1 r0 25356
-    sw r1 r0 25352
-    sw r1 r0 25348
-    sw r1 r0 25344
-    sw r1 r0 25340
-    sw r1 r0 25336
-    sw r1 r0 25332
-    lw r1 r0 25332
-    sw r1 r0 25532
-    addi r1 r0 25532
-    sw r1 r0 25536
+    sw r1 r0 30328
+    addi r1 r0 30328
+    sw r1 r0 30528
+    sw r1 r0 30524
+    sw r1 r0 30520
+    sw r1 r0 30516
+    sw r1 r0 30512
+    sw r1 r0 30508
+    sw r1 r0 30504
+    sw r1 r0 30500
+    sw r1 r0 30496
+    sw r1 r0 30492
+    sw r1 r0 30488
+    sw r1 r0 30484
+    sw r1 r0 30480
+    sw r1 r0 30476
+    sw r1 r0 30472
+    sw r1 r0 30468
+    sw r1 r0 30464
+    sw r1 r0 30460
+    sw r1 r0 30456
+    sw r1 r0 30452
+    sw r1 r0 30448
+    sw r1 r0 30444
+    sw r1 r0 30440
+    sw r1 r0 30436
+    sw r1 r0 30432
+    sw r1 r0 30428
+    sw r1 r0 30424
+    sw r1 r0 30420
+    sw r1 r0 30416
+    sw r1 r0 30412
+    sw r1 r0 30408
+    sw r1 r0 30404
+    sw r1 r0 30400
+    sw r1 r0 30396
+    sw r1 r0 30392
+    sw r1 r0 30388
+    sw r1 r0 30384
+    sw r1 r0 30380
+    sw r1 r0 30376
+    sw r1 r0 30372
+    sw r1 r0 30368
+    sw r1 r0 30364
+    sw r1 r0 30360
+    sw r1 r0 30356
+    sw r1 r0 30352
+    sw r1 r0 30348
+    sw r1 r0 30344
+    sw r1 r0 30340
+    sw r1 r0 30336
+    sw r1 r0 30332
+    lw r1 r0 30332
+    sw r1 r0 30532
+    addi r1 r0 30532
+    sw r1 r0 30536
     #0.0
     flui f0 0
-    swcZ f0 r0 25540
-    sw r0 r0 25544
+    swcZ f0 r0 30540
+    sw r0 r0 30544
     #1000000000.0
     flui f0 20078
     fori f0 f0 27432
-    swcZ f0 r0 25548
+    swcZ f0 r0 30548
     #0.0
     flui f0 0
-    swcZ f0 r0 25560
-    swcZ f0 r0 25556
-    swcZ f0 r0 25552
-    sw r0 r0 25564
+    swcZ f0 r0 30560
+    swcZ f0 r0 30556
+    swcZ f0 r0 30552
+    sw r0 r0 30564
     #0.0
     flui f0 0
-    swcZ f0 r0 25576
-    swcZ f0 r0 25572
-    swcZ f0 r0 25568
+    swcZ f0 r0 30576
+    swcZ f0 r0 30572
+    swcZ f0 r0 30568
     #0.0
     flui f0 0
-    swcZ f0 r0 25588
-    swcZ f0 r0 25584
-    swcZ f0 r0 25580
+    swcZ f0 r0 30588
+    swcZ f0 r0 30584
+    swcZ f0 r0 30580
     #0.0
     flui f0 0
-    swcZ f0 r0 25600
-    swcZ f0 r0 25596
-    swcZ f0 r0 25592
+    swcZ f0 r0 30600
+    swcZ f0 r0 30596
+    swcZ f0 r0 30592
     #0.0
     flui f0 0
-    swcZ f0 r0 25612
-    swcZ f0 r0 25608
-    swcZ f0 r0 25604
-    sw r0 r0 25620
-    sw r0 r0 25616
-    sw r0 r0 25628
-    sw r0 r0 25624
+    swcZ f0 r0 30612
+    swcZ f0 r0 30608
+    swcZ f0 r0 30604
+    sw r0 r0 30620
+    sw r0 r0 30616
+    sw r0 r0 30628
+    sw r0 r0 30624
     #0.0
     flui f0 0
-    swcZ f0 r0 25632
+    swcZ f0 r0 30632
     #0.0
     flui f0 0
-    swcZ f0 r0 25644
-    swcZ f0 r0 25640
-    swcZ f0 r0 25636
+    swcZ f0 r0 30644
+    swcZ f0 r0 30640
+    swcZ f0 r0 30636
     #0.0
     flui f0 0
-    swcZ f0 r0 25656
-    swcZ f0 r0 25652
-    swcZ f0 r0 25648
+    swcZ f0 r0 30656
+    swcZ f0 r0 30652
+    swcZ f0 r0 30648
     #0.0
     flui f0 0
-    swcZ f0 r0 25668
-    swcZ f0 r0 25664
-    swcZ f0 r0 25660
+    swcZ f0 r0 30668
+    swcZ f0 r0 30664
+    swcZ f0 r0 30660
     #0.0
     flui f0 0
-    swcZ f0 r0 25680
-    swcZ f0 r0 25676
-    swcZ f0 r0 25672
+    swcZ f0 r0 30680
+    swcZ f0 r0 30676
+    swcZ f0 r0 30672
     #0.0
     flui f0 0
-    swcZ f0 r0 25692
-    swcZ f0 r0 25688
-    swcZ f0 r0 25684
+    swcZ f0 r0 30692
+    swcZ f0 r0 30688
+    swcZ f0 r0 30684
     #0.0
     flui f0 0
-    swcZ f0 r0 25704
-    swcZ f0 r0 25700
-    swcZ f0 r0 25696
+    swcZ f0 r0 30704
+    swcZ f0 r0 30700
+    swcZ f0 r0 30696
     #0.0
     flui f0 0
-    addi r1 r0 25708
-    addi r2 r0 25708
-    sw r2 r0 25712
-    sw r1 r0 25708
-    addi r1 r0 25716
-    sw r1 r0 25732
-    sw r1 r0 25728
-    sw r1 r0 25724
-    sw r1 r0 25720
-    sw r1 r0 25716
+    addi r1 r0 30708
+    addi r2 r0 30708
+    sw r2 r0 30712
+    sw r1 r0 30708
+    addi r1 r0 30716
+    sw r1 r0 30732
+    sw r1 r0 30728
+    sw r1 r0 30724
+    sw r1 r0 30720
+    sw r1 r0 30716
     #0.0
     flui f0 0
-    addi r1 r0 25736
+    addi r1 r0 30736
     #0.0
     flui f0 0
-    swcZ f0 r0 25744
-    swcZ f0 r0 25740
-    swcZ f0 r0 25736
-    addi r2 r0 25736
-    sw r1 r0 25984
-    sw r1 r0 25980
-    sw r1 r0 25976
-    sw r1 r0 25972
-    sw r1 r0 25968
-    sw r1 r0 25964
-    sw r1 r0 25960
-    sw r1 r0 25956
-    sw r1 r0 25952
-    sw r1 r0 25948
-    sw r1 r0 25944
-    sw r1 r0 25940
-    sw r1 r0 25936
-    sw r1 r0 25932
-    sw r1 r0 25928
-    sw r1 r0 25924
-    sw r1 r0 25920
-    sw r1 r0 25916
-    sw r1 r0 25912
-    sw r1 r0 25908
-    sw r1 r0 25904
-    sw r1 r0 25900
-    sw r1 r0 25896
-    sw r1 r0 25892
-    sw r1 r0 25888
-    sw r1 r0 25884
-    sw r1 r0 25880
-    sw r1 r0 25876
-    sw r1 r0 25872
-    sw r1 r0 25868
-    sw r1 r0 25864
-    sw r1 r0 25860
-    sw r1 r0 25856
-    sw r1 r0 25852
-    sw r1 r0 25848
-    sw r1 r0 25844
-    sw r1 r0 25840
-    sw r1 r0 25836
-    sw r1 r0 25832
-    sw r1 r0 25828
-    sw r1 r0 25824
-    sw r1 r0 25820
-    sw r1 r0 25816
-    sw r1 r0 25812
-    sw r1 r0 25808
-    sw r1 r0 25804
-    sw r1 r0 25800
-    sw r1 r0 25796
-    sw r1 r0 25792
-    sw r1 r0 25788
-    sw r1 r0 25784
-    sw r1 r0 25780
-    sw r1 r0 25776
-    sw r1 r0 25772
-    sw r1 r0 25768
-    sw r1 r0 25764
-    sw r1 r0 25760
-    sw r1 r0 25756
-    sw r1 r0 25752
-    sw r1 r0 25748
-    addi r1 r0 25748
-    sw r1 r0 25992
-    sw r2 r0 25988
-    addi r1 r0 25988
+    swcZ f0 r0 30744
+    swcZ f0 r0 30740
+    swcZ f0 r0 30736
+    addi r2 r0 30736
+    sw r1 r0 30984
+    sw r1 r0 30980
+    sw r1 r0 30976
+    sw r1 r0 30972
+    sw r1 r0 30968
+    sw r1 r0 30964
+    sw r1 r0 30960
+    sw r1 r0 30956
+    sw r1 r0 30952
+    sw r1 r0 30948
+    sw r1 r0 30944
+    sw r1 r0 30940
+    sw r1 r0 30936
+    sw r1 r0 30932
+    sw r1 r0 30928
+    sw r1 r0 30924
+    sw r1 r0 30920
+    sw r1 r0 30916
+    sw r1 r0 30912
+    sw r1 r0 30908
+    sw r1 r0 30904
+    sw r1 r0 30900
+    sw r1 r0 30896
+    sw r1 r0 30892
+    sw r1 r0 30888
+    sw r1 r0 30884
+    sw r1 r0 30880
+    sw r1 r0 30876
+    sw r1 r0 30872
+    sw r1 r0 30868
+    sw r1 r0 30864
+    sw r1 r0 30860
+    sw r1 r0 30856
+    sw r1 r0 30852
+    sw r1 r0 30848
+    sw r1 r0 30844
+    sw r1 r0 30840
+    sw r1 r0 30836
+    sw r1 r0 30832
+    sw r1 r0 30828
+    sw r1 r0 30824
+    sw r1 r0 30820
+    sw r1 r0 30816
+    sw r1 r0 30812
+    sw r1 r0 30808
+    sw r1 r0 30804
+    sw r1 r0 30800
+    sw r1 r0 30796
+    sw r1 r0 30792
+    sw r1 r0 30788
+    sw r1 r0 30784
+    sw r1 r0 30780
+    sw r1 r0 30776
+    sw r1 r0 30772
+    sw r1 r0 30768
+    sw r1 r0 30764
+    sw r1 r0 30760
+    sw r1 r0 30756
+    sw r1 r0 30752
+    sw r1 r0 30748
+    addi r1 r0 30748
+    sw r1 r0 30992
+    sw r2 r0 30988
+    addi r1 r0 30988
     #0.0
     flui f0 0
-    addi r2 r0 25996
-    addi r3 r0 25996
-    sw r3 r0 26000
-    sw r2 r0 25996
-    addi r2 r0 25996
+    addi r2 r0 30996
+    addi r3 r0 30996
+    sw r3 r0 31000
+    sw r2 r0 30996
+    addi r2 r0 30996
     #0.0
     flui f0 0
-    swcZ f0 r0 26012
-    sw r2 r0 26008
-    sw r0 r0 26004
-    addi r2 r0 26004
-    sw r2 r0 26732
-    sw r2 r0 26728
-    sw r2 r0 26724
-    sw r2 r0 26720
-    sw r2 r0 26716
-    sw r2 r0 26712
-    sw r2 r0 26708
-    sw r2 r0 26704
-    sw r2 r0 26700
-    sw r2 r0 26696
-    sw r2 r0 26692
-    sw r2 r0 26688
-    sw r2 r0 26684
-    sw r2 r0 26680
-    sw r2 r0 26676
-    sw r2 r0 26672
-    sw r2 r0 26668
-    sw r2 r0 26664
-    sw r2 r0 26660
-    sw r2 r0 26656
-    sw r2 r0 26652
-    sw r2 r0 26648
-    sw r2 r0 26644
-    sw r2 r0 26640
-    sw r2 r0 26636
-    sw r2 r0 26632
-    sw r2 r0 26628
-    sw r2 r0 26624
-    sw r2 r0 26620
-    sw r2 r0 26616
-    sw r2 r0 26612
-    sw r2 r0 26608
-    sw r2 r0 26604
-    sw r2 r0 26600
-    sw r2 r0 26596
-    sw r2 r0 26592
-    sw r2 r0 26588
-    sw r2 r0 26584
-    sw r2 r0 26580
-    sw r2 r0 26576
-    sw r2 r0 26572
-    sw r2 r0 26568
-    sw r2 r0 26564
-    sw r2 r0 26560
-    sw r2 r0 26556
-    sw r2 r0 26552
-    sw r2 r0 26548
-    sw r2 r0 26544
-    sw r2 r0 26540
-    sw r2 r0 26536
-    sw r2 r0 26532
-    sw r2 r0 26528
-    sw r2 r0 26524
-    sw r2 r0 26520
-    sw r2 r0 26516
-    sw r2 r0 26512
-    sw r2 r0 26508
-    sw r2 r0 26504
-    sw r2 r0 26500
-    sw r2 r0 26496
-    sw r2 r0 26492
-    sw r2 r0 26488
-    sw r2 r0 26484
-    sw r2 r0 26480
-    sw r2 r0 26476
-    sw r2 r0 26472
-    sw r2 r0 26468
-    sw r2 r0 26464
-    sw r2 r0 26460
-    sw r2 r0 26456
-    sw r2 r0 26452
-    sw r2 r0 26448
-    sw r2 r0 26444
-    sw r2 r0 26440
-    sw r2 r0 26436
-    sw r2 r0 26432
-    sw r2 r0 26428
-    sw r2 r0 26424
-    sw r2 r0 26420
-    sw r2 r0 26416
-    sw r2 r0 26412
-    sw r2 r0 26408
-    sw r2 r0 26404
-    sw r2 r0 26400
-    sw r2 r0 26396
-    sw r2 r0 26392
-    sw r2 r0 26388
-    sw r2 r0 26384
-    sw r2 r0 26380
-    sw r2 r0 26376
-    sw r2 r0 26372
-    sw r2 r0 26368
-    sw r2 r0 26364
-    sw r2 r0 26360
-    sw r2 r0 26356
-    sw r2 r0 26352
-    sw r2 r0 26348
-    sw r2 r0 26344
-    sw r2 r0 26340
-    sw r2 r0 26336
-    sw r2 r0 26332
-    sw r2 r0 26328
-    sw r2 r0 26324
-    sw r2 r0 26320
-    sw r2 r0 26316
-    sw r2 r0 26312
-    sw r2 r0 26308
-    sw r2 r0 26304
-    sw r2 r0 26300
-    sw r2 r0 26296
-    sw r2 r0 26292
-    sw r2 r0 26288
-    sw r2 r0 26284
-    sw r2 r0 26280
-    sw r2 r0 26276
-    sw r2 r0 26272
-    sw r2 r0 26268
-    sw r2 r0 26264
-    sw r2 r0 26260
-    sw r2 r0 26256
-    sw r2 r0 26252
-    sw r2 r0 26248
-    sw r2 r0 26244
-    sw r2 r0 26240
-    sw r2 r0 26236
-    sw r2 r0 26232
-    sw r2 r0 26228
-    sw r2 r0 26224
-    sw r2 r0 26220
-    sw r2 r0 26216
-    sw r2 r0 26212
-    sw r2 r0 26208
-    sw r2 r0 26204
-    sw r2 r0 26200
-    sw r2 r0 26196
-    sw r2 r0 26192
-    sw r2 r0 26188
-    sw r2 r0 26184
-    sw r2 r0 26180
-    sw r2 r0 26176
-    sw r2 r0 26172
-    sw r2 r0 26168
-    sw r2 r0 26164
-    sw r2 r0 26160
-    sw r2 r0 26156
-    sw r2 r0 26152
-    sw r2 r0 26148
-    sw r2 r0 26144
-    sw r2 r0 26140
-    sw r2 r0 26136
-    sw r2 r0 26132
-    sw r2 r0 26128
-    sw r2 r0 26124
-    sw r2 r0 26120
-    sw r2 r0 26116
-    sw r2 r0 26112
-    sw r2 r0 26108
-    sw r2 r0 26104
-    sw r2 r0 26100
-    sw r2 r0 26096
-    sw r2 r0 26092
-    sw r2 r0 26088
-    sw r2 r0 26084
-    sw r2 r0 26080
-    sw r2 r0 26076
-    sw r2 r0 26072
-    sw r2 r0 26068
-    sw r2 r0 26064
-    sw r2 r0 26060
-    sw r2 r0 26056
-    sw r2 r0 26052
-    sw r2 r0 26048
-    sw r2 r0 26044
-    sw r2 r0 26040
-    sw r2 r0 26036
-    sw r2 r0 26032
-    sw r2 r0 26028
-    sw r2 r0 26024
-    sw r2 r0 26020
-    sw r2 r0 26016
-    sw r0 r0 26736
+    swcZ f0 r0 31012
+    sw r2 r0 31008
+    sw r0 r0 31004
+    addi r2 r0 31004
+    sw r2 r0 31732
+    sw r2 r0 31728
+    sw r2 r0 31724
+    sw r2 r0 31720
+    sw r2 r0 31716
+    sw r2 r0 31712
+    sw r2 r0 31708
+    sw r2 r0 31704
+    sw r2 r0 31700
+    sw r2 r0 31696
+    sw r2 r0 31692
+    sw r2 r0 31688
+    sw r2 r0 31684
+    sw r2 r0 31680
+    sw r2 r0 31676
+    sw r2 r0 31672
+    sw r2 r0 31668
+    sw r2 r0 31664
+    sw r2 r0 31660
+    sw r2 r0 31656
+    sw r2 r0 31652
+    sw r2 r0 31648
+    sw r2 r0 31644
+    sw r2 r0 31640
+    sw r2 r0 31636
+    sw r2 r0 31632
+    sw r2 r0 31628
+    sw r2 r0 31624
+    sw r2 r0 31620
+    sw r2 r0 31616
+    sw r2 r0 31612
+    sw r2 r0 31608
+    sw r2 r0 31604
+    sw r2 r0 31600
+    sw r2 r0 31596
+    sw r2 r0 31592
+    sw r2 r0 31588
+    sw r2 r0 31584
+    sw r2 r0 31580
+    sw r2 r0 31576
+    sw r2 r0 31572
+    sw r2 r0 31568
+    sw r2 r0 31564
+    sw r2 r0 31560
+    sw r2 r0 31556
+    sw r2 r0 31552
+    sw r2 r0 31548
+    sw r2 r0 31544
+    sw r2 r0 31540
+    sw r2 r0 31536
+    sw r2 r0 31532
+    sw r2 r0 31528
+    sw r2 r0 31524
+    sw r2 r0 31520
+    sw r2 r0 31516
+    sw r2 r0 31512
+    sw r2 r0 31508
+    sw r2 r0 31504
+    sw r2 r0 31500
+    sw r2 r0 31496
+    sw r2 r0 31492
+    sw r2 r0 31488
+    sw r2 r0 31484
+    sw r2 r0 31480
+    sw r2 r0 31476
+    sw r2 r0 31472
+    sw r2 r0 31468
+    sw r2 r0 31464
+    sw r2 r0 31460
+    sw r2 r0 31456
+    sw r2 r0 31452
+    sw r2 r0 31448
+    sw r2 r0 31444
+    sw r2 r0 31440
+    sw r2 r0 31436
+    sw r2 r0 31432
+    sw r2 r0 31428
+    sw r2 r0 31424
+    sw r2 r0 31420
+    sw r2 r0 31416
+    sw r2 r0 31412
+    sw r2 r0 31408
+    sw r2 r0 31404
+    sw r2 r0 31400
+    sw r2 r0 31396
+    sw r2 r0 31392
+    sw r2 r0 31388
+    sw r2 r0 31384
+    sw r2 r0 31380
+    sw r2 r0 31376
+    sw r2 r0 31372
+    sw r2 r0 31368
+    sw r2 r0 31364
+    sw r2 r0 31360
+    sw r2 r0 31356
+    sw r2 r0 31352
+    sw r2 r0 31348
+    sw r2 r0 31344
+    sw r2 r0 31340
+    sw r2 r0 31336
+    sw r2 r0 31332
+    sw r2 r0 31328
+    sw r2 r0 31324
+    sw r2 r0 31320
+    sw r2 r0 31316
+    sw r2 r0 31312
+    sw r2 r0 31308
+    sw r2 r0 31304
+    sw r2 r0 31300
+    sw r2 r0 31296
+    sw r2 r0 31292
+    sw r2 r0 31288
+    sw r2 r0 31284
+    sw r2 r0 31280
+    sw r2 r0 31276
+    sw r2 r0 31272
+    sw r2 r0 31268
+    sw r2 r0 31264
+    sw r2 r0 31260
+    sw r2 r0 31256
+    sw r2 r0 31252
+    sw r2 r0 31248
+    sw r2 r0 31244
+    sw r2 r0 31240
+    sw r2 r0 31236
+    sw r2 r0 31232
+    sw r2 r0 31228
+    sw r2 r0 31224
+    sw r2 r0 31220
+    sw r2 r0 31216
+    sw r2 r0 31212
+    sw r2 r0 31208
+    sw r2 r0 31204
+    sw r2 r0 31200
+    sw r2 r0 31196
+    sw r2 r0 31192
+    sw r2 r0 31188
+    sw r2 r0 31184
+    sw r2 r0 31180
+    sw r2 r0 31176
+    sw r2 r0 31172
+    sw r2 r0 31168
+    sw r2 r0 31164
+    sw r2 r0 31160
+    sw r2 r0 31156
+    sw r2 r0 31152
+    sw r2 r0 31148
+    sw r2 r0 31144
+    sw r2 r0 31140
+    sw r2 r0 31136
+    sw r2 r0 31132
+    sw r2 r0 31128
+    sw r2 r0 31124
+    sw r2 r0 31120
+    sw r2 r0 31116
+    sw r2 r0 31112
+    sw r2 r0 31108
+    sw r2 r0 31104
+    sw r2 r0 31100
+    sw r2 r0 31096
+    sw r2 r0 31092
+    sw r2 r0 31088
+    sw r2 r0 31084
+    sw r2 r0 31080
+    sw r2 r0 31076
+    sw r2 r0 31072
+    sw r2 r0 31068
+    sw r2 r0 31064
+    sw r2 r0 31060
+    sw r2 r0 31056
+    sw r2 r0 31052
+    sw r2 r0 31048
+    sw r2 r0 31044
+    sw r2 r0 31040
+    sw r2 r0 31036
+    sw r2 r0 31032
+    sw r2 r0 31028
+    sw r2 r0 31024
+    sw r2 r0 31020
+    sw r2 r0 31016
+    sw r0 r0 31736
     addi r2 r0 128
     addi r3 r0 128
-    sw r2 r0 25616
-    sw r3 r0 25620
+    sw r2 r0 30616
+    sw r3 r0 30620
     addi r3 r0 64
-    sw r3 r0 25624
+    sw r3 r0 30624
     addi r3 r0 64
-    sw r3 r0 25628
+    sw r3 r0 30628
     #128.0
     flui f0 17152
     itof f1 r2
@@ -14067,197 +14067,197 @@ block_0:
     fsub f1 f3 f1
     fmul f1 f2 f1
     fmul f0 f0 f1
-    swcZ f0 r0 25632
-    lw r2 r0 25616
+    swcZ f0 r0 30632
+    lw r2 r0 30616
     #0.0
     flui f0 0
-    swcZ f0 r0 26748
-    swcZ f0 r0 26744
-    swcZ f0 r0 26740
-    addi r3 r0 26740
+    swcZ f0 r0 31748
+    swcZ f0 r0 31744
+    swcZ f0 r0 31740
+    addi r3 r0 31740
     #0.0
     flui f0 0
-    swcZ f0 r0 26760
-    swcZ f0 r0 26756
-    swcZ f0 r0 26752
-    addi r4 r0 26752
-    sw r4 r0 26780
-    sw r4 r0 26776
-    sw r4 r0 26772
-    sw r4 r0 26768
-    sw r4 r0 26764
-    addi r4 r0 26764
+    swcZ f0 r0 31760
+    swcZ f0 r0 31756
+    swcZ f0 r0 31752
+    addi r4 r0 31752
+    sw r4 r0 31780
+    sw r4 r0 31776
+    sw r4 r0 31772
+    sw r4 r0 31768
+    sw r4 r0 31764
+    addi r4 r0 31764
     #0.0
     flui f0 0
-    swcZ f0 r0 26792
-    swcZ f0 r0 26788
-    swcZ f0 r0 26784
-    addi r5 r0 26784
-    sw r5 r0 26768
+    swcZ f0 r0 31792
+    swcZ f0 r0 31788
+    swcZ f0 r0 31784
+    addi r5 r0 31784
+    sw r5 r0 31768
     #0.0
     flui f0 0
-    swcZ f0 r0 26804
-    swcZ f0 r0 26800
-    swcZ f0 r0 26796
-    addi r5 r0 26796
-    sw r5 r0 26772
+    swcZ f0 r0 31804
+    swcZ f0 r0 31800
+    swcZ f0 r0 31796
+    addi r5 r0 31796
+    sw r5 r0 31772
     #0.0
     flui f0 0
-    swcZ f0 r0 26816
-    swcZ f0 r0 26812
-    swcZ f0 r0 26808
-    addi r5 r0 26808
-    sw r5 r0 26776
+    swcZ f0 r0 31816
+    swcZ f0 r0 31812
+    swcZ f0 r0 31808
+    addi r5 r0 31808
+    sw r5 r0 31776
     #0.0
     flui f0 0
-    swcZ f0 r0 26828
-    swcZ f0 r0 26824
-    swcZ f0 r0 26820
-    addi r5 r0 26820
-    sw r5 r0 26780
-    sw r0 r0 26848
-    sw r0 r0 26844
-    sw r0 r0 26840
-    sw r0 r0 26836
-    sw r0 r0 26832
-    addi r5 r0 26832
-    sw r0 r0 26868
-    sw r0 r0 26864
-    sw r0 r0 26860
-    sw r0 r0 26856
-    sw r0 r0 26852
-    addi r6 r0 26852
+    swcZ f0 r0 31828
+    swcZ f0 r0 31824
+    swcZ f0 r0 31820
+    addi r5 r0 31820
+    sw r5 r0 31780
+    sw r0 r0 31848
+    sw r0 r0 31844
+    sw r0 r0 31840
+    sw r0 r0 31836
+    sw r0 r0 31832
+    addi r5 r0 31832
+    sw r0 r0 31868
+    sw r0 r0 31864
+    sw r0 r0 31860
+    sw r0 r0 31856
+    sw r0 r0 31852
+    addi r6 r0 31852
     #0.0
     flui f0 0
-    swcZ f0 r0 26880
-    swcZ f0 r0 26876
-    swcZ f0 r0 26872
-    addi r7 r0 26872
-    sw r7 r0 26900
-    sw r7 r0 26896
-    sw r7 r0 26892
-    sw r7 r0 26888
-    sw r7 r0 26884
-    addi r7 r0 26884
+    swcZ f0 r0 31880
+    swcZ f0 r0 31876
+    swcZ f0 r0 31872
+    addi r7 r0 31872
+    sw r7 r0 31900
+    sw r7 r0 31896
+    sw r7 r0 31892
+    sw r7 r0 31888
+    sw r7 r0 31884
+    addi r7 r0 31884
     #0.0
     flui f0 0
-    swcZ f0 r0 26912
-    swcZ f0 r0 26908
-    swcZ f0 r0 26904
-    addi r8 r0 26904
-    sw r8 r0 26888
+    swcZ f0 r0 31912
+    swcZ f0 r0 31908
+    swcZ f0 r0 31904
+    addi r8 r0 31904
+    sw r8 r0 31888
     #0.0
     flui f0 0
-    swcZ f0 r0 26924
-    swcZ f0 r0 26920
-    swcZ f0 r0 26916
-    addi r8 r0 26916
-    sw r8 r0 26892
+    swcZ f0 r0 31924
+    swcZ f0 r0 31920
+    swcZ f0 r0 31916
+    addi r8 r0 31916
+    sw r8 r0 31892
     #0.0
     flui f0 0
-    swcZ f0 r0 26936
-    swcZ f0 r0 26932
-    swcZ f0 r0 26928
-    addi r8 r0 26928
-    sw r8 r0 26896
+    swcZ f0 r0 31936
+    swcZ f0 r0 31932
+    swcZ f0 r0 31928
+    addi r8 r0 31928
+    sw r8 r0 31896
     #0.0
     flui f0 0
-    swcZ f0 r0 26948
-    swcZ f0 r0 26944
-    swcZ f0 r0 26940
-    addi r8 r0 26940
-    sw r8 r0 26900
+    swcZ f0 r0 31948
+    swcZ f0 r0 31944
+    swcZ f0 r0 31940
+    addi r8 r0 31940
+    sw r8 r0 31900
     #0.0
     flui f0 0
-    swcZ f0 r0 26960
-    swcZ f0 r0 26956
-    swcZ f0 r0 26952
-    addi r8 r0 26952
-    sw r8 r0 26980
-    sw r8 r0 26976
-    sw r8 r0 26972
-    sw r8 r0 26968
-    sw r8 r0 26964
-    addi r8 r0 26964
+    swcZ f0 r0 31960
+    swcZ f0 r0 31956
+    swcZ f0 r0 31952
+    addi r8 r0 31952
+    sw r8 r0 31980
+    sw r8 r0 31976
+    sw r8 r0 31972
+    sw r8 r0 31968
+    sw r8 r0 31964
+    addi r8 r0 31964
     #0.0
     flui f0 0
-    swcZ f0 r0 26992
-    swcZ f0 r0 26988
-    swcZ f0 r0 26984
-    addi r9 r0 26984
-    sw r9 r0 26968
+    swcZ f0 r0 31992
+    swcZ f0 r0 31988
+    swcZ f0 r0 31984
+    addi r9 r0 31984
+    sw r9 r0 31968
     #0.0
     flui f0 0
-    swcZ f0 r0 27004
-    swcZ f0 r0 27000
-    swcZ f0 r0 26996
-    addi r9 r0 26996
-    sw r9 r0 26972
+    swcZ f0 r0 32004
+    swcZ f0 r0 32000
+    swcZ f0 r0 31996
+    addi r9 r0 31996
+    sw r9 r0 31972
     #0.0
     flui f0 0
-    swcZ f0 r0 27016
-    swcZ f0 r0 27012
-    swcZ f0 r0 27008
-    addi r9 r0 27008
-    sw r9 r0 26976
+    swcZ f0 r0 32016
+    swcZ f0 r0 32012
+    swcZ f0 r0 32008
+    addi r9 r0 32008
+    sw r9 r0 31976
     #0.0
     flui f0 0
-    swcZ f0 r0 27028
-    swcZ f0 r0 27024
-    swcZ f0 r0 27020
-    addi r9 r0 27020
-    sw r9 r0 26980
-    sw r0 r0 27032
-    addi r9 r0 27032
+    swcZ f0 r0 32028
+    swcZ f0 r0 32024
+    swcZ f0 r0 32020
+    addi r9 r0 32020
+    sw r9 r0 31980
+    sw r0 r0 32032
+    addi r9 r0 32032
     #0.0
     flui f0 0
-    swcZ f0 r0 27044
-    swcZ f0 r0 27040
-    swcZ f0 r0 27036
-    addi r10 r0 27036
-    sw r10 r0 27064
-    sw r10 r0 27060
-    sw r10 r0 27056
-    sw r10 r0 27052
-    sw r10 r0 27048
-    addi r10 r0 27048
+    swcZ f0 r0 32044
+    swcZ f0 r0 32040
+    swcZ f0 r0 32036
+    addi r10 r0 32036
+    sw r10 r0 32064
+    sw r10 r0 32060
+    sw r10 r0 32056
+    sw r10 r0 32052
+    sw r10 r0 32048
+    addi r10 r0 32048
     #0.0
     flui f0 0
-    swcZ f0 r0 27076
-    swcZ f0 r0 27072
-    swcZ f0 r0 27068
-    addi r11 r0 27068
-    sw r11 r0 27052
+    swcZ f0 r0 32076
+    swcZ f0 r0 32072
+    swcZ f0 r0 32068
+    addi r11 r0 32068
+    sw r11 r0 32052
     #0.0
     flui f0 0
-    swcZ f0 r0 27088
-    swcZ f0 r0 27084
-    swcZ f0 r0 27080
-    addi r11 r0 27080
-    sw r11 r0 27056
+    swcZ f0 r0 32088
+    swcZ f0 r0 32084
+    swcZ f0 r0 32080
+    addi r11 r0 32080
+    sw r11 r0 32056
     #0.0
     flui f0 0
-    swcZ f0 r0 27100
-    swcZ f0 r0 27096
-    swcZ f0 r0 27092
-    addi r11 r0 27092
-    sw r11 r0 27060
+    swcZ f0 r0 32100
+    swcZ f0 r0 32096
+    swcZ f0 r0 32092
+    addi r11 r0 32092
+    sw r11 r0 32060
     #0.0
     flui f0 0
-    swcZ f0 r0 27112
-    swcZ f0 r0 27108
-    swcZ f0 r0 27104
-    addi r11 r0 27104
-    sw r11 r0 27064
-    sw r10 r0 27144
-    sw r9 r0 27140
-    sw r8 r0 27136
-    sw r7 r0 27132
-    sw r6 r0 27128
-    sw r5 r0 27124
-    sw r4 r0 27120
-    sw r3 r0 27116
-    addi r3 r0 27116
+    swcZ f0 r0 32112
+    swcZ f0 r0 32108
+    swcZ f0 r0 32104
+    addi r11 r0 32104
+    sw r11 r0 32064
+    sw r10 r0 32144
+    sw r9 r0 32140
+    sw r8 r0 32136
+    sw r7 r0 32132
+    sw r6 r0 32128
+    sw r5 r0 32124
+    sw r4 r0 32120
+    sw r3 r0 32116
+    addi r3 r0 32116
     beq r0 r2 arrayexit.90941
     sll r28 r2  2
 arrayloop.90940:
@@ -14268,7 +14268,7 @@ arrayloop.90940:
     mv r2 r30
     add r30 r30 r28
 arrayexit.90941:
-    lw r3 r0 25616
+    lw r3 r0 30616
     subi r3 r3 2
     sw r1 r29 48
     blt r3 r0 block_2
@@ -14506,196 +14506,196 @@ block_1:
 block_2:
     mv r1 r2
 block_3:
-    lw r2 r0 25616
+    lw r2 r0 30616
     #0.0
     flui f0 0
-    swcZ f0 r0 27156
-    swcZ f0 r0 27152
-    swcZ f0 r0 27148
-    addi r3 r0 27148
+    swcZ f0 r0 32156
+    swcZ f0 r0 32152
+    swcZ f0 r0 32148
+    addi r3 r0 32148
     #0.0
     flui f0 0
-    swcZ f0 r0 27168
-    swcZ f0 r0 27164
-    swcZ f0 r0 27160
-    addi r4 r0 27160
-    sw r4 r0 27188
-    sw r4 r0 27184
-    sw r4 r0 27180
-    sw r4 r0 27176
-    sw r4 r0 27172
-    addi r4 r0 27172
+    swcZ f0 r0 32168
+    swcZ f0 r0 32164
+    swcZ f0 r0 32160
+    addi r4 r0 32160
+    sw r4 r0 32188
+    sw r4 r0 32184
+    sw r4 r0 32180
+    sw r4 r0 32176
+    sw r4 r0 32172
+    addi r4 r0 32172
     #0.0
     flui f0 0
-    swcZ f0 r0 27200
-    swcZ f0 r0 27196
-    swcZ f0 r0 27192
-    addi r5 r0 27192
-    sw r5 r0 27176
+    swcZ f0 r0 32200
+    swcZ f0 r0 32196
+    swcZ f0 r0 32192
+    addi r5 r0 32192
+    sw r5 r0 32176
     #0.0
     flui f0 0
-    swcZ f0 r0 27212
-    swcZ f0 r0 27208
-    swcZ f0 r0 27204
-    addi r5 r0 27204
-    sw r5 r0 27180
+    swcZ f0 r0 32212
+    swcZ f0 r0 32208
+    swcZ f0 r0 32204
+    addi r5 r0 32204
+    sw r5 r0 32180
     #0.0
     flui f0 0
-    swcZ f0 r0 27224
-    swcZ f0 r0 27220
-    swcZ f0 r0 27216
-    addi r5 r0 27216
-    sw r5 r0 27184
+    swcZ f0 r0 32224
+    swcZ f0 r0 32220
+    swcZ f0 r0 32216
+    addi r5 r0 32216
+    sw r5 r0 32184
     #0.0
     flui f0 0
-    swcZ f0 r0 27236
-    swcZ f0 r0 27232
-    swcZ f0 r0 27228
-    addi r5 r0 27228
-    sw r5 r0 27188
-    sw r0 r0 27256
-    sw r0 r0 27252
-    sw r0 r0 27248
-    sw r0 r0 27244
-    sw r0 r0 27240
-    addi r5 r0 27240
-    sw r0 r0 27276
-    sw r0 r0 27272
-    sw r0 r0 27268
-    sw r0 r0 27264
-    sw r0 r0 27260
-    addi r6 r0 27260
+    swcZ f0 r0 32236
+    swcZ f0 r0 32232
+    swcZ f0 r0 32228
+    addi r5 r0 32228
+    sw r5 r0 32188
+    sw r0 r0 32256
+    sw r0 r0 32252
+    sw r0 r0 32248
+    sw r0 r0 32244
+    sw r0 r0 32240
+    addi r5 r0 32240
+    sw r0 r0 32276
+    sw r0 r0 32272
+    sw r0 r0 32268
+    sw r0 r0 32264
+    sw r0 r0 32260
+    addi r6 r0 32260
     #0.0
     flui f0 0
-    swcZ f0 r0 27288
-    swcZ f0 r0 27284
-    swcZ f0 r0 27280
-    addi r7 r0 27280
-    sw r7 r0 27308
-    sw r7 r0 27304
-    sw r7 r0 27300
-    sw r7 r0 27296
-    sw r7 r0 27292
-    addi r7 r0 27292
+    swcZ f0 r0 32288
+    swcZ f0 r0 32284
+    swcZ f0 r0 32280
+    addi r7 r0 32280
+    sw r7 r0 32308
+    sw r7 r0 32304
+    sw r7 r0 32300
+    sw r7 r0 32296
+    sw r7 r0 32292
+    addi r7 r0 32292
     #0.0
     flui f0 0
-    swcZ f0 r0 27320
-    swcZ f0 r0 27316
-    swcZ f0 r0 27312
-    addi r8 r0 27312
-    sw r8 r0 27296
+    swcZ f0 r0 32320
+    swcZ f0 r0 32316
+    swcZ f0 r0 32312
+    addi r8 r0 32312
+    sw r8 r0 32296
     #0.0
     flui f0 0
-    swcZ f0 r0 27332
-    swcZ f0 r0 27328
-    swcZ f0 r0 27324
-    addi r8 r0 27324
-    sw r8 r0 27300
+    swcZ f0 r0 32332
+    swcZ f0 r0 32328
+    swcZ f0 r0 32324
+    addi r8 r0 32324
+    sw r8 r0 32300
     #0.0
     flui f0 0
-    swcZ f0 r0 27344
-    swcZ f0 r0 27340
-    swcZ f0 r0 27336
-    addi r8 r0 27336
-    sw r8 r0 27304
+    swcZ f0 r0 32344
+    swcZ f0 r0 32340
+    swcZ f0 r0 32336
+    addi r8 r0 32336
+    sw r8 r0 32304
     #0.0
     flui f0 0
-    swcZ f0 r0 27356
-    swcZ f0 r0 27352
-    swcZ f0 r0 27348
-    addi r8 r0 27348
-    sw r8 r0 27308
+    swcZ f0 r0 32356
+    swcZ f0 r0 32352
+    swcZ f0 r0 32348
+    addi r8 r0 32348
+    sw r8 r0 32308
     #0.0
     flui f0 0
-    swcZ f0 r0 27368
-    swcZ f0 r0 27364
-    swcZ f0 r0 27360
-    addi r8 r0 27360
-    sw r8 r0 27388
-    sw r8 r0 27384
-    sw r8 r0 27380
-    sw r8 r0 27376
-    sw r8 r0 27372
-    addi r8 r0 27372
+    swcZ f0 r0 32368
+    swcZ f0 r0 32364
+    swcZ f0 r0 32360
+    addi r8 r0 32360
+    sw r8 r0 32388
+    sw r8 r0 32384
+    sw r8 r0 32380
+    sw r8 r0 32376
+    sw r8 r0 32372
+    addi r8 r0 32372
     #0.0
     flui f0 0
-    swcZ f0 r0 27400
-    swcZ f0 r0 27396
-    swcZ f0 r0 27392
-    addi r9 r0 27392
-    sw r9 r0 27376
+    swcZ f0 r0 32400
+    swcZ f0 r0 32396
+    swcZ f0 r0 32392
+    addi r9 r0 32392
+    sw r9 r0 32376
     #0.0
     flui f0 0
-    swcZ f0 r0 27412
-    swcZ f0 r0 27408
-    swcZ f0 r0 27404
-    addi r9 r0 27404
-    sw r9 r0 27380
+    swcZ f0 r0 32412
+    swcZ f0 r0 32408
+    swcZ f0 r0 32404
+    addi r9 r0 32404
+    sw r9 r0 32380
     #0.0
     flui f0 0
-    swcZ f0 r0 27424
-    swcZ f0 r0 27420
-    swcZ f0 r0 27416
-    addi r9 r0 27416
-    sw r9 r0 27384
+    swcZ f0 r0 32424
+    swcZ f0 r0 32420
+    swcZ f0 r0 32416
+    addi r9 r0 32416
+    sw r9 r0 32384
     #0.0
     flui f0 0
-    swcZ f0 r0 27436
-    swcZ f0 r0 27432
-    swcZ f0 r0 27428
-    addi r9 r0 27428
-    sw r9 r0 27388
-    sw r0 r0 27440
-    addi r9 r0 27440
+    swcZ f0 r0 32436
+    swcZ f0 r0 32432
+    swcZ f0 r0 32428
+    addi r9 r0 32428
+    sw r9 r0 32388
+    sw r0 r0 32440
+    addi r9 r0 32440
     #0.0
     flui f0 0
-    swcZ f0 r0 27452
-    swcZ f0 r0 27448
-    swcZ f0 r0 27444
-    addi r10 r0 27444
-    sw r10 r0 27472
-    sw r10 r0 27468
-    sw r10 r0 27464
-    sw r10 r0 27460
-    sw r10 r0 27456
-    addi r10 r0 27456
+    swcZ f0 r0 32452
+    swcZ f0 r0 32448
+    swcZ f0 r0 32444
+    addi r10 r0 32444
+    sw r10 r0 32472
+    sw r10 r0 32468
+    sw r10 r0 32464
+    sw r10 r0 32460
+    sw r10 r0 32456
+    addi r10 r0 32456
     #0.0
     flui f0 0
-    swcZ f0 r0 27484
-    swcZ f0 r0 27480
-    swcZ f0 r0 27476
-    addi r11 r0 27476
-    sw r11 r0 27460
+    swcZ f0 r0 32484
+    swcZ f0 r0 32480
+    swcZ f0 r0 32476
+    addi r11 r0 32476
+    sw r11 r0 32460
     #0.0
     flui f0 0
-    swcZ f0 r0 27496
-    swcZ f0 r0 27492
-    swcZ f0 r0 27488
-    addi r11 r0 27488
-    sw r11 r0 27464
+    swcZ f0 r0 32496
+    swcZ f0 r0 32492
+    swcZ f0 r0 32488
+    addi r11 r0 32488
+    sw r11 r0 32464
     #0.0
     flui f0 0
-    swcZ f0 r0 27508
-    swcZ f0 r0 27504
-    swcZ f0 r0 27500
-    addi r11 r0 27500
-    sw r11 r0 27468
+    swcZ f0 r0 32508
+    swcZ f0 r0 32504
+    swcZ f0 r0 32500
+    addi r11 r0 32500
+    sw r11 r0 32468
     #0.0
     flui f0 0
-    swcZ f0 r0 27520
-    swcZ f0 r0 27516
-    swcZ f0 r0 27512
-    addi r11 r0 27512
-    sw r11 r0 27472
-    sw r10 r0 27552
-    sw r9 r0 27548
-    sw r8 r0 27544
-    sw r7 r0 27540
-    sw r6 r0 27536
-    sw r5 r0 27532
-    sw r4 r0 27528
-    sw r3 r0 27524
-    addi r3 r0 27524
+    swcZ f0 r0 32520
+    swcZ f0 r0 32516
+    swcZ f0 r0 32512
+    addi r11 r0 32512
+    sw r11 r0 32472
+    sw r10 r0 32552
+    sw r9 r0 32548
+    sw r8 r0 32544
+    sw r7 r0 32540
+    sw r6 r0 32536
+    sw r5 r0 32532
+    sw r4 r0 32528
+    sw r3 r0 32524
+    addi r3 r0 32524
     beq r0 r2 arrayexit.90943
     sll r28 r2  2
 arrayloop.90942:
@@ -14706,7 +14706,7 @@ arrayloop.90942:
     mv r2 r30
     add r30 r30 r28
 arrayexit.90943:
-    lw r3 r0 25616
+    lw r3 r0 30616
     subi r3 r3 2
     sw r1 r29 80
     blt r3 r0 block_5
@@ -14944,196 +14944,266 @@ block_4:
 block_5:
     mv r1 r2
 block_6:
-    lw r2 r0 25616
+    lw r2 r0 30616
     #0.0
     flui f0 0
-    swcZ f0 r0 27564
-    swcZ f0 r0 27560
-    swcZ f0 r0 27556
-    addi r3 r0 27556
+    swcZ f0 r0 32564
+    swcZ f0 r0 32560
+    swcZ f0 r0 32556
+    addi r3 r0 32556
     #0.0
     flui f0 0
-    swcZ f0 r0 27576
-    swcZ f0 r0 27572
-    swcZ f0 r0 27568
-    addi r4 r0 27568
-    sw r4 r0 27596
-    sw r4 r0 27592
-    sw r4 r0 27588
-    sw r4 r0 27584
-    sw r4 r0 27580
-    addi r4 r0 27580
+    swcZ f0 r0 32576
+    swcZ f0 r0 32572
+    swcZ f0 r0 32568
+    addi r4 r0 32568
+    sw r4 r0 32596
+    sw r4 r0 32592
+    sw r4 r0 32588
+    sw r4 r0 32584
+    sw r4 r0 32580
+    addi r4 r0 32580
     #0.0
     flui f0 0
-    swcZ f0 r0 27608
-    swcZ f0 r0 27604
-    swcZ f0 r0 27600
-    addi r5 r0 27600
-    sw r5 r0 27584
+    swcZ f0 r0 32608
+    swcZ f0 r0 32604
+    swcZ f0 r0 32600
+    addi r5 r0 32600
+    sw r5 r0 32584
     #0.0
     flui f0 0
-    swcZ f0 r0 27620
-    swcZ f0 r0 27616
-    swcZ f0 r0 27612
-    addi r5 r0 27612
-    sw r5 r0 27588
+    swcZ f0 r0 32620
+    swcZ f0 r0 32616
+    swcZ f0 r0 32612
+    addi r5 r0 32612
+    sw r5 r0 32588
     #0.0
     flui f0 0
-    swcZ f0 r0 27632
-    swcZ f0 r0 27628
-    swcZ f0 r0 27624
-    addi r5 r0 27624
-    sw r5 r0 27592
+    swcZ f0 r0 32632
+    swcZ f0 r0 32628
+    swcZ f0 r0 32624
+    addi r5 r0 32624
+    sw r5 r0 32592
     #0.0
     flui f0 0
-    swcZ f0 r0 27644
-    swcZ f0 r0 27640
-    swcZ f0 r0 27636
-    addi r5 r0 27636
-    sw r5 r0 27596
-    sw r0 r0 27664
-    sw r0 r0 27660
-    sw r0 r0 27656
-    sw r0 r0 27652
-    sw r0 r0 27648
-    addi r5 r0 27648
-    sw r0 r0 27684
-    sw r0 r0 27680
-    sw r0 r0 27676
-    sw r0 r0 27672
-    sw r0 r0 27668
-    addi r6 r0 27668
+    swcZ f0 r0 32644
+    swcZ f0 r0 32640
+    swcZ f0 r0 32636
+    addi r5 r0 32636
+    sw r5 r0 32596
+    sw r0 r0 32664
+    sw r0 r0 32660
+    sw r0 r0 32656
+    sw r0 r0 32652
+    sw r0 r0 32648
+    addi r5 r0 32648
+    sw r0 r0 32684
+    sw r0 r0 32680
+    sw r0 r0 32676
+    sw r0 r0 32672
+    sw r0 r0 32668
+    addi r6 r0 32668
     #0.0
     flui f0 0
-    swcZ f0 r0 27696
-    swcZ f0 r0 27692
-    swcZ f0 r0 27688
-    addi r7 r0 27688
-    sw r7 r0 27716
-    sw r7 r0 27712
-    sw r7 r0 27708
-    sw r7 r0 27704
-    sw r7 r0 27700
-    addi r7 r0 27700
+    swcZ f0 r0 32696
+    swcZ f0 r0 32692
+    swcZ f0 r0 32688
+    addi r7 r0 32688
+    sw r7 r0 32716
+    sw r7 r0 32712
+    sw r7 r0 32708
+    sw r7 r0 32704
+    sw r7 r0 32700
+    addi r7 r0 32700
     #0.0
     flui f0 0
-    swcZ f0 r0 27728
-    swcZ f0 r0 27724
-    swcZ f0 r0 27720
-    addi r8 r0 27720
-    sw r8 r0 27704
+    swcZ f0 r0 32728
+    swcZ f0 r0 32724
+    swcZ f0 r0 32720
+    addi r8 r0 32720
+    sw r8 r0 32704
     #0.0
     flui f0 0
-    swcZ f0 r0 27740
-    swcZ f0 r0 27736
-    swcZ f0 r0 27732
-    addi r8 r0 27732
-    sw r8 r0 27708
+    swcZ f0 r0 32740
+    swcZ f0 r0 32736
+    swcZ f0 r0 32732
+    addi r8 r0 32732
+    sw r8 r0 32708
     #0.0
     flui f0 0
-    swcZ f0 r0 27752
-    swcZ f0 r0 27748
-    swcZ f0 r0 27744
-    addi r8 r0 27744
-    sw r8 r0 27712
+    swcZ f0 r0 32752
+    swcZ f0 r0 32748
+    swcZ f0 r0 32744
+    addi r8 r0 32744
+    sw r8 r0 32712
     #0.0
     flui f0 0
-    swcZ f0 r0 27764
-    swcZ f0 r0 27760
-    swcZ f0 r0 27756
-    addi r8 r0 27756
-    sw r8 r0 27716
+    swcZ f0 r0 32764
+    swcZ f0 r0 32760
+    swcZ f0 r0 32756
+    addi r8 r0 32756
+    sw r8 r0 32716
     #0.0
     flui f0 0
-    swcZ f0 r0 27776
-    swcZ f0 r0 27772
-    swcZ f0 r0 27768
-    addi r8 r0 27768
-    sw r8 r0 27796
-    sw r8 r0 27792
-    sw r8 r0 27788
-    sw r8 r0 27784
-    sw r8 r0 27780
-    addi r8 r0 27780
+    #32768
+    lui r8 0
+    ori r8 r8 32768
+    swcZ f0 r8 8
+    swcZ f0 r8 4
+    swcZ f0 r8 0
+    #32768
+    lui r8 0
+    ori r8 r8 32768
+    #32780
+    lui r9 0
+    ori r9 r9 32780
+    sw r8 r9 16
+    sw r8 r9 12
+    sw r8 r9 8
+    sw r8 r9 4
+    sw r8 r9 0
+    #32780
+    lui r8 0
+    ori r8 r8 32780
     #0.0
     flui f0 0
-    swcZ f0 r0 27808
-    swcZ f0 r0 27804
-    swcZ f0 r0 27800
-    addi r9 r0 27800
-    sw r9 r0 27784
+    #32800
+    lui r9 0
+    ori r9 r9 32800
+    swcZ f0 r9 8
+    swcZ f0 r9 4
+    swcZ f0 r9 0
+    #32800
+    lui r9 0
+    ori r9 r9 32800
+    sw r9 r8 4
     #0.0
     flui f0 0
-    swcZ f0 r0 27820
-    swcZ f0 r0 27816
-    swcZ f0 r0 27812
-    addi r9 r0 27812
-    sw r9 r0 27788
+    #32812
+    lui r9 0
+    ori r9 r9 32812
+    swcZ f0 r9 8
+    swcZ f0 r9 4
+    swcZ f0 r9 0
+    #32812
+    lui r9 0
+    ori r9 r9 32812
+    sw r9 r8 8
     #0.0
     flui f0 0
-    swcZ f0 r0 27832
-    swcZ f0 r0 27828
-    swcZ f0 r0 27824
-    addi r9 r0 27824
-    sw r9 r0 27792
+    #32824
+    lui r9 0
+    ori r9 r9 32824
+    swcZ f0 r9 8
+    swcZ f0 r9 4
+    swcZ f0 r9 0
+    #32824
+    lui r9 0
+    ori r9 r9 32824
+    sw r9 r8 12
     #0.0
     flui f0 0
-    swcZ f0 r0 27844
-    swcZ f0 r0 27840
-    swcZ f0 r0 27836
-    addi r9 r0 27836
-    sw r9 r0 27796
-    sw r0 r0 27848
-    addi r9 r0 27848
+    #32836
+    lui r9 0
+    ori r9 r9 32836
+    swcZ f0 r9 8
+    swcZ f0 r9 4
+    swcZ f0 r9 0
+    #32836
+    lui r9 0
+    ori r9 r9 32836
+    sw r9 r8 16
+    #32848
+    lui r9 0
+    ori r9 r9 32848
+    sw r0 r9 0
+    #32848
+    lui r9 0
+    ori r9 r9 32848
     #0.0
     flui f0 0
-    swcZ f0 r0 27860
-    swcZ f0 r0 27856
-    swcZ f0 r0 27852
-    addi r10 r0 27852
-    sw r10 r0 27880
-    sw r10 r0 27876
-    sw r10 r0 27872
-    sw r10 r0 27868
-    sw r10 r0 27864
-    addi r10 r0 27864
+    #32852
+    lui r10 0
+    ori r10 r10 32852
+    swcZ f0 r10 8
+    swcZ f0 r10 4
+    swcZ f0 r10 0
+    #32852
+    lui r10 0
+    ori r10 r10 32852
+    #32864
+    lui r11 0
+    ori r11 r11 32864
+    sw r10 r11 16
+    sw r10 r11 12
+    sw r10 r11 8
+    sw r10 r11 4
+    sw r10 r11 0
+    #32864
+    lui r10 0
+    ori r10 r10 32864
     #0.0
     flui f0 0
-    swcZ f0 r0 27892
-    swcZ f0 r0 27888
-    swcZ f0 r0 27884
-    addi r11 r0 27884
-    sw r11 r0 27868
+    #32884
+    lui r11 0
+    ori r11 r11 32884
+    swcZ f0 r11 8
+    swcZ f0 r11 4
+    swcZ f0 r11 0
+    #32884
+    lui r11 0
+    ori r11 r11 32884
+    sw r11 r10 4
     #0.0
     flui f0 0
-    swcZ f0 r0 27904
-    swcZ f0 r0 27900
-    swcZ f0 r0 27896
-    addi r11 r0 27896
-    sw r11 r0 27872
+    #32896
+    lui r11 0
+    ori r11 r11 32896
+    swcZ f0 r11 8
+    swcZ f0 r11 4
+    swcZ f0 r11 0
+    #32896
+    lui r11 0
+    ori r11 r11 32896
+    sw r11 r10 8
     #0.0
     flui f0 0
-    swcZ f0 r0 27916
-    swcZ f0 r0 27912
-    swcZ f0 r0 27908
-    addi r11 r0 27908
-    sw r11 r0 27876
+    #32908
+    lui r11 0
+    ori r11 r11 32908
+    swcZ f0 r11 8
+    swcZ f0 r11 4
+    swcZ f0 r11 0
+    #32908
+    lui r11 0
+    ori r11 r11 32908
+    sw r11 r10 12
     #0.0
     flui f0 0
-    swcZ f0 r0 27928
-    swcZ f0 r0 27924
-    swcZ f0 r0 27920
-    addi r11 r0 27920
-    sw r11 r0 27880
-    sw r10 r0 27960
-    sw r9 r0 27956
-    sw r8 r0 27952
-    sw r7 r0 27948
-    sw r6 r0 27944
-    sw r5 r0 27940
-    sw r4 r0 27936
-    sw r3 r0 27932
-    addi r3 r0 27932
+    #32920
+    lui r11 0
+    ori r11 r11 32920
+    swcZ f0 r11 8
+    swcZ f0 r11 4
+    swcZ f0 r11 0
+    #32920
+    lui r11 0
+    ori r11 r11 32920
+    sw r11 r10 16
+    #32932
+    lui r11 0
+    ori r11 r11 32932
+    sw r10 r11 28
+    sw r9 r11 24
+    sw r8 r11 20
+    sw r7 r11 16
+    sw r6 r11 12
+    sw r5 r11 8
+    sw r4 r11 4
+    sw r3 r11 0
+    #32932
+    lui r3 0
+    ori r3 r3 32932
     beq r0 r2 arrayexit.90945
     sll r28 r2  2
 arrayloop.90944:
@@ -15144,7 +15214,7 @@ arrayloop.90944:
     mv r2 r30
     add r30 r30 r28
 arrayexit.90945:
-    lw r3 r0 25616
+    lw r3 r0 30616
     subi r3 r3 2
     sw r1 r29 28
     blt r3 r0 block_8
@@ -15383,11 +15453,11 @@ block_8:
     mv r1 r2
 block_9:
     inflt f0
-    swcZ f0 r0 25288
+    swcZ f0 r0 30288
     inflt f0
-    swcZ f0 r0 25292
+    swcZ f0 r0 30292
     inflt f0
-    swcZ f0 r0 25296
+    swcZ f0 r0 30296
     inflt f0
     #0.017453292
     flui f1 15502
@@ -15828,42 +15898,42 @@ block_87:
     #200.0
     flui f5 17224
     fmul f4 f4 f5
-    swcZ f4 r0 25684
+    swcZ f4 r0 30684
     #-200.0
     flui f4 -15544
     fmul f4 f0 f4
-    swcZ f4 r0 25688
+    swcZ f4 r0 30688
     fmul f4 f1 f3
     #200.0
     flui f5 17224
     fmul f4 f4 f5
-    swcZ f4 r0 25692
-    swcZ f3 r0 25660
+    swcZ f4 r0 30692
+    swcZ f3 r0 30660
     #0.0
     flui f4 0
-    swcZ f4 r0 25664
+    swcZ f4 r0 30664
     fneg f4 f2
-    swcZ f4 r0 25668
+    swcZ f4 r0 30668
     fneg f4 f0
     fmul f2 f4 f2
-    swcZ f2 r0 25672
+    swcZ f2 r0 30672
     fneg f1 f1
-    swcZ f1 r0 25676
+    swcZ f1 r0 30676
     fneg f0 f0
     fmul f0 f0 f3
-    swcZ f0 r0 25680
-    lwcZ f0 r0 25288
-    lwcZ f1 r0 25684
+    swcZ f0 r0 30680
+    lwcZ f0 r0 30288
+    lwcZ f1 r0 30684
     fsub f0 f0 f1
-    swcZ f0 r0 25300
-    lwcZ f0 r0 25292
-    lwcZ f1 r0 25688
+    swcZ f0 r0 30300
+    lwcZ f0 r0 30292
+    lwcZ f1 r0 30688
     fsub f0 f0 f1
-    swcZ f0 r0 25304
-    lwcZ f0 r0 25296
-    lwcZ f1 r0 25692
+    swcZ f0 r0 30304
+    lwcZ f0 r0 30296
+    lwcZ f1 r0 30692
     fsub f0 f0 f1
-    swcZ f0 r0 25308
+    swcZ f0 r0 30308
     inint r2
     inflt f0
     #0.017453292
@@ -15975,7 +16045,7 @@ block_103:
 block_104:
 block_105:
     fneg f1 f1
-    swcZ f1 r0 25316
+    swcZ f1 r0 30316
     inflt f1
     #0.017453292
     flui f2 15502
@@ -16196,7 +16266,7 @@ block_142:
 block_143:
 block_144:
     fmul f2 f0 f2
-    swcZ f2 r0 25312
+    swcZ f2 r0 30312
     #0.7853982
     flui f2 16201
     fori f2 f2 4059
@@ -16308,9 +16378,9 @@ block_164:
     fneg f1 f1
 block_165:
     fmul f0 f0 f1
-    swcZ f0 r0 25320
+    swcZ f0 r0 30320
     inflt f0
-    swcZ f0 r0 25324
+    swcZ f0 r0 30324
     sw r1 r29 68
     mv r1 r0
     sw r31 r29 92
@@ -16328,7 +16398,7 @@ block_165:
     addi r3 r0 -1
     beq r2 r3 block_167
 block_166:
-    sw r1 r0 25332
+    sw r1 r0 30332
     addi r1 r0 1
     sw r31 r29 92
     addi r29 r29 96
@@ -16364,11 +16434,11 @@ block_170:
     mv r1 r30
     addi r30 r30 4
 block_171:
-    sw r1 r0 25536
+    sw r1 r0 30536
     out r0 80
     out r0 54
     out r0 10
-    lw r1 r0 25616
+    lw r1 r0 30616
     blt r1 r0 block_173
 block_172:
     j block_174
@@ -16382,7 +16452,7 @@ block_174:
     subi r29 r29 96
     lw r31 r29 92
     out r0 32
-    lw r1 r0 25620
+    lw r1 r0 30620
     blt r1 r0 block_176
 block_175:
     j block_177
@@ -16421,7 +16491,7 @@ block_181:
     swcZ f0 r30 8
     mv r1 r30
     addi r30 r30 12
-    lw r2 r0 25000
+    lw r2 r0 30000
     beq r0 r2 arrayexit.90947
     sll r28 r2  2
 arrayloop.90946:
@@ -16559,8 +16629,8 @@ arrayexit.90947:
     sw r1 r30 476
     mv r1 r30
     addi r30 r30 480
-    sw r1 r0 25732
-    lw r1 r0 25732
+    sw r1 r0 30732
+    lw r1 r0 30732
     addi r2 r0 118
     sw r31 r29 92
     addi r29 r29 96
@@ -16618,7 +16688,7 @@ block_186:
     addi r1 r0 4
     blt r1 r0 block_191
 block_190:
-    lw r1 r0 25732
+    lw r1 r0 30732
     addi r2 r0 119
     sw r31 r29 92
     addi r29 r29 96
@@ -16634,21 +16704,21 @@ block_190:
     j block_192
 block_191:
 block_192:
-    lw r1 r0 25988
-    lwcZ f0 r0 25312
+    lw r1 r0 30988
+    lwcZ f0 r0 30312
     swcZ f0 r1 0
-    lwcZ f0 r0 25316
+    lwcZ f0 r0 30316
     swcZ f0 r1 4
-    lwcZ f0 r0 25320
+    lwcZ f0 r0 30320
     swcZ f0 r1 8
-    lw r1 r0 25000
+    lw r1 r0 30000
     subi r1 r1 1
     blt r1 r0 block_194
 block_193:
     sll r2 r1 2
-    lw r2 r2 25048
-    lw r3 r0 25992
-    lw r4 r0 25988
+    lw r2 r2 30048
+    lw r3 r0 30992
+    lw r4 r0 30988
     lw r5 r2 4
     addi r6 r0 1
     beq r5 r6 block_197
@@ -17075,12 +17145,12 @@ block_198:
     j block_195
 block_194:
 block_195:
-    lw r1 r0 25000
+    lw r1 r0 30000
     subi r1 r1 1
     blt r1 r0 block_259
 block_258:
     sll r2 r1 2
-    lw r2 r2 25048
+    lw r2 r2 30048
     lw r3 r2 8
     addi r4 r0 2
     beq r3 r4 block_262
@@ -17107,21 +17177,21 @@ block_267:
 block_268:
     sll r1 r1 2
     addi r1 r1 1
-    lw r3 r0 26736
+    lw r3 r0 31736
     #1.0
     flui f0 16256
     lw r4 r2 28
     lwcZ f1 r4 0
     fsub f0 f0 f1
     lw r4 r2 16
-    lwcZ f1 r0 25312
+    lwcZ f1 r0 30312
     lwcZ f2 r4 0
     fmul f1 f1 f2
-    lwcZ f2 r0 25316
+    lwcZ f2 r0 30316
     lwcZ f3 r4 4
     fmul f2 f2 f3
     fadd f1 f1 f2
-    lwcZ f2 r0 25320
+    lwcZ f2 r0 30320
     lwcZ f3 r4 8
     fmul f2 f2 f3
     fadd f1 f1 f2
@@ -17131,7 +17201,7 @@ block_268:
     lwcZ f3 r4 0
     fmul f2 f2 f3
     fmul f2 f2 f1
-    lwcZ f3 r0 25312
+    lwcZ f3 r0 30312
     fsub f2 f2 f3
     #2.0
     flui f3 16384
@@ -17139,7 +17209,7 @@ block_268:
     lwcZ f4 r4 4
     fmul f3 f3 f4
     fmul f3 f3 f1
-    lwcZ f4 r0 25316
+    lwcZ f4 r0 30316
     fsub f3 f3 f4
     #2.0
     flui f4 16384
@@ -17147,7 +17217,7 @@ block_268:
     lwcZ f5 r2 8
     fmul f4 f4 f5
     fmul f1 f4 f1
-    lwcZ f4 r0 25320
+    lwcZ f4 r0 30320
     fsub f1 f1 f4
     #0.0
     flui f4 0
@@ -17156,7 +17226,7 @@ block_268:
     swcZ f4 r30 8
     mv r2 r30
     addi r30 r30 12
-    lw r4 r0 25000
+    lw r4 r0 30000
     beq r0 r4 arrayexit.90949
     sll r28 r4  2
 arrayloop.90948:
@@ -17176,7 +17246,7 @@ arrayexit.90949:
     swcZ f2 r4 0
     swcZ f3 r4 4
     swcZ f1 r4 8
-    lw r4 r0 25000
+    lw r4 r0 30000
     subi r4 r4 1
     sw r1 r29 88
     sw r3 r29 76
@@ -17199,26 +17269,26 @@ arrayexit.90949:
     sw r2 r1 0
     lw r2 r29 76
     sll r3 r2 2
-    sw r1 r3 26016
+    sw r1 r3 31016
     addi r1 r2 1
-    sw r1 r0 26736
+    sw r1 r0 31736
     j block_260
 block_266:
     sll r1 r1 2
-    lw r3 r0 26736
+    lw r3 r0 31736
     #1.0
     flui f0 16256
     lw r2 r2 28
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25312
+    lwcZ f1 r0 30312
     fneg f1 f1
-    lwcZ f2 r0 25316
+    lwcZ f2 r0 30316
     fneg f2 f2
-    lwcZ f3 r0 25320
+    lwcZ f3 r0 30320
     fneg f3 f3
     addi r2 r1 1
-    lwcZ f4 r0 25312
+    lwcZ f4 r0 30312
     #0.0
     flui f5 0
     swcZ f5 r30 0
@@ -17226,7 +17296,7 @@ block_266:
     swcZ f5 r30 8
     mv r4 r30
     addi r30 r30 12
-    lw r5 r0 25000
+    lw r5 r0 30000
     beq r0 r5 arrayexit.90951
     sll r28 r5  2
 arrayloop.90950:
@@ -17246,7 +17316,7 @@ arrayexit.90951:
     swcZ f4 r5 0
     swcZ f2 r5 4
     swcZ f3 r5 8
-    lw r5 r0 25000
+    lw r5 r0 30000
     subi r5 r5 1
     sw r1 r29 84
     sw r3 r29 72
@@ -17273,11 +17343,11 @@ arrayexit.90951:
     sw r2 r1 0
     lw r2 r29 72
     sll r3 r2 2
-    sw r1 r3 26016
+    sw r1 r3 31016
     addi r1 r2 1
     lw r3 r29 84
     addi r4 r3 2
-    lwcZ f1 r0 25316
+    lwcZ f1 r0 30316
     #0.0
     flui f2 0
     swcZ f2 r30 0
@@ -17285,7 +17355,7 @@ arrayexit.90951:
     swcZ f2 r30 8
     mv r5 r30
     addi r30 r30 12
-    lw r6 r0 25000
+    lw r6 r0 30000
     beq r0 r6 arrayexit.90953
     sll r28 r6  2
 arrayloop.90952:
@@ -17307,7 +17377,7 @@ arrayexit.90953:
     swcZ f1 r6 4
     lwcZ f1 r29 60
     swcZ f1 r6 8
-    lw r6 r0 25000
+    lw r6 r0 30000
     subi r6 r6 1
     sw r5 r29 36
     sw r4 r29 8
@@ -17329,12 +17399,12 @@ arrayexit.90953:
     sw r2 r1 0
     lw r2 r29 4
     sll r2 r2 2
-    sw r1 r2 26016
+    sw r1 r2 31016
     lw r1 r29 72
     addi r2 r1 2
     lw r3 r29 84
     addi r3 r3 3
-    lwcZ f1 r0 25320
+    lwcZ f1 r0 30320
     #0.0
     flui f2 0
     swcZ f2 r30 0
@@ -17342,7 +17412,7 @@ arrayexit.90953:
     swcZ f2 r30 8
     mv r4 r30
     addi r30 r30 12
-    lw r5 r0 25000
+    lw r5 r0 30000
     beq r0 r5 arrayexit.90955
     sll r28 r5  2
 arrayloop.90954:
@@ -17364,7 +17434,7 @@ arrayexit.90955:
     lwcZ f2 r29 56
     swcZ f2 r5 4
     swcZ f1 r5 8
-    lw r5 r0 25000
+    lw r5 r0 30000
     subi r5 r5 1
     sw r4 r29 40
     sw r3 r29 16
@@ -17386,31 +17456,31 @@ arrayexit.90955:
     sw r2 r1 0
     lw r2 r29 12
     sll r2 r2 2
-    sw r1 r2 26016
+    sw r1 r2 31016
     lw r1 r29 72
     addi r1 r1 3
-    sw r1 r0 26736
+    sw r1 r0 31736
     j block_260
 block_259:
 block_260:
-    lwcZ f0 r0 25632
-    lw r1 r0 25628
+    lwcZ f0 r0 30632
+    lw r1 r0 30628
     sub r1 r0 r1
     itof f1 r1
     fmul f0 f0 f1
-    lwcZ f1 r0 25672
+    lwcZ f1 r0 30672
     fmul f1 f0 f1
-    lwcZ f2 r0 25684
+    lwcZ f2 r0 30684
     fadd f1 f1 f2
-    lwcZ f2 r0 25676
+    lwcZ f2 r0 30676
     fmul f2 f0 f2
-    lwcZ f3 r0 25688
+    lwcZ f3 r0 30688
     fadd f2 f2 f3
-    lwcZ f3 r0 25680
+    lwcZ f3 r0 30680
     fmul f0 f0 f3
-    lwcZ f3 r0 25692
+    lwcZ f3 r0 30692
     fadd f0 f0 f3
-    lw r1 r0 25616
+    lw r1 r0 30616
     subi r2 r1 1
     lw r1 r29 28
     mv r3 r0
@@ -17456,24 +17526,24 @@ block_5686:
     lw r3 r3 0
     #0.0
     flui f0 0
-    swcZ f0 r0 25592
-    swcZ f0 r0 25596
-    swcZ f0 r0 25600
+    swcZ f0 r0 30592
+    swcZ f0 r0 30596
+    swcZ f0 r0 30600
     lw r4 r1 28
     lw r5 r1 4
     sll r3 r3 2
-    lw r3 r3 25716
+    lw r3 r3 30716
     sll r6 r2 2
     lwab r4 r4 r6
     sll r6 r2 2
     lwab r5 r5 r6
     lwcZ f0 r5 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r5 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r5 8
-    swcZ f0 r0 25656
-    lw r6 r0 25000
+    swcZ f0 r0 30656
+    lw r6 r0 30000
     subi r6 r6 1
     sw r1 r29 32
     sw r5 r29 20
@@ -17500,11 +17570,11 @@ block_5686:
     lw r3 r29 28
     sll r4 r3 2
     lwab r2 r2 r4
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     swcZ f0 r2 0
-    lwcZ f0 r0 25596
+    lwcZ f0 r0 30596
     swcZ f0 r2 4
-    lwcZ f0 r0 25600
+    lwcZ f0 r0 30600
     swcZ f0 r2 8
 block_5687:
     lw r2 r29 28
@@ -17529,24 +17599,24 @@ block_5693:
     lw r3 r3 0
     #0.0
     flui f0 0
-    swcZ f0 r0 25592
-    swcZ f0 r0 25596
-    swcZ f0 r0 25600
+    swcZ f0 r0 30592
+    swcZ f0 r0 30596
+    swcZ f0 r0 30600
     lw r4 r1 28
     lw r5 r1 4
     sll r3 r3 2
-    lw r3 r3 25716
+    lw r3 r3 30716
     sll r6 r2 2
     lwab r4 r4 r6
     sll r6 r2 2
     lwab r5 r5 r6
     lwcZ f0 r5 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r5 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r5 8
-    swcZ f0 r0 25656
-    lw r6 r0 25000
+    swcZ f0 r0 30656
+    lw r6 r0 30000
     subi r6 r6 1
     sw r1 r29 32
     sw r5 r29 16
@@ -17631,11 +17701,11 @@ block_5697:
     lw r3 r29 24
     sll r4 r3 2
     lwab r2 r2 r4
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     swcZ f0 r2 0
-    lwcZ f0 r0 25596
+    lwcZ f0 r0 30596
     swcZ f0 r2 4
-    lwcZ f0 r0 25600
+    lwcZ f0 r0 30600
     swcZ f0 r2 8
 block_5694:
     lw r2 r29 24
@@ -17656,32 +17726,32 @@ block_5682:
     jr r31
 pretrace_pixels.5163:
 block_5704:
-    addi r4 r0 25696
+    addi r4 r0 30696
     blt r2 r0 block_5706
 block_5705:
-    lwcZ f3 r0 25632
-    lw r5 r0 25624
+    lwcZ f3 r0 30632
+    lw r5 r0 30624
     sub r5 r2 r5
     itof f4 r5
     fmul f3 f3 f4
-    lwcZ f4 r0 25660
+    lwcZ f4 r0 30660
     fmul f4 f3 f4
     fadd f4 f4 f0
-    swcZ f4 r0 25696
-    lwcZ f4 r0 25664
+    swcZ f4 r0 30696
+    lwcZ f4 r0 30664
     fmul f4 f3 f4
     fadd f4 f4 f1
-    swcZ f4 r0 25700
-    lwcZ f4 r0 25668
+    swcZ f4 r0 30700
+    lwcZ f4 r0 30668
     fmul f3 f3 f4
     fadd f3 f3 f2
-    swcZ f3 r0 25704
-    lwcZ f3 r0 25696
+    swcZ f3 r0 30704
+    lwcZ f3 r0 30696
     fmul f3 f3 f3
-    lwcZ f4 r0 25700
+    lwcZ f4 r0 30700
     fmul f4 f4 f4
     fadd f3 f3 f4
-    lwcZ f4 r0 25704
+    lwcZ f4 r0 30704
     fmul f4 f4 f4
     fadd f3 f3 f4
     sqrt_init f4 f3
@@ -17714,26 +17784,26 @@ block_5708:
     #1.0
     flui f3 16256
 block_5709:
-    lwcZ f4 r0 25696
+    lwcZ f4 r0 30696
     fmul f4 f4 f3
-    swcZ f4 r0 25696
-    lwcZ f4 r0 25700
+    swcZ f4 r0 30696
+    lwcZ f4 r0 30700
     fmul f4 f4 f3
-    swcZ f4 r0 25700
-    lwcZ f4 r0 25704
+    swcZ f4 r0 30700
+    lwcZ f4 r0 30704
     fmul f3 f4 f3
-    swcZ f3 r0 25704
+    swcZ f3 r0 30704
     #0.0
     flui f3 0
-    swcZ f3 r0 25604
-    swcZ f3 r0 25608
-    swcZ f3 r0 25612
-    lwcZ f3 r0 25300
-    swcZ f3 r0 25636
-    lwcZ f3 r0 25304
-    swcZ f3 r0 25640
-    lwcZ f3 r0 25308
-    swcZ f3 r0 25644
+    swcZ f3 r0 30604
+    swcZ f3 r0 30608
+    swcZ f3 r0 30612
+    lwcZ f3 r0 30300
+    swcZ f3 r0 30636
+    lwcZ f3 r0 30304
+    swcZ f3 r0 30640
+    lwcZ f3 r0 30308
+    swcZ f3 r0 30644
     #1.0
     flui f3 16256
     sll r5 r2 2
@@ -17761,11 +17831,11 @@ block_5709:
     lw r3 r29 32
     lwab r2 r3 r2
     lw r2 r2 0
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     swcZ f0 r2 0
-    lwcZ f0 r0 25608
+    lwcZ f0 r0 30608
     swcZ f0 r2 4
-    lwcZ f0 r0 25612
+    lwcZ f0 r0 30612
     swcZ f0 r2 8
     sll r2 r1 2
     lwab r2 r3 r2
@@ -17792,22 +17862,22 @@ block_5716:
     lw r5 r5 0
     #0.0
     flui f0 0
-    swcZ f0 r0 25592
-    swcZ f0 r0 25596
-    swcZ f0 r0 25600
+    swcZ f0 r0 30592
+    swcZ f0 r0 30596
+    swcZ f0 r0 30600
     lw r6 r2 28
     lw r7 r2 4
     sll r5 r5 2
-    lw r5 r5 25716
+    lw r5 r5 30716
     lw r6 r6 0
     lw r7 r7 0
     lwcZ f0 r7 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r7 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r7 8
-    swcZ f0 r0 25656
-    lw r8 r0 25000
+    swcZ f0 r0 30656
+    lw r8 r0 30000
     subi r8 r8 1
     sw r7 r29 8
     sw r6 r29 4
@@ -17889,11 +17959,11 @@ block_5720:
     lw r1 r29 12
     lw r2 r1 20
     lw r2 r2 0
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     swcZ f0 r2 0
-    lwcZ f0 r0 25596
+    lwcZ f0 r0 30596
     swcZ f0 r2 4
-    lwcZ f0 r0 25600
+    lwcZ f0 r0 30600
     swcZ f0 r2 8
 block_5717:
     addi r2 r0 1
@@ -18073,7 +18143,7 @@ block_691:
 block_698:
     lw r2 r29 36
     sll r3 r2 2
-    sw r1 r3 25332
+    sw r1 r3 30332
     addi r1 r2 1
     inint r2
     addi r3 r0 -1
@@ -18118,7 +18188,7 @@ block_702:
 block_706:
     lw r2 r29 4
     sll r3 r2 2
-    sw r1 r3 25332
+    sw r1 r3 30332
     addi r1 r2 1
     inint r2
     addi r3 r0 -1
@@ -18148,7 +18218,7 @@ block_710:
 block_711:
     lw r2 r29 8
     sll r3 r2 2
-    sw r1 r3 25332
+    sw r1 r3 30332
     addi r1 r2 1
     sw r1 r29 0
     mv r1 r0
@@ -18163,7 +18233,7 @@ block_711:
 block_713:
     lw r2 r29 0
     sll r3 r2 2
-    sw r1 r3 25332
+    sw r1 r3 30332
     addi r1 r2 1
     sw r31 r29 40
     addi r29 r29 44
@@ -18426,7 +18496,7 @@ block_295:
     sw r2 r14 0
     mv r2 r14
     sll r4 r1 2
-    sw r2 r4 25048
+    sw r2 r4 30048
     addi r2 r0 3
     beq r3 r2 block_297
 block_296:
@@ -19396,7 +19466,7 @@ block_285:
 block_286:
     bne r2 r0 block_463
 block_462:
-    sw r1 r0 25000
+    sw r1 r0 30000
     jr r31
 block_463:
     addi r1 r1 1
@@ -19533,7 +19603,7 @@ block_477:
     sw r2 r14 0
     mv r2 r14
     sll r4 r1 2
-    sw r2 r4 25048
+    sw r2 r4 30048
     addi r2 r0 3
     beq r3 r2 block_479
 block_478:
@@ -20503,7 +20573,7 @@ block_467:
 block_468:
     bne r2 r0 block_645
 block_644:
-    sw r1 r0 25000
+    sw r1 r0 30000
     jr r31
 block_645:
     addi r1 r1 1
@@ -20746,12 +20816,12 @@ arrayexit.90971:
     jr r31
 scan_line.5270:
 block_5829:
-    lw r6 r0 25620
+    lw r6 r0 30620
     blt r1 r6 block_5831
 block_5830:
     jr r31
 block_5831:
-    lw r6 r0 25620
+    lw r6 r0 30620
     subi r6 r6 1
     sw r1 r29 24
     sw r2 r29 20
@@ -20763,24 +20833,24 @@ block_5832:
     j block_5834
 block_5833:
     addi r6 r1 1
-    lwcZ f0 r0 25632
-    lw r7 r0 25628
+    lwcZ f0 r0 30632
+    lw r7 r0 30628
     sub r6 r6 r7
     itof f1 r6
     fmul f0 f0 f1
-    lwcZ f1 r0 25672
+    lwcZ f1 r0 30672
     fmul f1 f0 f1
-    lwcZ f2 r0 25684
+    lwcZ f2 r0 30684
     fadd f1 f1 f2
-    lwcZ f2 r0 25676
+    lwcZ f2 r0 30676
     fmul f2 f0 f2
-    lwcZ f3 r0 25688
+    lwcZ f3 r0 30688
     fadd f2 f2 f3
-    lwcZ f3 r0 25680
+    lwcZ f3 r0 30680
     fmul f0 f0 f3
-    lwcZ f3 r0 25692
+    lwcZ f3 r0 30692
     fadd f0 f0 f3
-    lw r6 r0 25616
+    lw r6 r0 30616
     subi r6 r6 1
     mv r3 r5
     mv r2 r6
@@ -20795,7 +20865,7 @@ block_5833:
     subi r29 r29 32
     lw r31 r29 28
 block_5834:
-    lw r1 r0 25616
+    lw r1 r0 30616
     blt r0 r1 block_5836
 block_5835:
     j block_5837
@@ -20804,14 +20874,14 @@ block_5836:
     lw r1 r4 0
     lw r1 r1 0
     lwcZ f0 r1 0
-    swcZ f0 r0 25604
+    swcZ f0 r0 30604
     lwcZ f0 r1 4
-    swcZ f0 r0 25608
+    swcZ f0 r0 30608
     lwcZ f0 r1 8
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     lw r2 r29 24
     addi r1 r2 1
-    lw r3 r0 25620
+    lw r3 r0 30620
     blt r1 r3 block_5839
 block_5838:
     mv r1 r0
@@ -20823,7 +20893,7 @@ block_5841:
     j block_5840
 block_5842:
     addi r1 r0 1
-    lw r3 r0 25616
+    lw r3 r0 30616
     blt r1 r3 block_5844
 block_5843:
     mv r1 r0
@@ -20857,7 +20927,7 @@ block_5848:
     subi r29 r29 32
     lw r31 r29 28
 block_5849:
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5851
@@ -20872,7 +20942,7 @@ block_5851:
     addi r1 r0 255
 block_5852:
     out r1 0
-    lwcZ f0 r0 25608
+    lwcZ f0 r0 30608
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5856
@@ -20887,7 +20957,7 @@ block_5856:
     addi r1 r0 255
 block_5857:
     out r1 0
-    lwcZ f0 r0 25612
+    lwcZ f0 r0 30612
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5861
@@ -20925,12 +20995,12 @@ block_5865:
 block_5866:
     mv r3 r1
 block_5867:
-    lw r1 r0 25620
+    lw r1 r0 30620
     blt r2 r1 block_5869
 block_5868:
     jr r31
 block_5869:
-    lw r1 r0 25620
+    lw r1 r0 30620
     subi r1 r1 1
     sw r3 r29 4
     sw r2 r29 0
@@ -20939,24 +21009,24 @@ block_5870:
     j block_5872
 block_5871:
     addi r1 r2 1
-    lwcZ f0 r0 25632
-    lw r4 r0 25628
+    lwcZ f0 r0 30632
+    lw r4 r0 30628
     sub r1 r1 r4
     itof f1 r1
     fmul f0 f0 f1
-    lwcZ f1 r0 25672
+    lwcZ f1 r0 30672
     fmul f1 f0 f1
-    lwcZ f2 r0 25684
+    lwcZ f2 r0 30684
     fadd f1 f1 f2
-    lwcZ f2 r0 25676
+    lwcZ f2 r0 30676
     fmul f2 f0 f2
-    lwcZ f3 r0 25688
+    lwcZ f3 r0 30688
     fadd f2 f2 f3
-    lwcZ f3 r0 25680
+    lwcZ f3 r0 30680
     fmul f0 f0 f3
-    lwcZ f3 r0 25692
+    lwcZ f3 r0 30692
     fadd f0 f0 f3
-    lw r1 r0 25616
+    lw r1 r0 30616
     subi r1 r1 1
     lw r4 r29 20
     mv r2 r1
@@ -21004,7 +21074,7 @@ block_5875:
     jr r31
 scan_pixel.5250:
 block_5730:
-    lw r6 r0 25616
+    lw r6 r0 30616
     blt r1 r6 block_5732
 block_5731:
     jr r31
@@ -21013,13 +21083,13 @@ block_5732:
     lwab r6 r4 r6
     lw r6 r6 0
     lwcZ f0 r6 0
-    swcZ f0 r0 25604
+    swcZ f0 r0 30604
     lwcZ f0 r6 4
-    swcZ f0 r0 25608
+    swcZ f0 r0 30608
     lwcZ f0 r6 8
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     addi r6 r2 1
-    lw r7 r0 25620
+    lw r7 r0 30620
     blt r6 r7 block_5734
 block_5733:
     mv r6 r0
@@ -21031,7 +21101,7 @@ block_5736:
     j block_5735
 block_5737:
     addi r6 r1 1
-    lw r7 r0 25616
+    lw r7 r0 30616
     blt r6 r7 block_5739
 block_5738:
     mv r6 r0
@@ -21073,11 +21143,11 @@ block_5750:
     lw r10 r6 16
     lw r7 r7 0
     lwcZ f0 r7 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r7 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r7 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r7 r6 24
     lw r7 r7 0
     lw r8 r8 0
@@ -21088,7 +21158,7 @@ block_5750:
     sw r8 r29 0
     beq r7 r0 block_5753
 block_5752:
-    lw r11 r0 25716
+    lw r11 r0 30716
     mv r3 r9
     mv r2 r8
     mv r1 r11
@@ -21104,7 +21174,7 @@ block_5754:
     lw r2 r29 12
     beq r2 r1 block_5756
 block_5755:
-    lw r1 r0 25720
+    lw r1 r0 30720
     lw r3 r29 0
     lw r4 r29 4
     mv r2 r3
@@ -21121,7 +21191,7 @@ block_5757:
     lw r2 r29 12
     beq r2 r1 block_5759
 block_5758:
-    lw r1 r0 25724
+    lw r1 r0 30724
     lw r3 r29 0
     lw r4 r29 4
     mv r2 r3
@@ -21138,7 +21208,7 @@ block_5760:
     lw r2 r29 12
     beq r2 r1 block_5762
 block_5761:
-    lw r1 r0 25728
+    lw r1 r0 30728
     lw r3 r29 0
     lw r4 r29 4
     mv r2 r3
@@ -21155,7 +21225,7 @@ block_5763:
     lw r2 r29 12
     beq r2 r1 block_5765
 block_5764:
-    lw r1 r0 25732
+    lw r1 r0 30732
     lw r2 r29 0
     lw r3 r29 4
     sw r31 r29 44
@@ -21168,24 +21238,24 @@ block_5765:
 block_5766:
     lw r1 r29 24
     lw r1 r1 0
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r1 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r1 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r1 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5751:
     addi r2 r0 1
     lw r1 r29 16
@@ -21291,85 +21361,85 @@ block_5783:
     lw r10 r10 20
     lw r6 r6 0
     lwcZ f0 r6 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r6 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r6 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r6 r7 0
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r6 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r6 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r6 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r6 r8 0
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r6 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r6 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r6 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r6 r9 0
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r6 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r6 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r6 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r6 r10 0
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r6 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r6 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r6 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r6 r1 2
     lwab r6 r4 r6
     lw r6 r6 16
     lw r6 r6 0
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r6 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r6 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r6 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5784:
     addi r6 r0 1
     sw r31 r29 44
@@ -21382,7 +21452,7 @@ block_5770:
     j block_5744
 block_5768:
 block_5744:
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5786
@@ -21397,7 +21467,7 @@ block_5786:
     addi r1 r0 255
 block_5787:
     out r1 0
-    lwcZ f0 r0 25608
+    lwcZ f0 r0 30608
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5791
@@ -21412,7 +21482,7 @@ block_5791:
     addi r1 r0 255
 block_5792:
     out r1 0
-    lwcZ f0 r0 25612
+    lwcZ f0 r0 30612
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5796
@@ -21429,7 +21499,7 @@ block_5797:
     out r1 0
     lw r1 r29 36
     addi r1 r1 1
-    lw r2 r0 25616
+    lw r2 r0 30616
     blt r1 r2 block_5801
 block_5800:
     jr r31
@@ -21439,14 +21509,14 @@ block_5801:
     lwab r2 r4 r2
     lw r2 r2 0
     lwcZ f0 r2 0
-    swcZ f0 r0 25604
+    swcZ f0 r0 30604
     lwcZ f0 r2 4
-    swcZ f0 r0 25608
+    swcZ f0 r0 30608
     lwcZ f0 r2 8
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     lw r2 r29 40
     addi r3 r2 1
-    lw r5 r0 25620
+    lw r5 r0 30620
     blt r3 r5 block_5803
 block_5802:
     mv r3 r0
@@ -21458,7 +21528,7 @@ block_5805:
     j block_5804
 block_5806:
     addi r3 r1 1
-    lw r5 r0 25616
+    lw r5 r0 30616
     blt r3 r5 block_5808
 block_5807:
     mv r3 r0
@@ -21494,7 +21564,7 @@ block_5812:
     subi r29 r29 48
     lw r31 r29 44
 block_5813:
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5815
@@ -21509,7 +21579,7 @@ block_5815:
     addi r1 r0 255
 block_5816:
     out r1 0
-    lwcZ f0 r0 25608
+    lwcZ f0 r0 30608
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5820
@@ -21524,7 +21594,7 @@ block_5820:
     addi r1 r0 255
 block_5821:
     out r1 0
-    lwcZ f0 r0 25612
+    lwcZ f0 r0 30612
     ftoi r1 f0
     addi r2 r0 255
     blt r2 r1 block_5825
@@ -21556,7 +21626,7 @@ block_844:
     blt r2 r0 block_846
 block_845:
     sll r3 r2 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 40
     lw r5 r3 4
     lwcZ f0 r1 0
@@ -21666,20 +21736,20 @@ block_1080:
     sll r3 r1 2
     lwab r3 r2 r3
     sll r4 r3 2
-    lw r4 r4 25048
-    lwcZ f0 r0 25552
+    lw r4 r4 30048
+    lwcZ f0 r0 30552
     lw r5 r4 20
     lwcZ f1 r5 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r5 r4 20
     lwcZ f2 r5 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r5 r4 20
     lwcZ f3 r5 8
     fsub f2 f2 f3
-    lw r5 r0 25992
+    lw r5 r0 30992
     sll r6 r3 2
     lwab r5 r5 r6
     lw r6 r4 4
@@ -21784,7 +21854,7 @@ block_1100:
     fsub f0 f4 f0
     lwcZ f1 r5 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_1102
 block_1101:
     sqrt_init f1 f0
@@ -21800,7 +21870,7 @@ block_1101:
     fadd f0 f4 f0
     lwcZ f1 r5 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_1102:
     addi r4 r0 1
     j block_1084
@@ -21832,11 +21902,11 @@ block_1107:
     lwcZ f1 r5 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_1084
 block_1083:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r5 0
     fsub f3 f3 f0
     lwcZ f4 r5 4
@@ -22035,18 +22105,18 @@ block_1160:
     mv r4 r0
     j block_1084
 block_1161:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_1084
 block_1143:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_1084
 block_1125:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_1084:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     beq r4 r0 block_1163
 block_1162:
     #-0.2
@@ -22066,7 +22136,7 @@ block_1164:
     bne r4 r0 block_1168
 block_1167:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r3 r3 24
     bne r3 r0 block_1170
 block_1169:
@@ -22085,17 +22155,17 @@ block_1168:
     flui f1 15395
     fori f1 f1 -10486
     fadd f0 f0 f1
-    lwcZ f1 r0 25312
+    lwcZ f1 r0 30312
     fmul f1 f1 f0
-    lwcZ f2 r0 25552
+    lwcZ f2 r0 30552
     fadd f1 f1 f2
-    lwcZ f2 r0 25316
+    lwcZ f2 r0 30316
     fmul f2 f2 f0
-    lwcZ f3 r0 25556
+    lwcZ f3 r0 30556
     fadd f2 f2 f3
-    lwcZ f3 r0 25320
+    lwcZ f3 r0 30320
     fmul f0 f3 f0
-    lwcZ f3 r0 25560
+    lwcZ f3 r0 30560
     fadd f0 f0 f3
     lw r3 r2 0
     addi r4 r0 -1
@@ -22104,7 +22174,7 @@ block_1168:
     beq r3 r4 block_1172
 block_1171:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f1 f3
@@ -22313,7 +22383,7 @@ block_1225:
     beq r3 r4 block_1228
 block_1227:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f1 f3
@@ -22522,7 +22592,7 @@ block_1280:
     beq r3 r4 block_1283
 block_1282:
     sll r3 r3 2
-    lw r3 r3 25048
+    lw r3 r3 30048
     lw r4 r3 20
     lwcZ f3 r4 0
     fsub f3 f1 f3
@@ -22781,7 +22851,7 @@ block_1339:
     beq r3 r4 block_1341
 block_1340:
     sll r3 r3 2
-    lw r3 r3 25332
+    lw r3 r3 30332
     sw r2 r29 32
     sw r1 r29 28
     mv r2 r3
@@ -22802,7 +22872,7 @@ block_1342:
     beq r2 r4 block_1345
 block_1344:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 12
     mv r1 r0
     sw r31 r29 36
@@ -22821,7 +22891,7 @@ block_1346:
     beq r2 r4 block_1349
 block_1348:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 24
     mv r1 r0
     sw r31 r29 36
@@ -22840,7 +22910,7 @@ block_1350:
     beq r2 r4 block_1353
 block_1352:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 4
     mv r1 r0
     sw r31 r29 36
@@ -22859,7 +22929,7 @@ block_1354:
     beq r2 r4 block_1357
 block_1356:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 16
     mv r1 r0
     sw r31 r29 36
@@ -22878,7 +22948,7 @@ block_1358:
     beq r2 r4 block_1361
 block_1360:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 8
     mv r1 r0
     sw r31 r29 36
@@ -22897,7 +22967,7 @@ block_1362:
     beq r2 r4 block_1365
 block_1364:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 20
     mv r1 r0
     sw r31 r29 36
@@ -22916,7 +22986,7 @@ block_1366:
     beq r2 r4 block_1369
 block_1368:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     sw r1 r29 0
     mv r1 r0
     sw r31 r29 36
@@ -22998,20 +23068,20 @@ block_1373:
     beq r4 r5 block_1376
 block_1375:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -23116,7 +23186,7 @@ block_1396:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_1398
 block_1397:
     sqrt_init f1 f0
@@ -23132,7 +23202,7 @@ block_1397:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_1398:
     addi r4 r0 1
     j block_1380
@@ -23164,11 +23234,11 @@ block_1403:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_1380
 block_1379:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -23367,20 +23437,20 @@ block_1456:
     mv r4 r0
     j block_1380
 block_1457:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_1380
 block_1439:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_1380
 block_1421:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_1380:
     beq r4 r0 block_1459
 block_1458:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -23395,7 +23465,7 @@ block_1461:
     beq r4 r5 block_1463
 block_1462:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 28
@@ -23411,7 +23481,7 @@ block_1465:
     beq r2 r3 block_1468
 block_1467:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -23426,7 +23496,7 @@ block_1469:
     beq r2 r3 block_1472
 block_1471:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -23441,7 +23511,7 @@ block_1473:
     beq r2 r3 block_1476
 block_1475:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -23456,7 +23526,7 @@ block_1477:
     beq r2 r3 block_1480
 block_1479:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -23471,7 +23541,7 @@ block_1481:
     beq r2 r3 block_1484
 block_1483:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -23486,7 +23556,7 @@ block_1485:
     beq r2 r3 block_1488
 block_1487:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -23575,20 +23645,20 @@ block_1495:
     beq r4 r5 block_1498
 block_1497:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -23693,7 +23763,7 @@ block_1518:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_1520
 block_1519:
     sqrt_init f1 f0
@@ -23709,7 +23779,7 @@ block_1519:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_1520:
     addi r4 r0 1
     j block_1502
@@ -23741,11 +23811,11 @@ block_1525:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_1502
 block_1501:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -23944,20 +24014,20 @@ block_1578:
     mv r4 r0
     j block_1502
 block_1579:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_1502
 block_1561:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_1502
 block_1543:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_1502:
     beq r4 r0 block_1581
 block_1580:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -23972,7 +24042,7 @@ block_1583:
     beq r4 r5 block_1585
 block_1584:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 28
@@ -23988,7 +24058,7 @@ block_1587:
     beq r2 r3 block_1590
 block_1589:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24003,7 +24073,7 @@ block_1591:
     beq r2 r3 block_1594
 block_1593:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24018,7 +24088,7 @@ block_1595:
     beq r2 r3 block_1598
 block_1597:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24033,7 +24103,7 @@ block_1599:
     beq r2 r3 block_1602
 block_1601:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24048,7 +24118,7 @@ block_1603:
     beq r2 r3 block_1606
 block_1605:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24132,7 +24202,7 @@ block_1612:
     beq r2 r3 block_1614
 block_1613:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24147,7 +24217,7 @@ block_1616:
     beq r2 r3 block_1619
 block_1618:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24162,7 +24232,7 @@ block_1620:
     beq r2 r3 block_1623
 block_1622:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24177,7 +24247,7 @@ block_1624:
     beq r2 r3 block_1627
 block_1626:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24192,7 +24262,7 @@ block_1628:
     beq r2 r3 block_1631
 block_1630:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24207,7 +24277,7 @@ block_1632:
     beq r2 r3 block_1635
 block_1634:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24284,7 +24354,7 @@ block_1494:
     beq r2 r3 block_1641
 block_1640:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24299,7 +24369,7 @@ block_1643:
     beq r2 r3 block_1646
 block_1645:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24314,7 +24384,7 @@ block_1647:
     beq r2 r3 block_1650
 block_1649:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24329,7 +24399,7 @@ block_1651:
     beq r2 r3 block_1654
 block_1653:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24344,7 +24414,7 @@ block_1655:
     beq r2 r3 block_1658
 block_1657:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24359,7 +24429,7 @@ block_1659:
     beq r2 r3 block_1662
 block_1661:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24374,7 +24444,7 @@ block_1663:
     beq r2 r3 block_1666
 block_1665:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24450,20 +24520,20 @@ block_1671:
     beq r4 r5 block_1674
 block_1673:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -24568,7 +24638,7 @@ block_1694:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_1696
 block_1695:
     sqrt_init f1 f0
@@ -24584,7 +24654,7 @@ block_1695:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_1696:
     addi r4 r0 1
     j block_1678
@@ -24616,11 +24686,11 @@ block_1701:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_1678
 block_1677:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -24819,20 +24889,20 @@ block_1754:
     mv r4 r0
     j block_1678
 block_1755:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_1678
 block_1737:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_1678
 block_1719:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_1678:
     beq r4 r0 block_1757
 block_1756:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -24847,7 +24917,7 @@ block_1759:
     beq r4 r5 block_1761
 block_1760:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 28
@@ -24863,7 +24933,7 @@ block_1763:
     beq r2 r3 block_1766
 block_1765:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24878,7 +24948,7 @@ block_1767:
     beq r2 r3 block_1770
 block_1769:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24893,7 +24963,7 @@ block_1771:
     beq r2 r3 block_1774
 block_1773:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24908,7 +24978,7 @@ block_1775:
     beq r2 r3 block_1778
 block_1777:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -24923,7 +24993,7 @@ block_1779:
     beq r2 r3 block_1782
 block_1781:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25007,7 +25077,7 @@ block_1788:
     beq r2 r3 block_1790
 block_1789:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25022,7 +25092,7 @@ block_1792:
     beq r2 r3 block_1795
 block_1794:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25037,7 +25107,7 @@ block_1796:
     beq r2 r3 block_1799
 block_1798:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25052,7 +25122,7 @@ block_1800:
     beq r2 r3 block_1803
 block_1802:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25067,7 +25137,7 @@ block_1804:
     beq r2 r3 block_1807
 block_1806:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25082,7 +25152,7 @@ block_1808:
     beq r2 r3 block_1811
 block_1810:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 28
     addi r29 r29 32
@@ -25166,16 +25236,16 @@ block_1816:
     beq r4 r5 block_1818
 block_1817:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25636
+    lw r5 r5 30048
+    lwcZ f0 r0 30636
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25640
+    lwcZ f1 r0 30640
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25644
+    lwcZ f2 r0 30644
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
@@ -25368,7 +25438,7 @@ block_1845:
     fsub f2 f2 f3
     fmul f1 f1 f2
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r5 r0 1
     j block_1821
 block_1828:
@@ -25418,7 +25488,7 @@ block_1850:
     fsub f2 f2 f3
     fmul f1 f1 f2
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r5 r0 1
     j block_1821
 block_1820:
@@ -25508,7 +25578,7 @@ block_1873:
     mv r6 r0
     j block_1853
 block_1874:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
     j block_1853
 block_1852:
@@ -25602,7 +25672,7 @@ block_1899:
     mv r6 r0
     j block_1879
 block_1900:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
     j block_1879
 block_1878:
@@ -25696,7 +25766,7 @@ block_1925:
     mv r5 r0
     j block_1905
 block_1926:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r5 r0 1
     j block_1905
 block_1904:
@@ -25717,7 +25787,7 @@ block_1876:
 block_1821:
     beq r5 r0 block_1930
 block_1929:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #0.0
     flui f1 0
     sw r1 r29 8
@@ -25728,7 +25798,7 @@ block_1929:
 block_1931:
     j block_1933
 block_1932:
-    lwcZ f1 r0 25548
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_1935
 block_1934:
@@ -25740,15 +25810,15 @@ block_1935:
     fadd f0 f0 f1
     lwcZ f1 r3 0
     fmul f1 f1 f0
-    lwcZ f2 r0 25636
+    lwcZ f2 r0 30636
     fadd f1 f1 f2
     lwcZ f2 r3 4
     fmul f2 f2 f0
-    lwcZ f3 r0 25640
+    lwcZ f3 r0 30640
     fadd f2 f2 f3
     lwcZ f3 r3 8
     fmul f3 f3 f0
-    lwcZ f4 r0 25644
+    lwcZ f4 r0 30644
     fadd f3 f3 f4
     lw r6 r2 0
     addi r7 r0 -1
@@ -25761,7 +25831,7 @@ block_1935:
     beq r6 r7 block_1937
 block_1936:
     sll r6 r6 2
-    lw r6 r6 25048
+    lw r6 r6 30048
     lw r7 r6 20
     lwcZ f4 r7 0
     fsub f4 f1 f4
@@ -25970,7 +26040,7 @@ block_1990:
     beq r6 r7 block_1993
 block_1992:
     sll r6 r6 2
-    lw r6 r6 25048
+    lw r6 r6 30048
     lw r7 r6 20
     lwcZ f4 r7 0
     fsub f4 f1 f4
@@ -26179,7 +26249,7 @@ block_2045:
     beq r6 r7 block_2048
 block_2047:
     sll r6 r6 2
-    lw r6 r6 25048
+    lw r6 r6 30048
     lw r7 r6 20
     lwcZ f4 r7 0
     fsub f4 f1 f4
@@ -26417,17 +26487,17 @@ block_2102:
     j block_1933
 block_2103:
     lwcZ f0 r29 28
-    swcZ f0 r0 25548
+    swcZ f0 r0 30548
     lwcZ f0 r29 16
-    swcZ f0 r0 25552
+    swcZ f0 r0 30552
     lwcZ f0 r29 20
-    swcZ f0 r0 25556
+    swcZ f0 r0 30556
     lwcZ f0 r29 24
-    swcZ f0 r0 25560
+    swcZ f0 r0 30560
     lw r1 r29 12
-    sw r1 r0 25564
+    sw r1 r0 30564
     lw r1 r29 32
-    sw r1 r0 25544
+    sw r1 r0 30544
 block_1933:
     lw r1 r29 8
     addi r1 r1 1
@@ -26441,7 +26511,7 @@ block_1933:
     jr r31
 block_1930:
     sll r4 r4 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r4 r4 24
     bne r4 r0 block_2105
 block_2104:
@@ -26465,7 +26535,7 @@ block_2414:
     beq r5 r6 block_2416
 block_2415:
     sll r6 r5 2
-    lw r6 r6 25048
+    lw r6 r6 30048
     lw r7 r6 40
     lwcZ f0 r7 0
     lwcZ f1 r7 4
@@ -26530,7 +26600,7 @@ block_2429:
     fsub f0 f0 f1
     lwcZ f1 r8 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_2431
 block_2430:
     sqrt_init f2 f1
@@ -26546,7 +26616,7 @@ block_2430:
     fadd f0 f0 f1
     lwcZ f1 r8 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_2431:
     addi r6 r0 1
     j block_2419
@@ -26573,7 +26643,7 @@ block_2436:
     lwcZ f0 r8 0
     lwcZ f1 r7 12
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r6 r0 1
     j block_2419
 block_2418:
@@ -26776,20 +26846,20 @@ block_2489:
     mv r6 r0
     j block_2419
 block_2490:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r6 r0 3
     j block_2419
 block_2472:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 2
     j block_2419
 block_2454:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
 block_2419:
     beq r6 r0 block_2492
 block_2491:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #0.0
     flui f1 0
     sw r1 r29 8
@@ -26800,7 +26870,7 @@ block_2491:
 block_2493:
     j block_2495
 block_2494:
-    lwcZ f1 r0 25548
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_2497
 block_2496:
@@ -26812,15 +26882,15 @@ block_2497:
     fadd f0 f0 f1
     lwcZ f1 r4 0
     fmul f1 f1 f0
-    lwcZ f2 r0 25648
+    lwcZ f2 r0 30648
     fadd f1 f1 f2
     lwcZ f2 r4 4
     fmul f2 f2 f0
-    lwcZ f3 r0 25652
+    lwcZ f3 r0 30652
     fadd f2 f2 f3
     lwcZ f3 r4 8
     fmul f3 f3 f0
-    lwcZ f4 r0 25656
+    lwcZ f4 r0 30656
     fadd f3 f3 f4
     lw r4 r2 0
     addi r7 r0 -1
@@ -26833,7 +26903,7 @@ block_2497:
     beq r4 r7 block_2499
 block_2498:
     sll r4 r4 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r7 r4 20
     lwcZ f4 r7 0
     fsub f4 f1 f4
@@ -27042,7 +27112,7 @@ block_2552:
     beq r4 r7 block_2555
 block_2554:
     sll r4 r4 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r7 r4 20
     lwcZ f4 r7 0
     fsub f4 f1 f4
@@ -27251,7 +27321,7 @@ block_2607:
     beq r4 r7 block_2610
 block_2609:
     sll r4 r4 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r7 r4 20
     lwcZ f4 r7 0
     fsub f4 f1 f4
@@ -27489,17 +27559,17 @@ block_2664:
     j block_2495
 block_2665:
     lwcZ f0 r29 28
-    swcZ f0 r0 25548
+    swcZ f0 r0 30548
     lwcZ f0 r29 16
-    swcZ f0 r0 25552
+    swcZ f0 r0 30552
     lwcZ f0 r29 20
-    swcZ f0 r0 25556
+    swcZ f0 r0 30556
     lwcZ f0 r29 24
-    swcZ f0 r0 25560
+    swcZ f0 r0 30560
     lw r1 r29 12
-    sw r1 r0 25564
+    sw r1 r0 30564
     lw r1 r29 32
-    sw r1 r0 25544
+    sw r1 r0 30544
 block_2495:
     lw r1 r29 8
     addi r1 r1 1
@@ -27513,7 +27583,7 @@ block_2495:
     jr r31
 block_2492:
     sll r4 r5 2
-    lw r4 r4 25048
+    lw r4 r4 30048
     lw r4 r4 24
     bne r4 r0 block_2667
 block_2666:
@@ -27536,7 +27606,7 @@ block_2106:
     beq r4 r5 block_2108
 block_2107:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     sw r2 r29 36
     sw r1 r29 32
     sw r3 r29 28
@@ -27556,7 +27626,7 @@ block_2107:
     beq r2 r4 block_2110
 block_2109:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 12
     mv r3 r4
@@ -27575,7 +27645,7 @@ block_2109:
     beq r2 r4 block_2112
 block_2111:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 24
     mv r3 r4
@@ -27594,7 +27664,7 @@ block_2111:
     beq r2 r4 block_2114
 block_2113:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 4
     mv r3 r4
@@ -27613,7 +27683,7 @@ block_2113:
     beq r2 r4 block_2116
 block_2115:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 16
     mv r3 r4
@@ -27632,7 +27702,7 @@ block_2115:
     beq r2 r4 block_2118
 block_2117:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 8
     mv r3 r4
@@ -27651,7 +27721,7 @@ block_2117:
     beq r2 r4 block_2120
 block_2119:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 20
     mv r3 r4
@@ -27670,7 +27740,7 @@ block_2119:
     beq r2 r4 block_2122
 block_2121:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 0
     mv r3 r4
@@ -27714,7 +27784,7 @@ block_2668:
     beq r4 r5 block_2670
 block_2669:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     sw r2 r29 36
     sw r1 r29 32
     sw r3 r29 28
@@ -27734,7 +27804,7 @@ block_2669:
     beq r2 r4 block_2672
 block_2671:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 12
     mv r3 r4
@@ -27753,7 +27823,7 @@ block_2671:
     beq r2 r4 block_2674
 block_2673:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 24
     mv r3 r4
@@ -27772,7 +27842,7 @@ block_2673:
     beq r2 r4 block_2676
 block_2675:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 4
     mv r3 r4
@@ -27791,7 +27861,7 @@ block_2675:
     beq r2 r4 block_2678
 block_2677:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 16
     mv r3 r4
@@ -27810,7 +27880,7 @@ block_2677:
     beq r2 r4 block_2680
 block_2679:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 8
     mv r3 r4
@@ -27829,7 +27899,7 @@ block_2679:
     beq r2 r4 block_2682
 block_2681:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 20
     mv r3 r4
@@ -27848,7 +27918,7 @@ block_2681:
     beq r2 r4 block_2684
 block_2683:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r4 r29 28
     sw r1 r29 0
     mv r3 r4
@@ -27889,8 +27959,8 @@ block_3791:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r2 r0 25536
+    swcZ f1 r0 30548
+    lw r2 r0 30536
     swcZ f0 r29 8
     sw r1 r29 4
     mv r3 r1
@@ -27900,7 +27970,7 @@ block_3791:
     jal trace_or_matrix_fast.4483
     subi r29 r29 24
     lw r31 r29 20
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -27925,9 +27995,9 @@ block_3794:
 block_3797:
     jr r31
 block_3798:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 4
     lw r2 r2 0
     lw r3 r1 4
@@ -27937,15 +28007,15 @@ block_3799:
     addi r2 r0 2
     beq r3 r2 block_3803
 block_3802:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -27972,7 +28042,7 @@ block_3804:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -27984,7 +28054,7 @@ block_3804:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -27996,20 +28066,20 @@ block_3804:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_3806
 block_3805:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_3806:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -28055,37 +28125,37 @@ block_3808:
     #1.0
     flui f0 16256
 block_3809:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_3801
 block_3803:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_3801
 block_3800:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -28121,18 +28191,18 @@ block_3813:
 block_3814:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_3801:
     lw r2 r1 0
     lw r3 r1 32
     lwcZ f0 r3 0
-    swcZ f0 r0 25580
+    swcZ f0 r0 30580
     lw r3 r1 32
     lwcZ f0 r3 4
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     lw r3 r1 32
     lwcZ f0 r3 8
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     addi r3 r0 1
     beq r2 r3 block_3821
 block_3820:
@@ -28147,7 +28217,7 @@ block_3825:
 block_3827:
     j block_3822
 block_3828:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -28164,7 +28234,7 @@ block_3828:
     fsub f2 f3 f2
     fmul f1 f1 f2
     fmul f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -28418,7 +28488,7 @@ block_3853:
     fsub f1 f1 f3
 block_3854:
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f3 r2 4
     fsub f1 f1 f3
@@ -28706,14 +28776,14 @@ block_3886:
     flui f1 16469
     fori f1 f1 21845
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_3822
 block_3826:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -28864,17 +28934,17 @@ block_3910:
     #255.0
     flui f1 17279
     fmul f1 f0 f1
-    swcZ f1 r0 25584
+    swcZ f1 r0 30584
     #1.0
     flui f1 16256
     fsub f0 f1 f0
     #255.0
     flui f1 17279
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_3822
 block_3824:
-    lwcZ f0 r0 25556
+    lwcZ f0 r0 30556
     #0.25
     flui f1 16000
     fmul f0 f0 f1
@@ -28984,17 +29054,17 @@ block_3928:
     #255.0
     flui f1 17279
     fmul f1 f1 f0
-    swcZ f1 r0 25580
+    swcZ f1 r0 30580
     #255.0
     flui f1 17279
     #1.0
     flui f2 16256
     fsub f0 f2 f0
     fmul f0 f1 f0
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     j block_3822
 block_3821:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -29028,7 +29098,7 @@ block_3932:
 block_3933:
     addi r2 r0 1
 block_3934:
-    lwcZ f0 r0 25560
+    lwcZ f0 r0 30560
     lw r3 r1 20
     lwcZ f1 r3 8
     fsub f0 f0 f1
@@ -29083,9 +29153,9 @@ block_3947:
     #255.0
     flui f0 17279
 block_3943:
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
 block_3822:
-    lw r2 r0 25536
+    lw r2 r0 30536
     lw r3 r2 0
     lw r4 r3 0
     addi r5 r0 -1
@@ -29098,20 +29168,20 @@ block_3948:
     beq r4 r5 block_3952
 block_3951:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -29216,7 +29286,7 @@ block_3972:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_3974
 block_3973:
     sqrt_init f1 f0
@@ -29232,7 +29302,7 @@ block_3973:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_3974:
     addi r4 r0 1
     j block_3956
@@ -29264,11 +29334,11 @@ block_3979:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_3956
 block_3955:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -29467,20 +29537,20 @@ block_4032:
     mv r4 r0
     j block_3956
 block_4033:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_3956
 block_4015:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_3956
 block_3997:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_3956:
     beq r4 r0 block_4035
 block_4034:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -29495,7 +29565,7 @@ block_4037:
     beq r4 r5 block_4039
 block_4038:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 20
@@ -29511,7 +29581,7 @@ block_4041:
     beq r2 r3 block_4044
 block_4043:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29526,7 +29596,7 @@ block_4045:
     beq r2 r3 block_4048
 block_4047:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29541,7 +29611,7 @@ block_4049:
     beq r2 r3 block_4052
 block_4051:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29556,7 +29626,7 @@ block_4053:
     beq r2 r3 block_4056
 block_4055:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29571,7 +29641,7 @@ block_4057:
     beq r2 r3 block_4060
 block_4059:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29654,7 +29724,7 @@ block_4066:
     beq r2 r3 block_4068
 block_4067:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29669,7 +29739,7 @@ block_4070:
     beq r2 r3 block_4073
 block_4072:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29684,7 +29754,7 @@ block_4074:
     beq r2 r3 block_4077
 block_4076:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29699,7 +29769,7 @@ block_4078:
     beq r2 r3 block_4081
 block_4080:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29714,7 +29784,7 @@ block_4082:
     beq r2 r3 block_4085
 block_4084:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29729,7 +29799,7 @@ block_4086:
     beq r2 r3 block_4089
 block_4088:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 20
     addi r29 r29 24
@@ -29800,15 +29870,15 @@ block_3949:
 block_3950:
     bne r1 r0 block_4095
 block_4094:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -29835,33 +29905,33 @@ block_4101:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     jr r31
 block_4095:
     jr r31
 trace_diffuse_rays.4959:
 block_4979:
     lwcZ f0 r3 0
-    swcZ f0 r0 25648
+    swcZ f0 r0 30648
     lwcZ f0 r3 4
-    swcZ f0 r0 25652
+    swcZ f0 r0 30652
     lwcZ f0 r3 8
-    swcZ f0 r0 25656
-    lw r4 r0 25000
+    swcZ f0 r0 30656
+    lw r4 r0 30000
     subi r4 r4 1
     sw r3 r29 48
     sw r2 r29 36
@@ -29911,8 +29981,8 @@ block_4985:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r4 r0 25536
+    swcZ f1 r0 30548
+    lw r4 r0 30536
     sw r2 r29 20
     swcZ f0 r29 12
     mv r3 r2
@@ -29923,7 +29993,7 @@ block_4985:
     jal trace_or_matrix_fast.4483
     subi r29 r29 56
     lw r31 r29 52
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -29948,9 +30018,9 @@ block_4990:
 block_4993:
     j block_4987
 block_4994:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 20
     lw r2 r2 0
     lw r3 r1 4
@@ -29960,15 +30030,15 @@ block_4995:
     addi r2 r0 2
     beq r3 r2 block_4999
 block_4998:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -29995,7 +30065,7 @@ block_5000:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -30007,7 +30077,7 @@ block_5000:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -30019,20 +30089,20 @@ block_5000:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_5002
 block_5001:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_5002:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -30078,37 +30148,37 @@ block_5004:
     #1.0
     flui f0 16256
 block_5005:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4997
 block_4999:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_4997
 block_4996:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -30144,18 +30214,18 @@ block_5009:
 block_5010:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_4997:
     lw r2 r1 0
     lw r3 r1 32
     lwcZ f0 r3 0
-    swcZ f0 r0 25580
+    swcZ f0 r0 30580
     lw r3 r1 32
     lwcZ f0 r3 4
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     lw r3 r1 32
     lwcZ f0 r3 8
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     addi r3 r0 1
     beq r2 r3 block_5017
 block_5016:
@@ -30170,7 +30240,7 @@ block_5021:
 block_5023:
     j block_5018
 block_5024:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -30187,7 +30257,7 @@ block_5024:
     fsub f2 f3 f2
     fmul f1 f1 f2
     fmul f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -30441,7 +30511,7 @@ block_5049:
     fsub f1 f1 f3
 block_5050:
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f3 r2 4
     fsub f1 f1 f3
@@ -30729,14 +30799,14 @@ block_5082:
     flui f1 16469
     fori f1 f1 21845
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_5018
 block_5022:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -30887,17 +30957,17 @@ block_5106:
     #255.0
     flui f1 17279
     fmul f1 f0 f1
-    swcZ f1 r0 25584
+    swcZ f1 r0 30584
     #1.0
     flui f1 16256
     fsub f0 f1 f0
     #255.0
     flui f1 17279
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_5018
 block_5020:
-    lwcZ f0 r0 25556
+    lwcZ f0 r0 30556
     #0.25
     flui f1 16000
     fmul f0 f0 f1
@@ -31007,17 +31077,17 @@ block_5124:
     #255.0
     flui f1 17279
     fmul f1 f1 f0
-    swcZ f1 r0 25580
+    swcZ f1 r0 30580
     #255.0
     flui f1 17279
     #1.0
     flui f2 16256
     fsub f0 f2 f0
     fmul f0 f1 f0
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     j block_5018
 block_5017:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -31051,7 +31121,7 @@ block_5128:
 block_5129:
     addi r2 r0 1
 block_5130:
-    lwcZ f0 r0 25560
+    lwcZ f0 r0 30560
     lw r3 r1 20
     lwcZ f1 r3 8
     fsub f0 f0 f1
@@ -31106,9 +31176,9 @@ block_5143:
     #255.0
     flui f0 17279
 block_5139:
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
 block_5018:
-    lw r2 r0 25536
+    lw r2 r0 30536
     lw r3 r2 0
     lw r4 r3 0
     addi r5 r0 -1
@@ -31121,20 +31191,20 @@ block_5144:
     beq r4 r5 block_5148
 block_5147:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -31239,7 +31309,7 @@ block_5168:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_5170
 block_5169:
     sqrt_init f1 f0
@@ -31255,7 +31325,7 @@ block_5169:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_5170:
     addi r4 r0 1
     j block_5152
@@ -31287,11 +31357,11 @@ block_5175:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_5152
 block_5151:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -31490,20 +31560,20 @@ block_5228:
     mv r4 r0
     j block_5152
 block_5229:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_5152
 block_5211:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_5152
 block_5193:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_5152:
     beq r4 r0 block_5231
 block_5230:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -31518,7 +31588,7 @@ block_5233:
     beq r4 r5 block_5235
 block_5234:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 52
@@ -31534,7 +31604,7 @@ block_5237:
     beq r2 r3 block_5240
 block_5239:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31549,7 +31619,7 @@ block_5241:
     beq r2 r3 block_5244
 block_5243:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31564,7 +31634,7 @@ block_5245:
     beq r2 r3 block_5248
 block_5247:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31635,7 +31705,7 @@ block_5254:
     beq r2 r3 block_5256
 block_5255:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31650,7 +31720,7 @@ block_5258:
     beq r2 r3 block_5261
 block_5260:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31665,7 +31735,7 @@ block_5262:
     beq r2 r3 block_5265
 block_5264:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31680,7 +31750,7 @@ block_5266:
     beq r2 r3 block_5269
 block_5268:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -31739,15 +31809,15 @@ block_5145:
 block_5146:
     bne r1 r0 block_5275
 block_5274:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -31774,21 +31844,21 @@ block_5281:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     j block_4987
 block_5275:
     j block_4987
@@ -31801,8 +31871,8 @@ block_4986:
     #1000000000.0
     flui f1 20078
     fori f1 f1 27432
-    swcZ f1 r0 25548
-    lw r4 r0 25536
+    swcZ f1 r0 30548
+    lw r4 r0 30536
     sw r2 r29 16
     swcZ f0 r29 8
     mv r3 r2
@@ -31813,7 +31883,7 @@ block_4986:
     jal trace_or_matrix_fast.4483
     subi r29 r29 56
     lw r31 r29 52
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -31838,9 +31908,9 @@ block_5284:
 block_5287:
     j block_4987
 block_5288:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r1 r1 25048
+    lw r1 r1 30048
     lw r2 r29 16
     lw r2 r2 0
     lw r3 r1 4
@@ -31850,15 +31920,15 @@ block_5289:
     addi r2 r0 2
     beq r3 r2 block_5293
 block_5292:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f2 r2 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r2 r1 20
     lwcZ f3 r2 8
     fsub f2 f2 f3
@@ -31885,7 +31955,7 @@ block_5294:
     flui f7 16128
     fmul f6 f6 f7
     fadd f3 f3 f6
-    swcZ f3 r0 25568
+    swcZ f3 r0 30568
     lw r2 r1 36
     lwcZ f3 r2 8
     fmul f3 f0 f3
@@ -31897,7 +31967,7 @@ block_5294:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f4 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r2 r1 36
     lwcZ f2 r2 4
     fmul f0 f0 f2
@@ -31909,20 +31979,20 @@ block_5294:
     flui f1 16128
     fmul f0 f0 f1
     fadd f0 f5 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_5296
 block_5295:
-    swcZ f3 r0 25568
-    swcZ f4 r0 25572
-    swcZ f5 r0 25576
+    swcZ f3 r0 30568
+    swcZ f4 r0 30572
+    swcZ f5 r0 30576
 block_5296:
     lw r2 r1 24
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     fmul f0 f0 f0
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     fmul f1 f1 f1
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     fmul f1 f1 f1
     fadd f0 f0 f1
     sqrt_init f1 f0
@@ -31968,37 +32038,37 @@ block_5298:
     #1.0
     flui f0 16256
 block_5299:
-    lwcZ f1 r0 25568
+    lwcZ f1 r0 30568
     fmul f1 f1 f0
-    swcZ f1 r0 25568
-    lwcZ f1 r0 25572
+    swcZ f1 r0 30568
+    lwcZ f1 r0 30572
     fmul f1 f1 f0
-    swcZ f1 r0 25572
-    lwcZ f1 r0 25576
+    swcZ f1 r0 30572
+    lwcZ f1 r0 30576
     fmul f0 f1 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_5291
 block_5293:
     lw r2 r1 16
     lwcZ f0 r2 0
     fneg f0 f0
-    swcZ f0 r0 25568
+    swcZ f0 r0 30568
     lw r2 r1 16
     lwcZ f0 r2 4
     fneg f0 f0
-    swcZ f0 r0 25572
+    swcZ f0 r0 30572
     lw r2 r1 16
     lwcZ f0 r2 8
     fneg f0 f0
-    swcZ f0 r0 25576
+    swcZ f0 r0 30576
     j block_5291
 block_5290:
-    lw r3 r0 25544
+    lw r3 r0 30544
     #0.0
     flui f0 0
-    swcZ f0 r0 25568
-    swcZ f0 r0 25572
-    swcZ f0 r0 25576
+    swcZ f0 r0 30568
+    swcZ f0 r0 30572
+    swcZ f0 r0 30576
     subi r4 r3 1
     subi r3 r3 1
     sll r3 r3 2
@@ -32034,18 +32104,18 @@ block_5303:
 block_5304:
     fneg f0 f0
     sll r2 r4 2
-    swcZ f0 r2 25568
+    swcZ f0 r2 30568
 block_5291:
     lw r2 r1 0
     lw r3 r1 32
     lwcZ f0 r3 0
-    swcZ f0 r0 25580
+    swcZ f0 r0 30580
     lw r3 r1 32
     lwcZ f0 r3 4
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     lw r3 r1 32
     lwcZ f0 r3 8
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     addi r3 r0 1
     beq r2 r3 block_5311
 block_5310:
@@ -32060,7 +32130,7 @@ block_5315:
 block_5317:
     j block_5312
 block_5318:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -32077,7 +32147,7 @@ block_5318:
     fsub f2 f3 f2
     fmul f1 f1 f2
     fmul f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -32331,7 +32401,7 @@ block_5343:
     fsub f1 f1 f3
 block_5344:
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r2 r1 20
     lwcZ f3 r2 4
     fsub f1 f1 f3
@@ -32619,14 +32689,14 @@ block_5376:
     flui f1 16469
     fori f1 f1 21845
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_5312
 block_5316:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25560
+    lwcZ f1 r0 30560
     lw r2 r1 20
     lwcZ f2 r2 8
     fsub f1 f1 f2
@@ -32777,17 +32847,17 @@ block_5400:
     #255.0
     flui f1 17279
     fmul f1 f0 f1
-    swcZ f1 r0 25584
+    swcZ f1 r0 30584
     #1.0
     flui f1 16256
     fsub f0 f1 f0
     #255.0
     flui f1 17279
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     j block_5312
 block_5314:
-    lwcZ f0 r0 25556
+    lwcZ f0 r0 30556
     #0.25
     flui f1 16000
     fmul f0 f0 f1
@@ -32897,17 +32967,17 @@ block_5418:
     #255.0
     flui f1 17279
     fmul f1 f1 f0
-    swcZ f1 r0 25580
+    swcZ f1 r0 30580
     #255.0
     flui f1 17279
     #1.0
     flui f2 16256
     fsub f0 f2 f0
     fmul f0 f1 f0
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     j block_5312
 block_5311:
-    lwcZ f0 r0 25552
+    lwcZ f0 r0 30552
     lw r2 r1 20
     lwcZ f1 r2 0
     fsub f0 f0 f1
@@ -32941,7 +33011,7 @@ block_5422:
 block_5423:
     addi r2 r0 1
 block_5424:
-    lwcZ f0 r0 25560
+    lwcZ f0 r0 30560
     lw r3 r1 20
     lwcZ f1 r3 8
     fsub f0 f0 f1
@@ -32996,9 +33066,9 @@ block_5437:
     #255.0
     flui f0 17279
 block_5433:
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
 block_5312:
-    lw r2 r0 25536
+    lw r2 r0 30536
     lw r3 r2 0
     lw r4 r3 0
     addi r5 r0 -1
@@ -33011,20 +33081,20 @@ block_5438:
     beq r4 r5 block_5442
 block_5441:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -33129,7 +33199,7 @@ block_5462:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_5464
 block_5463:
     sqrt_init f1 f0
@@ -33145,7 +33215,7 @@ block_5463:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_5464:
     addi r4 r0 1
     j block_5446
@@ -33177,11 +33247,11 @@ block_5469:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_5446
 block_5445:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -33380,20 +33450,20 @@ block_5522:
     mv r4 r0
     j block_5446
 block_5523:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_5446
 block_5505:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_5446
 block_5487:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_5446:
     beq r4 r0 block_5525
 block_5524:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -33408,7 +33478,7 @@ block_5527:
     beq r4 r5 block_5529
 block_5528:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 52
@@ -33424,7 +33494,7 @@ block_5531:
     beq r2 r3 block_5534
 block_5533:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33439,7 +33509,7 @@ block_5535:
     beq r2 r3 block_5538
 block_5537:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33454,7 +33524,7 @@ block_5539:
     beq r2 r3 block_5542
 block_5541:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33525,7 +33595,7 @@ block_5548:
     beq r2 r3 block_5550
 block_5549:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33540,7 +33610,7 @@ block_5552:
     beq r2 r3 block_5555
 block_5554:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33555,7 +33625,7 @@ block_5556:
     beq r2 r3 block_5559
 block_5558:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33570,7 +33640,7 @@ block_5560:
     beq r2 r3 block_5563
 block_5562:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -33629,15 +33699,15 @@ block_5439:
 block_5440:
     bne r1 r0 block_5569
 block_5568:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -33664,21 +33734,21 @@ block_5575:
     lw r1 r1 28
     lwcZ f1 r1 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25592
-    lwcZ f2 r0 25580
+    lwcZ f1 r0 30592
+    lwcZ f2 r0 30580
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25592
-    lwcZ f1 r0 25596
-    lwcZ f2 r0 25584
+    swcZ f1 r0 30592
+    lwcZ f1 r0 30596
+    lwcZ f2 r0 30584
     fmul f2 f0 f2
     fadd f1 f1 f2
-    swcZ f1 r0 25596
-    lwcZ f1 r0 25600
-    lwcZ f2 r0 25588
+    swcZ f1 r0 30596
+    lwcZ f1 r0 30600
+    lwcZ f2 r0 30588
     fmul f0 f0 f2
     fadd f0 f1 f0
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     j block_4987
 block_5569:
 block_4987:
@@ -33709,16 +33779,16 @@ block_2124:
     beq r5 r6 block_2127
 block_2126:
     sll r5 r5 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25636
+    lw r5 r5 30048
+    lwcZ f0 r0 30636
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25640
+    lwcZ f1 r0 30640
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25644
+    lwcZ f2 r0 30644
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
@@ -33911,7 +33981,7 @@ block_2155:
     fsub f2 f2 f3
     fmul f1 f1 f2
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r5 r0 1
     j block_2131
 block_2138:
@@ -33961,7 +34031,7 @@ block_2160:
     fsub f2 f2 f3
     fmul f1 f1 f2
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r5 r0 1
     j block_2131
 block_2130:
@@ -34051,7 +34121,7 @@ block_2183:
     mv r6 r0
     j block_2163
 block_2184:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
     j block_2163
 block_2162:
@@ -34145,7 +34215,7 @@ block_2209:
     mv r6 r0
     j block_2189
 block_2210:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
     j block_2189
 block_2188:
@@ -34239,7 +34309,7 @@ block_2235:
     mv r5 r0
     j block_2215
 block_2236:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r5 r0 1
     j block_2215
 block_2214:
@@ -34260,8 +34330,8 @@ block_2186:
 block_2131:
     beq r5 r0 block_2240
 block_2239:
-    lwcZ f0 r0 25540
-    lwcZ f1 r0 25548
+    lwcZ f0 r0 30540
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_2242
 block_2241:
@@ -34272,7 +34342,7 @@ block_2242:
     beq r5 r6 block_2244
 block_2243:
     sll r5 r5 2
-    lw r5 r5 25332
+    lw r5 r5 30332
     sw r4 r29 8
     mv r2 r5
     mv r1 r0
@@ -34287,7 +34357,7 @@ block_2243:
     beq r2 r3 block_2246
 block_2245:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34301,7 +34371,7 @@ block_2245:
     beq r2 r3 block_2248
 block_2247:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34315,7 +34385,7 @@ block_2247:
     beq r2 r3 block_2250
 block_2249:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34329,7 +34399,7 @@ block_2249:
     beq r2 r3 block_2252
 block_2251:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34343,7 +34413,7 @@ block_2251:
     beq r2 r3 block_2254
 block_2253:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34357,7 +34427,7 @@ block_2253:
     beq r2 r3 block_2256
 block_2255:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34396,7 +34466,7 @@ block_2127:
     beq r5 r6 block_2258
 block_2257:
     sll r5 r5 2
-    lw r5 r5 25332
+    lw r5 r5 30332
     sw r4 r29 8
     mv r2 r5
     mv r1 r0
@@ -34411,7 +34481,7 @@ block_2257:
     beq r2 r3 block_2260
 block_2259:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34425,7 +34495,7 @@ block_2259:
     beq r2 r3 block_2262
 block_2261:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34439,7 +34509,7 @@ block_2261:
     beq r2 r3 block_2264
 block_2263:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34453,7 +34523,7 @@ block_2263:
     beq r2 r3 block_2266
 block_2265:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34467,7 +34537,7 @@ block_2265:
     beq r2 r3 block_2268
 block_2267:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34481,7 +34551,7 @@ block_2267:
     beq r2 r3 block_2270
 block_2269:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -34526,16 +34596,16 @@ block_2271:
     beq r4 r5 block_2274
 block_2273:
     sll r4 r4 2
-    lw r4 r4 25048
-    lwcZ f0 r0 25636
+    lw r4 r4 30048
+    lwcZ f0 r0 30636
     lw r5 r4 20
     lwcZ f1 r5 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25640
+    lwcZ f1 r0 30640
     lw r5 r4 20
     lwcZ f2 r5 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25644
+    lwcZ f2 r0 30644
     lw r5 r4 20
     lwcZ f3 r5 8
     fsub f2 f2 f3
@@ -34729,7 +34799,7 @@ block_2302:
     fsub f2 f2 f3
     fmul f1 f1 f2
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_2278
 block_2285:
@@ -34780,7 +34850,7 @@ block_2307:
     fsub f2 f2 f3
     fmul f1 f1 f2
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_2278
 block_2277:
@@ -34871,7 +34941,7 @@ block_2330:
     mv r6 r0
     j block_2310
 block_2331:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
     j block_2310
 block_2309:
@@ -34965,7 +35035,7 @@ block_2356:
     mv r6 r0
     j block_2336
 block_2357:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
     j block_2336
 block_2335:
@@ -35059,7 +35129,7 @@ block_2382:
     mv r4 r0
     j block_2362
 block_2383:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 1
     j block_2362
 block_2361:
@@ -35080,8 +35150,8 @@ block_2333:
 block_2278:
     beq r4 r0 block_2387
 block_2386:
-    lwcZ f0 r0 25540
-    lwcZ f1 r0 25548
+    lwcZ f0 r0 30540
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_2389
 block_2388:
@@ -35092,7 +35162,7 @@ block_2389:
     beq r4 r6 block_2391
 block_2390:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     sw r2 r29 12
     mv r3 r5
     mv r2 r4
@@ -35108,7 +35178,7 @@ block_2390:
     beq r2 r3 block_2393
 block_2392:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35122,7 +35192,7 @@ block_2392:
     beq r2 r3 block_2395
 block_2394:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35136,7 +35206,7 @@ block_2394:
     beq r2 r3 block_2397
 block_2396:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35150,7 +35220,7 @@ block_2396:
     beq r2 r3 block_2399
 block_2398:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35164,7 +35234,7 @@ block_2398:
     beq r2 r3 block_2401
 block_2400:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35201,7 +35271,7 @@ block_2274:
     beq r4 r5 block_2403
 block_2402:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     lw r5 r29 4
     sw r2 r29 12
     mv r3 r5
@@ -35218,7 +35288,7 @@ block_2402:
     beq r2 r3 block_2405
 block_2404:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35232,7 +35302,7 @@ block_2404:
     beq r2 r3 block_2407
 block_2406:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35246,7 +35316,7 @@ block_2406:
     beq r2 r3 block_2409
 block_2408:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35260,7 +35330,7 @@ block_2408:
     beq r2 r3 block_2411
 block_2410:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35274,7 +35344,7 @@ block_2410:
     beq r2 r3 block_2413
 block_2412:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35332,7 +35402,7 @@ block_2686:
     beq r5 r6 block_2689
 block_2688:
     sll r6 r5 2
-    lw r6 r6 25048
+    lw r6 r6 30048
     lw r7 r6 40
     lwcZ f0 r7 0
     lwcZ f1 r7 4
@@ -35397,7 +35467,7 @@ block_2703:
     fsub f0 f0 f1
     lwcZ f1 r5 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_2705
 block_2704:
     sqrt_init f2 f1
@@ -35413,7 +35483,7 @@ block_2704:
     fadd f0 f0 f1
     lwcZ f1 r5 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_2705:
     addi r5 r0 1
     j block_2693
@@ -35440,7 +35510,7 @@ block_2710:
     lwcZ f0 r5 0
     lwcZ f1 r7 12
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r5 r0 1
     j block_2693
 block_2692:
@@ -35643,21 +35713,21 @@ block_2763:
     mv r5 r0
     j block_2693
 block_2764:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r5 r0 3
     j block_2693
 block_2746:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r5 r0 2
     j block_2693
 block_2728:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r5 r0 1
 block_2693:
     beq r5 r0 block_2766
 block_2765:
-    lwcZ f0 r0 25540
-    lwcZ f1 r0 25548
+    lwcZ f0 r0 30540
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_2768
 block_2767:
@@ -35668,7 +35738,7 @@ block_2768:
     beq r5 r6 block_2770
 block_2769:
     sll r5 r5 2
-    lw r5 r5 25332
+    lw r5 r5 30332
     sw r4 r29 8
     mv r2 r5
     mv r1 r0
@@ -35683,7 +35753,7 @@ block_2769:
     beq r2 r3 block_2772
 block_2771:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35697,7 +35767,7 @@ block_2771:
     beq r2 r3 block_2774
 block_2773:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35711,7 +35781,7 @@ block_2773:
     beq r2 r3 block_2776
 block_2775:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35725,7 +35795,7 @@ block_2775:
     beq r2 r3 block_2778
 block_2777:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35739,7 +35809,7 @@ block_2777:
     beq r2 r3 block_2780
 block_2779:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35753,7 +35823,7 @@ block_2779:
     beq r2 r3 block_2782
 block_2781:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35792,7 +35862,7 @@ block_2689:
     beq r5 r6 block_2784
 block_2783:
     sll r5 r5 2
-    lw r5 r5 25332
+    lw r5 r5 30332
     sw r4 r29 8
     mv r2 r5
     mv r1 r0
@@ -35807,7 +35877,7 @@ block_2783:
     beq r2 r3 block_2786
 block_2785:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35821,7 +35891,7 @@ block_2785:
     beq r2 r3 block_2788
 block_2787:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35835,7 +35905,7 @@ block_2787:
     beq r2 r3 block_2790
 block_2789:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35849,7 +35919,7 @@ block_2789:
     beq r2 r3 block_2792
 block_2791:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35863,7 +35933,7 @@ block_2791:
     beq r2 r3 block_2794
 block_2793:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35877,7 +35947,7 @@ block_2793:
     beq r2 r3 block_2796
 block_2795:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -35922,7 +35992,7 @@ block_2797:
     beq r4 r5 block_2800
 block_2799:
     sll r5 r4 2
-    lw r5 r5 25048
+    lw r5 r5 30048
     lw r6 r5 40
     lwcZ f0 r6 0
     lwcZ f1 r6 4
@@ -35988,7 +36058,7 @@ block_2814:
     fsub f0 f0 f1
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_2816
 block_2815:
     sqrt_init f2 f1
@@ -36004,7 +36074,7 @@ block_2815:
     fadd f0 f0 f1
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_2816:
     addi r4 r0 1
     j block_2804
@@ -36031,7 +36101,7 @@ block_2821:
     lwcZ f0 r4 0
     lwcZ f1 r6 12
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_2804
 block_2803:
@@ -36234,21 +36304,21 @@ block_2874:
     mv r4 r0
     j block_2804
 block_2875:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_2804
 block_2857:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_2804
 block_2839:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_2804:
     beq r4 r0 block_2877
 block_2876:
-    lwcZ f0 r0 25540
-    lwcZ f1 r0 25548
+    lwcZ f0 r0 30540
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_2879
 block_2878:
@@ -36259,7 +36329,7 @@ block_2879:
     beq r4 r5 block_2881
 block_2880:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     sw r2 r29 12
     mv r3 r7
     mv r2 r4
@@ -36275,7 +36345,7 @@ block_2880:
     beq r2 r3 block_2883
 block_2882:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36289,7 +36359,7 @@ block_2882:
     beq r2 r3 block_2885
 block_2884:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36303,7 +36373,7 @@ block_2884:
     beq r2 r3 block_2887
 block_2886:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36317,7 +36387,7 @@ block_2886:
     beq r2 r3 block_2889
 block_2888:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36331,7 +36401,7 @@ block_2888:
     beq r2 r3 block_2891
 block_2890:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36368,7 +36438,7 @@ block_2800:
     beq r4 r5 block_2893
 block_2892:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     lw r5 r29 4
     sw r2 r29 12
     mv r3 r5
@@ -36385,7 +36455,7 @@ block_2892:
     beq r2 r3 block_2895
 block_2894:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36399,7 +36469,7 @@ block_2894:
     beq r2 r3 block_2897
 block_2896:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36413,7 +36483,7 @@ block_2896:
     beq r2 r3 block_2899
 block_2898:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36427,7 +36497,7 @@ block_2898:
     beq r2 r3 block_2901
 block_2900:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36441,7 +36511,7 @@ block_2900:
     beq r2 r3 block_2903
 block_2902:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 4
     mv r1 r0
     sw r31 r29 24
@@ -36487,15 +36557,15 @@ block_2687:
 trace_ray.4807:
 block_3329:
     addi r4 r0 4
-    addi r5 r0 25552
+    addi r5 r0 30552
     blt r4 r1 block_3331
 block_3330:
     lw r4 r3 8
     #1000000000.0
     flui f2 20078
     fori f2 f2 27432
-    swcZ f2 r0 25548
-    lw r6 r0 25536
+    swcZ f2 r0 30548
+    lw r6 r0 30536
     sw r3 r29 64
     sw r1 r29 56
     sw r4 r29 48
@@ -36511,7 +36581,7 @@ block_3330:
     jal trace_or_matrix.4387
     subi r29 r29 76
     lw r31 r29 72
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -36543,14 +36613,14 @@ block_3337:
 block_3339:
     lw r1 r29 16
     lwcZ f0 r1 0
-    lwcZ f1 r0 25312
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
     lwcZ f1 r1 4
-    lwcZ f2 r0 25316
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
     lwcZ f1 r1 8
-    lwcZ f2 r0 25320
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -36572,24 +36642,24 @@ block_3345:
     fmul f0 f1 f0
     lwcZ f1 r29 24
     fmul f0 f0 f1
-    lwcZ f1 r0 25324
+    lwcZ f1 r0 30324
     fmul f0 f0 f1
-    lwcZ f1 r0 25604
+    lwcZ f1 r0 30604
     fadd f1 f1 f0
-    swcZ f1 r0 25604
-    lwcZ f1 r0 25608
+    swcZ f1 r0 30604
+    lwcZ f1 r0 30608
     fadd f1 f1 f0
-    swcZ f1 r0 25608
-    lwcZ f1 r0 25612
+    swcZ f1 r0 30608
+    lwcZ f1 r0 30612
     fadd f0 f1 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     jr r31
 block_3340:
     jr r31
 block_3338:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r2 r1 2
-    lw r2 r2 25048
+    lw r2 r2 30048
     lw r3 r2 8
     lw r4 r2 28
     lwcZ f0 r4 0
@@ -36602,15 +36672,15 @@ block_3346:
     addi r5 r0 2
     beq r4 r5 block_3350
 block_3349:
-    lwcZ f2 r0 25552
+    lwcZ f2 r0 30552
     lw r4 r2 20
     lwcZ f3 r4 0
     fsub f2 f2 f3
-    lwcZ f3 r0 25556
+    lwcZ f3 r0 30556
     lw r4 r2 20
     lwcZ f4 r4 4
     fsub f3 f3 f4
-    lwcZ f4 r0 25560
+    lwcZ f4 r0 30560
     lw r4 r2 20
     lwcZ f5 r4 8
     fsub f4 f4 f5
@@ -36637,7 +36707,7 @@ block_3351:
     flui f9 16128
     fmul f8 f8 f9
     fadd f5 f5 f8
-    swcZ f5 r0 25568
+    swcZ f5 r0 30568
     lw r4 r2 36
     lwcZ f5 r4 8
     fmul f5 f2 f5
@@ -36649,7 +36719,7 @@ block_3351:
     flui f5 16128
     fmul f4 f4 f5
     fadd f4 f6 f4
-    swcZ f4 r0 25572
+    swcZ f4 r0 30572
     lw r4 r2 36
     lwcZ f4 r4 4
     fmul f2 f2 f4
@@ -36661,20 +36731,20 @@ block_3351:
     flui f3 16128
     fmul f2 f2 f3
     fadd f2 f7 f2
-    swcZ f2 r0 25576
+    swcZ f2 r0 30576
     j block_3353
 block_3352:
-    swcZ f5 r0 25568
-    swcZ f6 r0 25572
-    swcZ f7 r0 25576
+    swcZ f5 r0 30568
+    swcZ f6 r0 30572
+    swcZ f7 r0 30576
 block_3353:
     lw r4 r2 24
-    lwcZ f2 r0 25568
+    lwcZ f2 r0 30568
     fmul f2 f2 f2
-    lwcZ f3 r0 25572
+    lwcZ f3 r0 30572
     fmul f3 f3 f3
     fadd f2 f2 f3
-    lwcZ f3 r0 25576
+    lwcZ f3 r0 30576
     fmul f3 f3 f3
     fadd f2 f2 f3
     sqrt_init f3 f2
@@ -36720,37 +36790,37 @@ block_3355:
     #1.0
     flui f2 16256
 block_3356:
-    lwcZ f3 r0 25568
+    lwcZ f3 r0 30568
     fmul f3 f3 f2
-    swcZ f3 r0 25568
-    lwcZ f3 r0 25572
+    swcZ f3 r0 30568
+    lwcZ f3 r0 30572
     fmul f3 f3 f2
-    swcZ f3 r0 25572
-    lwcZ f3 r0 25576
+    swcZ f3 r0 30572
+    lwcZ f3 r0 30576
     fmul f2 f3 f2
-    swcZ f2 r0 25576
+    swcZ f2 r0 30576
     j block_3348
 block_3350:
     lw r4 r2 16
     lwcZ f2 r4 0
     fneg f2 f2
-    swcZ f2 r0 25568
+    swcZ f2 r0 30568
     lw r4 r2 16
     lwcZ f2 r4 4
     fneg f2 f2
-    swcZ f2 r0 25572
+    swcZ f2 r0 30572
     lw r4 r2 16
     lwcZ f2 r4 8
     fneg f2 f2
-    swcZ f2 r0 25576
+    swcZ f2 r0 30576
     j block_3348
 block_3347:
-    lw r4 r0 25544
+    lw r4 r0 30544
     #0.0
     flui f2 0
-    swcZ f2 r0 25568
-    swcZ f2 r0 25572
-    swcZ f2 r0 25576
+    swcZ f2 r0 30568
+    swcZ f2 r0 30572
+    swcZ f2 r0 30576
     subi r5 r4 1
     subi r4 r4 1
     sll r4 r4 2
@@ -36787,24 +36857,24 @@ block_3360:
 block_3361:
     fneg f2 f2
     sll r4 r5 2
-    swcZ f2 r4 25568
+    swcZ f2 r4 30568
 block_3348:
-    lwcZ f2 r0 25552
-    swcZ f2 r0 25636
-    lwcZ f2 r0 25556
-    swcZ f2 r0 25640
-    lwcZ f2 r0 25560
-    swcZ f2 r0 25644
+    lwcZ f2 r0 30552
+    swcZ f2 r0 30636
+    lwcZ f2 r0 30556
+    swcZ f2 r0 30640
+    lwcZ f2 r0 30560
+    swcZ f2 r0 30644
     lw r4 r2 0
     lw r5 r2 32
     lwcZ f2 r5 0
-    swcZ f2 r0 25580
+    swcZ f2 r0 30580
     lw r5 r2 32
     lwcZ f2 r5 4
-    swcZ f2 r0 25584
+    swcZ f2 r0 30584
     lw r5 r2 32
     lwcZ f2 r5 8
-    swcZ f2 r0 25588
+    swcZ f2 r0 30588
     addi r5 r0 1
     beq r4 r5 block_3368
 block_3367:
@@ -36819,7 +36889,7 @@ block_3372:
 block_3374:
     j block_3369
 block_3375:
-    lwcZ f2 r0 25552
+    lwcZ f2 r0 30552
     lw r4 r2 20
     lwcZ f3 r4 0
     fsub f2 f2 f3
@@ -36836,7 +36906,7 @@ block_3375:
     fsub f4 f5 f4
     fmul f3 f3 f4
     fmul f2 f2 f3
-    lwcZ f3 r0 25560
+    lwcZ f3 r0 30560
     lw r4 r2 20
     lwcZ f4 r4 8
     fsub f3 f3 f4
@@ -37090,7 +37160,7 @@ block_3400:
     fsub f3 f3 f5
 block_3401:
     fsub f2 f2 f3
-    lwcZ f3 r0 25556
+    lwcZ f3 r0 30556
     lw r4 r2 20
     lwcZ f5 r4 4
     fsub f3 f3 f5
@@ -37378,14 +37448,14 @@ block_3433:
     flui f3 16469
     fori f3 f3 21845
     fmul f2 f2 f3
-    swcZ f2 r0 25588
+    swcZ f2 r0 30588
     j block_3369
 block_3373:
-    lwcZ f2 r0 25552
+    lwcZ f2 r0 30552
     lw r4 r2 20
     lwcZ f3 r4 0
     fsub f2 f2 f3
-    lwcZ f3 r0 25560
+    lwcZ f3 r0 30560
     lw r4 r2 20
     lwcZ f4 r4 8
     fsub f3 f3 f4
@@ -37536,17 +37606,17 @@ block_3457:
     #255.0
     flui f3 17279
     fmul f3 f2 f3
-    swcZ f3 r0 25584
+    swcZ f3 r0 30584
     #1.0
     flui f3 16256
     fsub f2 f3 f2
     #255.0
     flui f3 17279
     fmul f2 f2 f3
-    swcZ f2 r0 25588
+    swcZ f2 r0 30588
     j block_3369
 block_3371:
-    lwcZ f2 r0 25556
+    lwcZ f2 r0 30556
     #0.25
     flui f3 16000
     fmul f2 f2 f3
@@ -37656,17 +37726,17 @@ block_3475:
     #255.0
     flui f3 17279
     fmul f3 f3 f2
-    swcZ f3 r0 25580
+    swcZ f3 r0 30580
     #255.0
     flui f3 17279
     #1.0
     flui f4 16256
     fsub f2 f4 f2
     fmul f2 f3 f2
-    swcZ f2 r0 25584
+    swcZ f2 r0 30584
     j block_3369
 block_3368:
-    lwcZ f2 r0 25552
+    lwcZ f2 r0 30552
     lw r4 r2 20
     lwcZ f3 r4 0
     fsub f2 f2 f3
@@ -37700,7 +37770,7 @@ block_3479:
 block_3480:
     addi r4 r0 1
 block_3481:
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r5 r2 20
     lwcZ f3 r5 8
     fsub f2 f2 f3
@@ -37755,10 +37825,10 @@ block_3494:
     #255.0
     flui f2 17279
 block_3490:
-    swcZ f2 r0 25584
+    swcZ f2 r0 30584
 block_3369:
     sll r1 r1 2
-    lw r4 r0 25544
+    lw r4 r0 30544
     add r1 r1 r4
     lw r4 r29 56
     sll r5 r4 2
@@ -37768,11 +37838,11 @@ block_3369:
     lw r5 r1 4
     sll r7 r4 2
     lwab r5 r5 r7
-    lwcZ f2 r0 25552
+    lwcZ f2 r0 30552
     swcZ f2 r5 0
-    lwcZ f2 r0 25556
+    lwcZ f2 r0 30556
     swcZ f2 r5 4
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     swcZ f2 r5 8
     lw r5 r1 12
     lw r7 r2 28
@@ -37788,11 +37858,11 @@ block_3495:
     lw r5 r1 16
     sll r7 r4 2
     lwab r7 r5 r7
-    lwcZ f2 r0 25580
+    lwcZ f2 r0 30580
     swcZ f2 r7 0
-    lwcZ f2 r0 25584
+    lwcZ f2 r0 30584
     swcZ f2 r7 4
-    lwcZ f2 r0 25588
+    lwcZ f2 r0 30588
     swcZ f2 r7 8
     sll r7 r4 2
     lwab r5 r5 r7
@@ -37811,11 +37881,11 @@ block_3495:
     lw r5 r1 28
     sll r7 r4 2
     lwab r5 r5 r7
-    lwcZ f2 r0 25568
+    lwcZ f2 r0 30568
     swcZ f2 r5 0
-    lwcZ f2 r0 25572
+    lwcZ f2 r0 30572
     swcZ f2 r5 4
-    lwcZ f2 r0 25576
+    lwcZ f2 r0 30576
     swcZ f2 r5 8
     j block_3497
 block_3496:
@@ -37826,36 +37896,36 @@ block_3497:
     flui f2 -16384
     lw r5 r29 16
     lwcZ f3 r5 0
-    lwcZ f4 r0 25568
+    lwcZ f4 r0 30568
     fmul f3 f3 f4
     lwcZ f4 r5 4
-    lwcZ f5 r0 25572
+    lwcZ f5 r0 30572
     fmul f4 f4 f5
     fadd f3 f3 f4
     lwcZ f4 r5 8
-    lwcZ f5 r0 25576
+    lwcZ f5 r0 30576
     fmul f4 f4 f5
     fadd f3 f3 f4
     fmul f2 f2 f3
     lwcZ f3 r5 0
-    lwcZ f4 r0 25568
+    lwcZ f4 r0 30568
     fmul f4 f2 f4
     fadd f3 f3 f4
     swcZ f3 r5 0
     lwcZ f3 r5 4
-    lwcZ f4 r0 25572
+    lwcZ f4 r0 30572
     fmul f4 f2 f4
     fadd f3 f3 f4
     swcZ f3 r5 4
     lwcZ f3 r5 8
-    lwcZ f4 r0 25576
+    lwcZ f4 r0 30576
     fmul f2 f2 f4
     fadd f2 f3 f2
     swcZ f2 r5 8
     lw r7 r2 28
     lwcZ f2 r7 4
     fmul f2 f1 f2
-    lw r7 r0 25536
+    lw r7 r0 30536
     lw r8 r7 0
     lw r9 r8 0
     addi r10 r0 -1
@@ -37871,20 +37941,20 @@ block_3498:
     beq r9 r10 block_3502
 block_3501:
     sll r10 r9 2
-    lw r10 r10 25048
-    lwcZ f3 r0 25552
+    lw r10 r10 30048
+    lwcZ f3 r0 30552
     lw r11 r10 20
     lwcZ f4 r11 0
     fsub f3 f3 f4
-    lwcZ f4 r0 25556
+    lwcZ f4 r0 30556
     lw r11 r10 20
     lwcZ f5 r11 4
     fsub f4 f4 f5
-    lwcZ f5 r0 25560
+    lwcZ f5 r0 30560
     lw r11 r10 20
     lwcZ f6 r11 8
     fsub f5 f5 f6
-    lw r11 r0 25992
+    lw r11 r0 30992
     sll r9 r9 2
     lwab r9 r11 r9
     lw r11 r10 4
@@ -37989,7 +38059,7 @@ block_3522:
     fsub f3 f7 f3
     lwcZ f4 r9 16
     fmul f3 f3 f4
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     j block_3524
 block_3523:
     sqrt_init f4 f3
@@ -38005,7 +38075,7 @@ block_3523:
     fadd f3 f7 f3
     lwcZ f4 r9 16
     fmul f3 f3 f4
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
 block_3524:
     addi r9 r0 1
     j block_3506
@@ -38037,11 +38107,11 @@ block_3529:
     lwcZ f4 r9 12
     fmul f4 f4 f5
     fadd f3 f3 f4
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r9 r0 1
     j block_3506
 block_3505:
-    lw r11 r0 25988
+    lw r11 r0 30988
     lwcZ f6 r9 0
     fsub f6 f6 f3
     lwcZ f7 r9 4
@@ -38240,20 +38310,20 @@ block_3582:
     mv r9 r0
     j block_3506
 block_3583:
-    swcZ f5 r0 25540
+    swcZ f5 r0 30540
     addi r9 r0 3
     j block_3506
 block_3565:
-    swcZ f6 r0 25540
+    swcZ f6 r0 30540
     addi r9 r0 2
     j block_3506
 block_3547:
-    swcZ f6 r0 25540
+    swcZ f6 r0 30540
     addi r9 r0 1
 block_3506:
     beq r9 r0 block_3585
 block_3584:
-    lwcZ f3 r0 25540
+    lwcZ f3 r0 30540
     #-0.1
     flui f4 -16948
     fori f4 f4 -13107
@@ -38268,7 +38338,7 @@ block_3587:
     beq r9 r10 block_3589
 block_3588:
     sll r9 r9 2
-    lw r9 r9 25332
+    lw r9 r9 30332
     mv r2 r9
     mv r1 r0
     sw r31 r29 72
@@ -38284,7 +38354,7 @@ block_3591:
     beq r2 r3 block_3594
 block_3593:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38299,7 +38369,7 @@ block_3595:
     beq r2 r3 block_3598
 block_3597:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38314,7 +38384,7 @@ block_3599:
     beq r2 r3 block_3602
 block_3601:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38329,7 +38399,7 @@ block_3603:
     beq r2 r3 block_3606
 block_3605:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38344,7 +38414,7 @@ block_3607:
     beq r2 r3 block_3610
 block_3609:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38427,7 +38497,7 @@ block_3616:
     beq r2 r3 block_3618
 block_3617:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38442,7 +38512,7 @@ block_3620:
     beq r2 r3 block_3623
 block_3622:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38457,7 +38527,7 @@ block_3624:
     beq r2 r3 block_3627
 block_3626:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38472,7 +38542,7 @@ block_3628:
     beq r2 r3 block_3631
 block_3630:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38487,7 +38557,7 @@ block_3632:
     beq r2 r3 block_3635
 block_3634:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38502,7 +38572,7 @@ block_3636:
     beq r2 r3 block_3639
 block_3638:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 72
     addi r29 r29 76
@@ -38573,15 +38643,15 @@ block_3499:
 block_3500:
     bne r1 r0 block_3645
 block_3644:
-    lwcZ f0 r0 25568
-    lwcZ f1 r0 25312
+    lwcZ f0 r0 30568
+    lwcZ f1 r0 30312
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
-    lwcZ f2 r0 25316
+    lwcZ f1 r0 30572
+    lwcZ f2 r0 30316
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
-    lwcZ f2 r0 25320
+    lwcZ f1 r0 30576
+    lwcZ f2 r0 30320
     fmul f1 f1 f2
     fadd f0 f0 f1
     fneg f0 f0
@@ -38589,14 +38659,14 @@ block_3644:
     fmul f0 f0 f1
     lw r1 r29 16
     lwcZ f2 r1 0
-    lwcZ f3 r0 25312
+    lwcZ f3 r0 30312
     fmul f2 f2 f3
     lwcZ f3 r1 4
-    lwcZ f4 r0 25316
+    lwcZ f4 r0 30316
     fmul f3 f3 f4
     fadd f2 f2 f3
     lwcZ f3 r1 8
-    lwcZ f4 r0 25320
+    lwcZ f4 r0 30320
     fmul f3 f3 f4
     fadd f2 f2 f3
     fneg f2 f2
@@ -38614,21 +38684,21 @@ block_3649:
 block_3650:
     j block_3652
 block_3651:
-    lwcZ f3 r0 25604
-    lwcZ f4 r0 25580
+    lwcZ f3 r0 30604
+    lwcZ f4 r0 30580
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
-    lwcZ f4 r0 25584
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
+    lwcZ f4 r0 30584
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
-    lwcZ f4 r0 25588
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
+    lwcZ f4 r0 30588
     fmul f0 f0 f4
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_3652:
     #0.0
     flui f0 0
@@ -38648,25 +38718,25 @@ block_3657:
     fmul f0 f0 f0
     lwcZ f2 r29 36
     fmul f0 f0 f2
-    lwcZ f3 r0 25604
+    lwcZ f3 r0 30604
     fadd f3 f3 f0
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
     fadd f3 f3 f0
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     j block_3646
 block_3645:
 block_3646:
-    lwcZ f0 r0 25552
-    swcZ f0 r0 25648
-    lwcZ f0 r0 25556
-    swcZ f0 r0 25652
-    lwcZ f0 r0 25560
-    swcZ f0 r0 25656
-    lw r1 r0 25000
+    lwcZ f0 r0 30552
+    swcZ f0 r0 30648
+    lwcZ f0 r0 30556
+    swcZ f0 r0 30652
+    lwcZ f0 r0 30560
+    swcZ f0 r0 30656
+    lw r1 r0 30000
     subi r2 r1 1
     lw r1 r29 40
     sw r31 r29 72
@@ -38674,18 +38744,18 @@ block_3646:
     jal setup_startp_constants.4131
     subi r29 r29 76
     lw r31 r29 72
-    lw r1 r0 26736
+    lw r1 r0 31736
     subi r1 r1 1
     blt r1 r0 block_3659
 block_3658:
     sll r2 r1 2
-    lw r2 r2 26016
+    lw r2 r2 31016
     lw r3 r2 4
     #1000000000.0
     flui f0 20078
     fori f0 f0 27432
-    swcZ f0 r0 25548
-    lw r4 r0 25536
+    swcZ f0 r0 30548
+    lw r4 r0 30536
     lw r5 r4 0
     lw r6 r5 0
     addi r7 r0 -1
@@ -38699,7 +38769,7 @@ block_3661:
     beq r6 r7 block_3665
 block_3664:
     sll r7 r6 2
-    lw r7 r7 25048
+    lw r7 r7 30048
     lw r8 r7 40
     lwcZ f0 r8 0
     lwcZ f1 r8 4
@@ -38764,7 +38834,7 @@ block_3679:
     fsub f0 f0 f1
     lwcZ f1 r6 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_3681
 block_3680:
     sqrt_init f2 f1
@@ -38780,7 +38850,7 @@ block_3680:
     fadd f0 f0 f1
     lwcZ f1 r6 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_3681:
     addi r6 r0 1
     j block_3669
@@ -38807,7 +38877,7 @@ block_3686:
     lwcZ f0 r6 0
     lwcZ f1 r8 12
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r6 r0 1
     j block_3669
 block_3668:
@@ -39010,21 +39080,21 @@ block_3739:
     mv r6 r0
     j block_3669
 block_3740:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r6 r0 3
     j block_3669
 block_3722:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 2
     j block_3669
 block_3704:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
 block_3669:
     beq r6 r0 block_3742
 block_3741:
-    lwcZ f0 r0 25540
-    lwcZ f1 r0 25548
+    lwcZ f0 r0 30540
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_3744
 block_3743:
@@ -39035,7 +39105,7 @@ block_3744:
     beq r6 r7 block_3746
 block_3745:
     sll r6 r6 2
-    lw r6 r6 25332
+    lw r6 r6 30332
     sw r5 r29 32
     mv r2 r6
     mv r1 r0
@@ -39050,7 +39120,7 @@ block_3745:
     beq r2 r3 block_3748
 block_3747:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 44
     mv r1 r0
     sw r31 r29 72
@@ -39064,7 +39134,7 @@ block_3747:
     beq r2 r3 block_3750
 block_3749:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 44
     mv r1 r0
     sw r31 r29 72
@@ -39078,7 +39148,7 @@ block_3749:
     beq r2 r3 block_3752
 block_3751:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 44
     mv r1 r0
     sw r31 r29 72
@@ -39111,7 +39181,7 @@ block_3665:
     beq r6 r7 block_3754
 block_3753:
     sll r6 r6 2
-    lw r6 r6 25332
+    lw r6 r6 30332
     sw r5 r29 32
     mv r2 r6
     mv r1 r0
@@ -39126,7 +39196,7 @@ block_3753:
     beq r2 r3 block_3756
 block_3755:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 44
     mv r1 r0
     sw r31 r29 72
@@ -39140,7 +39210,7 @@ block_3755:
     beq r2 r3 block_3758
 block_3757:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 44
     mv r1 r0
     sw r31 r29 72
@@ -39154,7 +39224,7 @@ block_3757:
     beq r2 r3 block_3760
 block_3759:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 44
     mv r1 r0
     sw r31 r29 72
@@ -39190,7 +39260,7 @@ block_3666:
     j block_3663
 block_3662:
 block_3663:
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -39215,9 +39285,9 @@ block_3763:
 block_3766:
     j block_3768
 block_3767:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r2 r0 25544
+    lw r2 r0 30544
     add r1 r1 r2
     lw r2 r29 68
     lw r3 r2 0
@@ -39225,7 +39295,7 @@ block_3767:
 block_3769:
     j block_3768
 block_3770:
-    lw r1 r0 25536
+    lw r1 r0 30536
     mv r2 r1
     mv r1 r0
     sw r31 r29 72
@@ -39237,14 +39307,14 @@ block_3770:
 block_3771:
     lw r1 r29 44
     lw r2 r1 0
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     lwcZ f1 r2 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     lwcZ f2 r2 4
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     lwcZ f2 r2 8
     fmul f1 f1 f2
     fadd f0 f0 f1
@@ -39281,21 +39351,21 @@ block_3775:
 block_3776:
     j block_3778
 block_3777:
-    lwcZ f3 r0 25604
-    lwcZ f4 r0 25580
+    lwcZ f3 r0 30604
+    lwcZ f4 r0 30580
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
-    lwcZ f4 r0 25584
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
+    lwcZ f4 r0 30584
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
-    lwcZ f4 r0 25588
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
+    lwcZ f4 r0 30588
     fmul f0 f0 f4
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_3778:
     #0.0
     flui f0 0
@@ -39315,15 +39385,15 @@ block_3783:
     fmul f0 f0 f0
     lwcZ f1 r29 36
     fmul f0 f0 f1
-    lwcZ f3 r0 25604
+    lwcZ f3 r0 30604
     fadd f3 f3 f0
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
     fadd f3 f3 f0
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     j block_3768
 block_3772:
 block_3768:
@@ -39375,7 +39445,7 @@ block_3790:
     fsub f0 f0 f2
     fmul f0 f1 f0
     addi r1 r2 1
-    lwcZ f1 r0 25548
+    lwcZ f1 r0 30548
     lwcZ f2 r29 20
     fadd f1 f2 f1
     lw r2 r29 16
@@ -39393,13 +39463,13 @@ block_3032:
     blt r1 r0 block_3034
 block_3033:
     sll r3 r1 2
-    lw r3 r3 26016
+    lw r3 r3 31016
     lw r4 r3 4
     #1000000000.0
     flui f2 20078
     fori f2 f2 27432
-    swcZ f2 r0 25548
-    lw r5 r0 25536
+    swcZ f2 r0 30548
+    lw r5 r0 30536
     sw r3 r29 44
     sw r4 r29 40
     sw r1 r29 32
@@ -39414,7 +39484,7 @@ block_3033:
     jal trace_or_matrix_fast.4483
     subi r29 r29 56
     lw r31 r29 52
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -39439,9 +39509,9 @@ block_3037:
 block_3040:
     j block_3042
 block_3041:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r2 r0 25544
+    lw r2 r0 30544
     add r1 r1 r2
     lw r2 r29 44
     lw r3 r2 0
@@ -39449,7 +39519,7 @@ block_3041:
 block_3043:
     j block_3042
 block_3044:
-    lw r1 r0 25536
+    lw r1 r0 30536
     lw r3 r1 0
     lw r4 r3 0
     addi r5 r0 -1
@@ -39461,20 +39531,20 @@ block_3045:
     beq r4 r5 block_3049
 block_3048:
     sll r5 r4 2
-    lw r5 r5 25048
-    lwcZ f0 r0 25552
+    lw r5 r5 30048
+    lwcZ f0 r0 30552
     lw r6 r5 20
     lwcZ f1 r6 0
     fsub f0 f0 f1
-    lwcZ f1 r0 25556
+    lwcZ f1 r0 30556
     lw r6 r5 20
     lwcZ f2 r6 4
     fsub f1 f1 f2
-    lwcZ f2 r0 25560
+    lwcZ f2 r0 30560
     lw r6 r5 20
     lwcZ f3 r6 8
     fsub f2 f2 f3
-    lw r6 r0 25992
+    lw r6 r0 30992
     sll r4 r4 2
     lwab r4 r6 r4
     lw r6 r5 4
@@ -39579,7 +39649,7 @@ block_3069:
     fsub f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_3071
 block_3070:
     sqrt_init f1 f0
@@ -39595,7 +39665,7 @@ block_3070:
     fadd f0 f4 f0
     lwcZ f1 r4 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_3071:
     addi r4 r0 1
     j block_3053
@@ -39627,11 +39697,11 @@ block_3076:
     lwcZ f1 r4 12
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r4 r0 1
     j block_3053
 block_3052:
-    lw r6 r0 25988
+    lw r6 r0 30988
     lwcZ f3 r4 0
     fsub f3 f3 f0
     lwcZ f4 r4 4
@@ -39830,20 +39900,20 @@ block_3129:
     mv r4 r0
     j block_3053
 block_3130:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r4 r0 3
     j block_3053
 block_3112:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 2
     j block_3053
 block_3094:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r4 r0 1
 block_3053:
     beq r4 r0 block_3132
 block_3131:
-    lwcZ f0 r0 25540
+    lwcZ f0 r0 30540
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -39858,7 +39928,7 @@ block_3134:
     beq r4 r5 block_3136
 block_3135:
     sll r4 r4 2
-    lw r4 r4 25332
+    lw r4 r4 30332
     mv r2 r4
     mv r1 r0
     sw r31 r29 52
@@ -39874,7 +39944,7 @@ block_3138:
     beq r2 r3 block_3141
 block_3140:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -39889,7 +39959,7 @@ block_3142:
     beq r2 r3 block_3145
 block_3144:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -39904,7 +39974,7 @@ block_3146:
     beq r2 r3 block_3149
 block_3148:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -39919,7 +39989,7 @@ block_3150:
     beq r2 r3 block_3153
 block_3152:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -39934,7 +40004,7 @@ block_3154:
     beq r2 r3 block_3157
 block_3156:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40017,7 +40087,7 @@ block_3163:
     beq r2 r3 block_3165
 block_3164:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40032,7 +40102,7 @@ block_3167:
     beq r2 r3 block_3170
 block_3169:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40047,7 +40117,7 @@ block_3171:
     beq r2 r3 block_3174
 block_3173:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40062,7 +40132,7 @@ block_3175:
     beq r2 r3 block_3178
 block_3177:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40077,7 +40147,7 @@ block_3179:
     beq r2 r3 block_3182
 block_3181:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40092,7 +40162,7 @@ block_3183:
     beq r2 r3 block_3186
 block_3185:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     mv r1 r0
     sw r31 r29 52
     addi r29 r29 56
@@ -40165,14 +40235,14 @@ block_3047:
 block_3191:
     lw r1 r29 40
     lw r2 r1 0
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     lwcZ f1 r2 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     lwcZ f2 r2 4
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     lwcZ f2 r2 8
     fmul f1 f1 f2
     fadd f0 f0 f1
@@ -40209,21 +40279,21 @@ block_3195:
 block_3196:
     j block_3198
 block_3197:
-    lwcZ f3 r0 25604
-    lwcZ f4 r0 25580
+    lwcZ f3 r0 30604
+    lwcZ f4 r0 30580
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
-    lwcZ f4 r0 25584
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
+    lwcZ f4 r0 30584
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
-    lwcZ f4 r0 25588
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
+    lwcZ f4 r0 30588
     fmul f0 f0 f4
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_3198:
     #0.0
     flui f0 0
@@ -40243,15 +40313,15 @@ block_3203:
     fmul f0 f0 f0
     lwcZ f1 r29 28
     fmul f0 f0 f1
-    lwcZ f3 r0 25604
+    lwcZ f3 r0 30604
     fadd f3 f3 f0
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
     fadd f3 f3 f0
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     j block_3042
 block_3192:
 block_3042:
@@ -40260,13 +40330,13 @@ block_3042:
     blt r1 r0 block_3205
 block_3204:
     sll r2 r1 2
-    lw r2 r2 26016
+    lw r2 r2 31016
     lw r3 r2 4
     #1000000000.0
     flui f0 20078
     fori f0 f0 27432
-    swcZ f0 r0 25548
-    lw r4 r0 25536
+    swcZ f0 r0 30548
+    lw r4 r0 30536
     lw r5 r4 0
     lw r6 r5 0
     addi r7 r0 -1
@@ -40280,7 +40350,7 @@ block_3206:
     beq r6 r7 block_3210
 block_3209:
     sll r7 r6 2
-    lw r7 r7 25048
+    lw r7 r7 30048
     lw r8 r7 40
     lwcZ f0 r8 0
     lwcZ f1 r8 4
@@ -40345,7 +40415,7 @@ block_3224:
     fsub f0 f0 f1
     lwcZ f1 r6 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     j block_3226
 block_3225:
     sqrt_init f2 f1
@@ -40361,7 +40431,7 @@ block_3225:
     fadd f0 f0 f1
     lwcZ f1 r6 16
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
 block_3226:
     addi r6 r0 1
     j block_3214
@@ -40388,7 +40458,7 @@ block_3231:
     lwcZ f0 r6 0
     lwcZ f1 r8 12
     fmul f0 f0 f1
-    swcZ f0 r0 25540
+    swcZ f0 r0 30540
     addi r6 r0 1
     j block_3214
 block_3213:
@@ -40591,21 +40661,21 @@ block_3284:
     mv r6 r0
     j block_3214
 block_3285:
-    swcZ f2 r0 25540
+    swcZ f2 r0 30540
     addi r6 r0 3
     j block_3214
 block_3267:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 2
     j block_3214
 block_3249:
-    swcZ f3 r0 25540
+    swcZ f3 r0 30540
     addi r6 r0 1
 block_3214:
     beq r6 r0 block_3287
 block_3286:
-    lwcZ f0 r0 25540
-    lwcZ f1 r0 25548
+    lwcZ f0 r0 30540
+    lwcZ f1 r0 30548
     fclt f0 f1
     bc1t block_3289
 block_3288:
@@ -40616,7 +40686,7 @@ block_3289:
     beq r6 r7 block_3291
 block_3290:
     sll r6 r6 2
-    lw r6 r6 25332
+    lw r6 r6 30332
     sw r5 r29 24
     mv r2 r6
     mv r1 r0
@@ -40631,7 +40701,7 @@ block_3290:
     beq r2 r3 block_3293
 block_3292:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 36
     mv r1 r0
     sw r31 r29 52
@@ -40645,7 +40715,7 @@ block_3292:
     beq r2 r3 block_3295
 block_3294:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 36
     mv r1 r0
     sw r31 r29 52
@@ -40659,7 +40729,7 @@ block_3294:
     beq r2 r3 block_3297
 block_3296:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 36
     mv r1 r0
     sw r31 r29 52
@@ -40692,7 +40762,7 @@ block_3210:
     beq r6 r7 block_3299
 block_3298:
     sll r6 r6 2
-    lw r6 r6 25332
+    lw r6 r6 30332
     sw r5 r29 24
     mv r2 r6
     mv r1 r0
@@ -40707,7 +40777,7 @@ block_3298:
     beq r2 r3 block_3301
 block_3300:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 36
     mv r1 r0
     sw r31 r29 52
@@ -40721,7 +40791,7 @@ block_3300:
     beq r2 r3 block_3303
 block_3302:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 36
     mv r1 r0
     sw r31 r29 52
@@ -40735,7 +40805,7 @@ block_3302:
     beq r2 r3 block_3305
 block_3304:
     sll r2 r2 2
-    lw r2 r2 25332
+    lw r2 r2 30332
     lw r3 r29 36
     mv r1 r0
     sw r31 r29 52
@@ -40771,7 +40841,7 @@ block_3211:
     j block_3208
 block_3207:
 block_3208:
-    lwcZ f0 r0 25548
+    lwcZ f0 r0 30548
     #-0.1
     flui f1 -16948
     fori f1 f1 -13107
@@ -40796,9 +40866,9 @@ block_3308:
 block_3311:
     j block_3313
 block_3312:
-    lw r1 r0 25564
+    lw r1 r0 30564
     sll r1 r1 2
-    lw r2 r0 25544
+    lw r2 r0 30544
     add r1 r1 r2
     lw r2 r29 48
     lw r3 r2 0
@@ -40806,7 +40876,7 @@ block_3312:
 block_3314:
     j block_3313
 block_3315:
-    lw r1 r0 25536
+    lw r1 r0 30536
     mv r2 r1
     mv r1 r0
     sw r31 r29 52
@@ -40818,14 +40888,14 @@ block_3315:
 block_3316:
     lw r1 r29 36
     lw r2 r1 0
-    lwcZ f0 r0 25568
+    lwcZ f0 r0 30568
     lwcZ f1 r2 0
     fmul f0 f0 f1
-    lwcZ f1 r0 25572
+    lwcZ f1 r0 30572
     lwcZ f2 r2 4
     fmul f1 f1 f2
     fadd f0 f0 f1
-    lwcZ f1 r0 25576
+    lwcZ f1 r0 30576
     lwcZ f2 r2 8
     fmul f1 f1 f2
     fadd f0 f0 f1
@@ -40862,21 +40932,21 @@ block_3320:
 block_3321:
     j block_3323
 block_3322:
-    lwcZ f3 r0 25604
-    lwcZ f4 r0 25580
+    lwcZ f3 r0 30604
+    lwcZ f4 r0 30580
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
-    lwcZ f4 r0 25584
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
+    lwcZ f4 r0 30584
     fmul f4 f0 f4
     fadd f3 f3 f4
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
-    lwcZ f4 r0 25588
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
+    lwcZ f4 r0 30588
     fmul f0 f0 f4
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_3323:
     #0.0
     flui f0 0
@@ -40896,15 +40966,15 @@ block_3328:
     fmul f0 f0 f0
     lwcZ f1 r29 28
     fmul f0 f0 f1
-    lwcZ f3 r0 25604
+    lwcZ f3 r0 30604
     fadd f3 f3 f0
-    swcZ f3 r0 25604
-    lwcZ f3 r0 25608
+    swcZ f3 r0 30604
+    lwcZ f3 r0 30608
     fadd f3 f3 f0
-    swcZ f3 r0 25608
-    lwcZ f3 r0 25612
+    swcZ f3 r0 30608
+    lwcZ f3 r0 30612
     fadd f0 f3 f0
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
     j block_3313
 block_3317:
 block_3313:
@@ -41012,11 +41082,11 @@ block_5642:
     sll r7 r6 2
     lwab r2 r2 r7
     lwcZ f0 r2 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r2 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r2 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     lw r2 r1 24
     lw r2 r2 0
     sll r7 r6 2
@@ -41029,7 +41099,7 @@ block_5642:
     sw r3 r29 0
     beq r2 r0 block_5645
 block_5644:
-    lw r7 r0 25716
+    lw r7 r0 30716
     mv r2 r3
     mv r1 r7
     mv r3 r4
@@ -41045,7 +41115,7 @@ block_5646:
     lw r2 r29 8
     beq r2 r1 block_5648
 block_5647:
-    lw r1 r0 25720
+    lw r1 r0 30720
     lw r3 r29 0
     lw r4 r29 4
     mv r2 r3
@@ -41062,7 +41132,7 @@ block_5649:
     lw r2 r29 8
     beq r2 r1 block_5651
 block_5650:
-    lw r1 r0 25724
+    lw r1 r0 30724
     lw r3 r29 0
     lw r4 r29 4
     mv r2 r3
@@ -41079,7 +41149,7 @@ block_5652:
     lw r2 r29 8
     beq r2 r1 block_5654
 block_5653:
-    lw r1 r0 25728
+    lw r1 r0 30728
     lw r3 r29 0
     lw r4 r29 4
     mv r2 r3
@@ -41096,7 +41166,7 @@ block_5655:
     lw r2 r29 8
     beq r2 r1 block_5657
 block_5656:
-    lw r1 r0 25732
+    lw r1 r0 30732
     lw r2 r29 0
     lw r3 r29 4
     sw r31 r29 24
@@ -41111,24 +41181,24 @@ block_5658:
     sll r2 r1 2
     lw r3 r29 16
     lwab r2 r3 r2
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r2 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r2 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r2 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5643:
     lw r1 r29 20
     addi r2 r1 1
@@ -41171,90 +41241,90 @@ block_5660:
     sll r12 r6 2
     lwab r7 r7 r12
     lwcZ f0 r7 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r7 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r7 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r8 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r9 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r10 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r11 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r1 2
     lwab r7 r4 r7
     lw r7 r7 16
     sll r8 r6 2
     lwab r7 r7 r8
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r7 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r7 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r7 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5661:
     addi r6 r6 1
     sll r7 r1 2
@@ -41355,90 +41425,90 @@ block_5678:
     sll r12 r6 2
     lwab r7 r7 r12
     lwcZ f0 r7 0
-    swcZ f0 r0 25592
+    swcZ f0 r0 30592
     lwcZ f0 r7 4
-    swcZ f0 r0 25596
+    swcZ f0 r0 30596
     lwcZ f0 r7 8
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r8 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r9 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r10 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r6 2
     lwab r7 r11 r7
-    lwcZ f0 r0 25592
+    lwcZ f0 r0 30592
     lwcZ f1 r7 0
     fadd f0 f0 f1
-    swcZ f0 r0 25592
-    lwcZ f0 r0 25596
+    swcZ f0 r0 30592
+    lwcZ f0 r0 30596
     lwcZ f1 r7 4
     fadd f0 f0 f1
-    swcZ f0 r0 25596
-    lwcZ f0 r0 25600
+    swcZ f0 r0 30596
+    lwcZ f0 r0 30600
     lwcZ f1 r7 8
     fadd f0 f0 f1
-    swcZ f0 r0 25600
+    swcZ f0 r0 30600
     sll r7 r1 2
     lwab r7 r4 r7
     lw r7 r7 16
     sll r8 r6 2
     lwab r7 r7 r8
-    lwcZ f0 r0 25604
+    lwcZ f0 r0 30604
     lwcZ f1 r7 0
-    lwcZ f2 r0 25592
+    lwcZ f2 r0 30592
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25604
-    lwcZ f0 r0 25608
+    swcZ f0 r0 30604
+    lwcZ f0 r0 30608
     lwcZ f1 r7 4
-    lwcZ f2 r0 25596
+    lwcZ f2 r0 30596
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25608
-    lwcZ f0 r0 25612
+    swcZ f0 r0 30608
+    lwcZ f0 r0 30612
     lwcZ f1 r7 8
-    lwcZ f2 r0 25600
+    lwcZ f2 r0 30600
     fmul f1 f1 f2
     fadd f0 f0 f1
-    swcZ f0 r0 25612
+    swcZ f0 r0 30612
 block_5679:
     addi r6 r6 1
     sw r31 r29 24
@@ -41460,13 +41530,13 @@ block_2904:
     lw r3 r1 0
     lw r4 r1 32
     lwcZ f0 r4 0
-    swcZ f0 r0 25580
+    swcZ f0 r0 30580
     lw r4 r1 32
     lwcZ f0 r4 4
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     lw r4 r1 32
     lwcZ f0 r4 8
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     addi r4 r0 1
     beq r3 r4 block_2906
 block_2905:
@@ -42040,7 +42110,7 @@ block_2970:
     flui f1 16469
     fori f1 f1 21845
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     jr r31
 block_2910:
     lwcZ f0 r2 0
@@ -42198,14 +42268,14 @@ block_2994:
     #255.0
     flui f1 17279
     fmul f1 f0 f1
-    swcZ f1 r0 25584
+    swcZ f1 r0 30584
     #1.0
     flui f1 16256
     fsub f0 f1 f0
     #255.0
     flui f1 17279
     fmul f0 f0 f1
-    swcZ f0 r0 25588
+    swcZ f0 r0 30588
     jr r31
 block_2908:
     lwcZ f0 r2 4
@@ -42318,14 +42388,14 @@ block_3012:
     #255.0
     flui f1 17279
     fmul f1 f1 f0
-    swcZ f1 r0 25580
+    swcZ f1 r0 30580
     #255.0
     flui f1 17279
     #1.0
     flui f2 16256
     fsub f0 f2 f0
     fmul f0 f1 f0
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     jr r31
 block_2906:
     lwcZ f0 r2 0
@@ -42417,5 +42487,5 @@ block_3031:
     #255.0
     flui f0 17279
 block_3027:
-    swcZ f0 r0 25584
+    swcZ f0 r0 30584
     jr r31

@@ -148,7 +148,3 @@ let rec fisneg x = x < 0.0 in
 
 (* truncate *)
 let rec truncate x = int_of_float x in
-let rec fib n =
-  if n < 2 then n else
-  fib (n - 1) + fib (n - 2) in
-  print_int (fib 40)
