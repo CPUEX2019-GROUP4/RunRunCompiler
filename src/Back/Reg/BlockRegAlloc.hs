@@ -8,23 +8,26 @@ import Data.List as L
 import Data.Foldable as F
 import Data.Array as A
 import Data.Maybe (fromJust)
+import           Algebra.Graph.AdjacencyMap as Graph
 import           Algebra.Graph.AdjacencyMap.Algorithm
 import           Algebra.Graph.AdjacencyMap.Internal
 import           Back.Block
 import           Back.Reg.Coloring                    as Coloring (regColor)
-import           Back.Reg.InsertSave                  as InsertSave (insertSave)
+import           Back.Reg.InsertSave                  as InsertSave (insertSaveFunc)
 import           Back.Reg.Interference                as Interference  (interferenceConn)
+import           Back.Reg.InsertRestore               as InsertRestore (insertRestore)
 import           Back.Reg.Liveness                    as Liveness (liveConn, G)
 import           Back.Reg.LivenessGlobal              as LivenessGlobal (liveness)
 import           Back.Reg.SmallBlock                  as SmallBlock
 import           Back.Reg.Stack                       as Stack
 import RunRun.Type as Type
+import RunRun.RunRun
 
 
 -- prepare :: RunRun (Map String FunctionData)
 -- liveness :: Map String FunctionData -> RunRun (Map String (FunctionData, Map Int Live))
 -- saveset :: Map String (FunctionData, Map Int Live) -> RunRun (Map String (FunctionData, Map Int Live, Map Int Store))
--- insertSave :: FunctionData -> Map Int Store -> FunctionData
+-- insertSaveFunc :: FunctionData -> Map Int Store -> FunctionData
 -- breakFuncSB :: FunctionData -> ReturnValue
 -- type ReturnValue =
 --     (Map SN SmallBlock, Map SN (Set SN), Map Int Int)
@@ -35,50 +38,65 @@ import RunRun.Type as Type
 -- regColor ::  X -> (Maybe (Map String String), Maybe (Map String String))
 
 
--- regAlloc :: Map String FunctionData -> RunRun (Map String FuncionData)
--- regAlloc prepare = do
---     livenessglobal <- LivenessGlobal.liveness prepare
---     saved <- Stack.saveset livenessglobal
---     where
+regAlloc :: Map String FunctionData -> RunRun (Map String FunctionData)
+regAlloc prepare = do
+    livenessglobal <- LivenessGlobal.liveness prepare
+    saved <- Stack.saveset livenessglobal
+    return $
+        M.map regAllocFunc saved
 
 
 
 
--- regAllocFunc :: (FunctionData, Map Int Live, Map Int Store) -> FunctionData
--- regAllocFunc (func, _, store) =
---     func { blocks = sbTob mvinsertedsnsbmap (blocks func) }
---     where
---       funcWithSave = InsertSave.insertSave func store
---       (snsbmap, sngraphmap, blocklengthmap) = SmallBlock.breakFuncSB funcWithSave
---       sngraph = AM sngraphmap
---       reverseSngraph = transpose g
---       topsort = topSort sngraph
---       (restoredsnsbmap, clist) = insertRestore.insertRestore snsbmap sngraph topsort
---       cAllList = P.map (\ c -> (c, Liveness.liveConn restoredsnsbmap sngraph c)) clist
---       cXList   = P.map (\ (c,all) -> (c, Interference.interferenceConn restoredsnsbmap sngraph c all)) cAllList
---       (regsnsbmap, sncoloringmap) = convertReg restoredsnsbmap cXList
---       getargs :: SN -> Args
---       getargs sn
---         | hasEdge sn reverseSngraph = ([], [])
---         | (b,0) <- sn = (args func, fargs func)
---         | (b,n) <- sn, CONT ys zs _ <- sBranch (regsnsbmap M.! (b,n-1)) =
---                                             (ys, zs)
---         | otherwise = ([], []) -- should be an error
---       mvinsertedsnsnbmap =
---         M.mapWithKey
---             (\ sn sb -> insertMv (sInst (regsnsbmap M.! sn)) (getargs sn) (sncoloringmap M.! sn))
---             regsnsbmap
+regAllocFunc :: (FunctionData, Map Int Live, Map Int Store) -> FunctionData
+regAllocFunc (func, _, store) =
+    func { blocks = sbTob mvinsertedsnsbmap (blocks func) blocklengthmap }
+    where
+      funcWithSave = InsertSave.insertSaveFunc func store
+      (snsbmap, sngraphmap, blocklengthmap) = SmallBlock.breakFuncSB funcWithSave
+      sngraph = AM sngraphmap
+      reverseSngraph = Graph.transpose sngraph
+      topsort = fromJust $ topSort sngraph
+      (restoredsnsbmap, clist) = InsertRestore.insertRestore snsbmap sngraph topsort
+      cAllList = P.map (\ c -> (c, Liveness.liveConn restoredsnsbmap sngraph c)) clist
+      cXList   = P.map (\ (c,all) -> (c, Interference.interferenceConn restoredsnsbmap sngraph c all)) cAllList
+      (regsnsbmap, sncoloringmap) = convertReg restoredsnsbmap cXList
+      getargs :: SN -> Args
+      getargs sn
+        | S.null (postSet sn reverseSngraph) = ([], [])
+        | (b,0) <- sn = (args func, fargs func)
+        | (b,n) <- sn, CONT ys zs _ <- sBranch (regsnsbmap M.! (b,n-1)) =
+                                            (ys, zs)
+        | otherwise = ([], []) -- should be an error
+      mvinsertedsnsbmap =
+        M.mapWithKey
+            (\ sn sb -> sb { sInst = insertMv (sInst (regsnsbmap M.! sn)) (getargs sn) (sncoloringmap M.! sn)})
+            regsnsbmap
+
+
+sbTob :: Map SN SmallBlock -> Map Int Block -> Map Int Int-> Map Int Block
+sbTob snsbmap bnbmap blocklengthmap =
+    M.mapWithKey convert bnbmap
+    where
+      convert :: Int -> Block -> Block
+      convert b block =
+        let len = blocklengthmap M.! b in
+        let concatedinst = L.foldr (\ n -> instconcat (snsbmap M.! (b,n))) SEQ.Empty [0 .. (len-1)] in
+        block { blockInst = concatedinst }
+      instconcat :: SmallBlock -> InstSeq -> InstSeq
+      instconcat sb inst = inst >< sInst sb
 
 
 type Args = ([String], [String])
 
 
-insertMv :: InstSeq -> Args -> Map String String -> InstSeq
-insertMv instseq (ys, zs) m =
-    let mvs = SEQ.reverse $ mvArgs (f ys) (f zs) in
+insertMv :: InstSeq -> Args -> (Map String String, Map String String) -> InstSeq
+insertMv instseq (ys, zs) (m1,m2) =
+    let mvs = SEQ.reverse $ mvArgs (f ys) (g zs) in
     mvs >< instseq
     where
-      f = P.map (m M.!)
+      f = P.map (m1 M.!)
+      g = P.map (m2 M.!)
 
 
 shuffle :: Eq a => a -> [(a, a)] -> [(a, a)]

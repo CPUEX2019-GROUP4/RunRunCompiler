@@ -9,7 +9,6 @@ import           Data.Map                             as M
 import           Data.Maybe                           (fromJust)
 import           Data.Sequence                        as SEQ
 import           Data.Set                             as S
-import Data.Foldable as F
 import           RunRun.Type                          as Type
 import Data.List as L
 import Control.Monad.State
@@ -26,7 +25,7 @@ type SetV = Set String
 
 type Def = Map SN SetV
 type Free = Map SN SetV
-type TypeMap = Map String Type
+
 
 -- |
 -- 第一引数は, 1 つの 関数の smallblock 全体. SmallBlock.hs で生成.
@@ -34,39 +33,37 @@ type TypeMap = Map String Type
 -- 第二引数は, SmallBlock.hs で生成したグラフを mkGraph で変換したもの.
 --
 -- 第三引数は, 第二引数のグラフを topSort したもの.
-collectDefFree :: Map SN SmallBlock -> G SN -> [SN] -> (Def, Free, TypeMap)
+collectDefFree :: Map SN SmallBlock -> G SN -> [SN] -> (Def, Free)
 collectDefFree m g =
-    Prelude.foldl (\ (def,free,oldtm) sn -> let (d,f,tm) = collect sn def in (d, M.insert sn f free, tm `M.union` oldtm))
-      (M.empty, M.empty, M.empty)
+    Prelude.foldl (\ (def,free) sn -> let (d,f) = collect sn def in (d, M.insert sn f free))
+      (M.empty, M.empty)
     where
       reverseG = Galg.transpose g
-      collect :: SN -> Def -> (Def, SetV, TypeMap)
+      collect :: SN -> Def -> (Def, SetV)
       collect sn acc =
-        (M.insert sn d acc, f, tm)
+        (M.insert sn d acc, f)
         where
           sb = m M.! sn
           instseq = sInst sb
           getparent = adjacencyMap reverseG M.! sn
           defparent = intersectL (S.foldr (\ parent b -> acc M.! parent : b) [] getparent)
-          (d,f,tm) = instDef instseq (defparent, S.empty, M.empty)
+          (d,f) = instDef instseq (defparent, S.empty)
 
--- | これ末尾仕様の考慮されてなくないか？
--- [XXX]
+
 unionL :: [SetV] -> SetV
 unionL = foldr1 S.intersection
 
 intersectL :: [SetV] -> SetV
 intersectL = foldr1 S.intersection
 
-instDef :: InstSeq -> (SetV, SetV, TypeMap) -> (SetV, SetV, TypeMap)
+instDef :: InstSeq -> (SetV, SetV) -> (SetV, SetV)
 instDef Empty s = s
-instDef (i :<| is) (d, f, m)
+instDef (i :<| is) (d, f)
     -- -- | ((x,Type.Float), Inst _ ys zs) <- i = f (d1, S.insert x d2) ys zs
-    | ((x,t), Inst _ ys zs) <- i = func (S.insert x d) ys zs x t
+    | ((x,_         ), Inst _ ys zs) <- i = func (S.insert x d) ys zs
     where
-      func d ys zs x t =
-        (d, (S.fromList ys S.\\ d) `S.union` (S.fromList zs S.\\ d) `S.union` f,
-        M.insert x t m)
+      func d ys zs =
+        (d, (S.fromList ys S.\\ d) `S.union` (S.fromList zs S.\\ d) `S.union` f)
 
 
 
@@ -189,44 +186,40 @@ reverseRestore m = -- 第二引数は適当でいい. SN の集合が欲しい�
 
 insertRestore :: Map SN SmallBlock -> G SN -> [SN] -> (Map SN SmallBlock, [[SN]])
 insertRestore snsbmap g sorted =
-    let (def, free, tm) = collectDefFree snsbmap g sorted
-        (_, ref) = runState (searchTop g free def) refinit
+    let (def, free) = collectDefFree snsbmap g sorted
+        (ref, _) = runState (searchTop g free def) refinit
         transformer = reverseRestore (xsets ref) snsbmap in
-    (transform transformer snsbmap tm, L.reverse (components ref))
+    (transform transformer restoredsnsb, L.reverse (components ref))
 --       (restoredsnsbmap, clist) = insertRestore.insertRestore snsbmap sngraph topsort
 
-transform :: Map SN (Set String) -> Map SN SmallBlock -> TypeMap -> Map SN SmallBlock
-transform op snsb tm =
-    M.mapWithKey (\ sn sb -> transInstSeq tm (op M.! sn) sb) snsb
+transform :: Map SN (Set String) -> Map SN SmallBlock
+transform op snsb = 
 
 
-transInstSeq :: TypeMap -> Set String -> SmallBlock -> SmallBlock
-transInstSeq tm s sb =
-    let (s', instseq) = F.foldr transOneInst (s, SEQ.Empty) inst
-    in
-      sb { sInst = cat s' instseq }
+-- 違う、最初に使った場所の直前や
+transInstSeq :: Set String -> SmallBlock -> SmallBlock
+transInstSeq s sb =
+    SEQ.foldr transOneInst SEQ.Empty inst -- ちゃんと s を更新
     where
       inst = sInst sb
       -- sInst :: InstSeq, sBranch :: SmallBlockTail, sIsCall :: Bool}
       transOneInst :: ((String, Type), Inst) -> (Set String, InstSeq) -> (Set String, InstSeq)
-      transOneInst i@(_, Inst _ ys zs) (ss, instacc) =
-          let restore  =
-                S.foldr (\ y acc -> ((y,Type.Int), Inst (Restore y) [] []) <| acc) SEQ.Empty ysRestore
-              restore' =
-                S.foldr (\ z acc -> ((z,Type.Float), Inst (Restore z) [] []) <| acc) restore zsRestore
+      transOneInst i@(_, Inst _ ys zs) (ss, instacc)
+          let instacc' = if not . null $ ysRestore then
+                           S.foldr (\ y acc -> ((y,Type.Int), Inst (Restore y) [] []) <| acc) instacc ysRestore
+                         else
+                           instacc
+              instacc'' = if not . null $ zsRestore then
+                           S.foldr (\ z acc -> ((y,Type.Float), Inst (Restore y) [] []) <| acc) instacc zsRestore
+                         else
+                           instacc'
           in
-            (ss', instacc >< (restore' |> i))
+            (ss', instacc''')
           where
-            ysRestore = S.fromList ys `S.intersection` ss
+            ysRestore = fromList ys `S.intersection` ss
             ss' = ss S.\\ ysRestore
-            zsRestore = S.fromList ys `S.intersection` ss'
+            ysRestore = fromList ys `S.intersection` ss'
             ss'' = ss' S.\\ zsRestore
-      cat :: Set String -> InstSeq -> InstSeq
-      cat s instseq =
-        let i' = S.foldr (\ y acc -> ((y,gettype y), Inst (Restore y) [] []) <| acc) instseq s
-        in instseq >< i'
-        where
-          gettype x = tm M.! x
 
 
 
