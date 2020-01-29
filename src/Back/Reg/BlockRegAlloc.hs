@@ -41,9 +41,10 @@ import RunRun.RunRun
 regAlloc :: Map String FunctionData -> RunRun (Map String FunctionData)
 regAlloc prepare = do
     livenessglobal <- LivenessGlobal.liveness prepare
+    eprint livenessglobal
     saved <- Stack.saveset livenessglobal
-    return $
-        M.map regAllocFunc saved
+    eprint saved
+    return $ M.map regAllocFunc saved
 
 
 

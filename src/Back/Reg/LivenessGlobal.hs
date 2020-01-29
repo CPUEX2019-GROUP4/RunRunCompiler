@@ -12,8 +12,8 @@ import           Data.Set        as S
 
 type Live = Seq (Set String, Set String)
 
--- | 関数呼び出しの有無に関係なく, 同時に resister または stack
---   に存在せねばならぬ変数の集合を各命令ごとに計算する.
+-- | 関数呼び出しの有無に関係なく, resister または stack
+--   に存在せねばならぬ変数の集合を各命令に対して計算する.
 liveness :: Map String FunctionData -> RunRun (Map String (FunctionData, Map Int Live))
 liveness m = return $ M.map (\ func -> (func, liveFunc func)) m
 
