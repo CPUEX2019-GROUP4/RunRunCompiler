@@ -26,7 +26,7 @@ import           Middle.Global          as Global
 import           Middle.Inline          as Inline
 import           Middle.KNormal         as KNormal
 
-import           Back.RegAlloc          as RegAlloc
+-- import           Back.RegAlloc          as RegAlloc
 import           Back.Simm              as Simm
 import           Back.ToBlock           as ToBlock
 import           Back.Virtual           as Virtual
@@ -54,7 +54,7 @@ main = do
         >>= Closure.closure
         >>= Virtual.virtual
         >>= Simm.simm
-        >>= RegAlloc.regalloc
+        -- >>= RegAlloc.regalloc
         >>= ToBlock.toBlock
         >> BlockPrepare.prepare
         -- >>= BlockRegAlloc.regAlloc
@@ -88,7 +88,7 @@ initEnv = Env {
             stackset = empty,
             stackmap = [],
             toplevel = [],
-            inlinenum = 650,
+            inlinenum = 0,
             globals = M.empty,
             hp = 30000,
             sp = 5040,

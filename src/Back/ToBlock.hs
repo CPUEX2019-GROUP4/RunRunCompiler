@@ -80,9 +80,9 @@ convertFundef (A.Afundef {A.a_name = (L name), A.a_args = ys, A.a_fargs = zs, A.
     -- eputstrln "block id ="
     -- eprint b
     ans <- case t of
-                Float -> return (fregs Array.! 0)
+                Float -> return "ret"
                 Unit  -> gentmp Type.Unit
-                _     -> return (regs Array.! 0)
+                _     -> return "ret"
     (\f -> do
         let bm = blockmap f
         put $ f {blockmap = (((name, ys, zs, t), []), M.empty) : bm}) =<< get
