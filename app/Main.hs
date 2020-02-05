@@ -25,6 +25,7 @@ import           Middle.Elim            as Elim
 import           Middle.Global          as Global
 import           Middle.Inline          as Inline
 import           Middle.KNormal         as KNormal
+import           Middle.TypingClosure   as ClsTyp
 
 import           Back.RegAlloc          as RegAlloc
 import           Back.Simm              as Simm
@@ -34,7 +35,7 @@ import           Back.Virtual           as Virtual
 import           Back.BlockEmit         as BlockEmit
 import           Back.BlockPrepare      as BlockPrepare
 import           Back.BlockStackSearch  as BlockStackSearch
-import Back.Reg.BlockRegAlloc as BlockRegAlloc
+import           Back.Reg.BlockRegAlloc as BlockRegAlloc
 
 main :: IO ()
 main = do
@@ -52,6 +53,7 @@ main = do
         >>= Global.global
         >>= ConvertGlobal.convertGlobal
         >>= Closure.closure
+        >>= ClsTyp.clsTyping
         >>= Virtual.virtual
         >>= Simm.simm
         >>= RegAlloc.regalloc
@@ -88,11 +90,13 @@ initEnv = Env {
             stackset = empty,
             stackmap = [],
             toplevel = [],
-            inlinenum = 650,
+            inlinenum = 100,
             globals = M.empty,
             hp = 30000,
             sp = 5040,
             blockid = 0,
-            blockmap = []
+            blockmap = [],
             -- funcGraph = M.empty
+            clsSubst = M.empty,
+            clsTyCounter = 0
             }

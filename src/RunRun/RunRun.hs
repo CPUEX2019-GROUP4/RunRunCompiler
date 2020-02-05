@@ -29,13 +29,16 @@ data Env = Env {
     hp :: Int,
     sp :: Int,
     blockid :: Int,
-    blockmap :: [(((String, [String], [String], Type), [Int]), Map Int Block)]
+    blockmap :: [(((String, [String], [String], Type), [Int]), Map Int Block)],
     -- funcGraph :: Map String Graph
+    clsSubst :: Map Int Type,
+    clsTyCounter :: Int
     }
     deriving (Show)
 
 data Error = ParseErr String
            | Fail String
+           | UnifyErr Type Type
             deriving Show
 
 data Global = Global { typ :: Type, addr :: Int }

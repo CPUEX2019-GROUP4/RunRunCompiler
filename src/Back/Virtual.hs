@@ -213,10 +213,11 @@ findGlobal x = ((M.lookup x) . globals) <$> get
 
 virtual :: C.Prog -> RunRun Aprog
 virtual (C.Prog e) = do
-    --eprint e
+    -- eprint e
     eputstrln "virtual ..."
     e' <- g mapinit e
     -- eprint e'
+    -- eprint . toplevel =<< get
     fundefs' <- ((mapM h . reverse . toplevel) =<< get)
---    eprint fundefs'
+    -- eprint fundefs'
     return $ Aprog fundefs' e'

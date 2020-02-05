@@ -29,7 +29,7 @@ data K =
     | Var !String
     | Tuple ![String]
     | LetTuple ![(String,Type.Type)] !String !K
-    | Array !Type.Type !String !String
+    | Array !Type.Type !String !String -- t は Array の中身の型
     | Out !Int !String
     | In !Type.Type
     | Get !String !String
